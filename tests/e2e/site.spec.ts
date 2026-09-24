@@ -1,6 +1,8 @@
 import copy from '../../src/data/site-settings.json';
 import { test, expect } from '@playwright/test';
 import content from '../../src/data/demo.json';
+// Canonical và sitemap dùng domain thật, nên lấy theo nơi đang kiểm thử.
+const SITE = (process.env.TEST_BASE_URL || 'http://localhost:3100').replace(/\/$/, '');
 const pages = [
   '/',
   '/ve-chung-toi',
@@ -39,7 +41,7 @@ test('all pages render with unique canonical, metadata and one H1 in every langu
       await expect(page.locator('meta[name="description"]'), url).toHaveAttribute('content', /.{10,}/);
       await expect(page.locator('link[rel="canonical"]'), url).toHaveAttribute(
         'href',
-        'http://localhost:3100' + (url === '/' ? '' : url),
+        SITE + (url === '/' ? '' : url),
       );
       await expect(page.locator('link[rel="alternate"][hreflang="x-default"]'), url).toHaveCount(1);
       const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
@@ -52,16 +54,21 @@ test('all pages render with unique canonical, metadata and one H1 in every langu
 test('language switcher keeps the current page and links stay in the chosen language', async ({
   page,
 }) => {
+  // Menu ngôn ngữ chỉ hoạt động sau khi React hydrate, nên chờ menu mở rồi mới bấm.
+  const chooseLanguage = async (code: string) => {
+    await page.locator('.lang-switch > button').click();
+    await expect(page.locator(`.lang-menu [lang="${code}"]`)).toBeVisible();
+    await page.locator(`.lang-menu [lang="${code}"]`).click();
+    await expect(page.locator('.lang-menu')).toHaveCount(0);
+  };
   await page.goto('/dich-vu/production-lines');
-  await page.locator('.lang-switch > button').click();
-  await page.locator('.lang-menu [lang="zh"]').click();
+  await chooseLanguage('zh');
   await expect(page).toHaveURL(/\/zh\/dich-vu\/production-lines$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
   await expect(page.locator('#primary-nav a').first()).toHaveAttribute('href', '/zh');
-  await page.locator('.lang-switch > button').click();
-  await page.locator('.lang-menu [lang="vi"]').click();
-  await expect(page).toHaveURL(/localhost:3100\/dich-vu\/production-lines$/);
-  expect((await page.goto('/vi/du-an'))?.url()).toBe('http://localhost:3100/du-an');
+  await chooseLanguage('vi');
+  await expect(page).toHaveURL(SITE + '/dich-vu/production-lines');
+  expect((await page.goto('/vi/du-an'))?.url()).toBe(SITE + '/du-an');
 });
 test('responsive pages have no viewport overflow, and original images load', async ({ page }) => {
   for (const width of [1280, 768, 390, 320]) {
@@ -175,8 +182,8 @@ test('SEO endpoints and unknown URLs are correct', async ({ page, request }) => 
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
   for (const path of pages) {
-    expect(xml).toContain('http://localhost:3100' + path);
-    expect(xml).toContain('http://localhost:3100/zh' + (path === '/' ? '' : path));
+    expect(xml).toContain(SITE + path);
+    expect(xml).toContain(SITE + '/zh' + (path === '/' ? '' : path));
   }
   expect((await request.get('/robots.txt')).status()).toBe(200);
   expect((await request.get('/opengraph-image')).status()).toBe(200);

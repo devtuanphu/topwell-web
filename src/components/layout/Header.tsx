@@ -62,7 +62,11 @@ export default function Header({
     setLangOpen(false);
     if (code === lang) return;
     document.cookie = `${LOCALE_COOKIE}=${code}; path=/; max-age=31536000; samesite=lax`;
-    router.push(localizePath(pathname, code) + window.location.search + window.location.hash);
+    // Tải lại cả trang: điều hướng phía client sang đường dẫn tiếng Việt (được proxy
+    // rewrite sang /vi/...) có lúc không đổi URL, nên đổi ngôn ngữ luôn dùng điều hướng thật.
+    window.location.assign(
+      localizePath(pathname, code) + window.location.search + window.location.hash,
+    );
   };
   const submenu = (href?: string) =>
     href === copy.routes.services
