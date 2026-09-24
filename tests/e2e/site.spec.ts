@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 import content from '../../src/data/demo.json';
 // Canonical và sitemap dùng domain thật, nên lấy theo nơi đang kiểm thử.
 const SITE = (process.env.TEST_BASE_URL || 'http://localhost:3100').replace(/\/$/, '');
+const CMS = (process.env.TEST_CMS_URL || 'http://localhost:1337').replace(/\/$/, '');
 const pages = [
   '/',
   '/ve-chung-toi',
@@ -171,11 +172,11 @@ test('contact form stores an inquiry and rejects invalid or unauthenticated requ
   ).toBe(403);
   expect(
     (
-      await request.post('http://localhost:1337/api/site-inquiry', { data: { name: 'X' } })
+      await request.post(`${CMS}/api/site-inquiry`, { data: { name: 'X' } })
     ).status(),
   ).toBe(401);
-  expect((await request.get('http://localhost:1337/api/inquiries')).status()).toBe(403);
-  expect((await request.get('http://localhost:1337/api/site/inquiries')).status()).toBe(404);
+  expect((await request.get(`${CMS}/api/inquiries`)).status()).toBe(403);
+  expect((await request.get(`${CMS}/api/site/inquiries`)).status()).toBe(404);
 });
 test('SEO endpoints and unknown URLs are correct', async ({ page, request }) => {
   const sitemap = await request.get('/sitemap.xml');

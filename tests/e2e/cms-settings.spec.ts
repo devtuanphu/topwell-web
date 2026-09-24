@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
+const CMS = (process.env.TEST_CMS_URL || 'http://localhost:1337').replace(/\/$/, '');
 
 test('published CMS settings supply header, footer, forms and list actions', async ({
   page,
   request,
 }) => {
   const cms = async (type: string) => {
-    const response = await request.get(`http://localhost:1337/api/site/${type}?locale=en`);
+    const response = await request.get(`${CMS}/api/site/${type}?locale=en`);
     expect(response.status()).toBe(200);
     return (await response.json()).data;
   };
