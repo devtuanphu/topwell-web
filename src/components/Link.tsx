@@ -1,15 +1,24 @@
 'use client';
 import NextLink from 'next/link';
 import type { ComponentProps } from 'react';
-import { DEFAULT_LOCALE, localizePath } from '@/lib/i18n';
+import { localizePath } from '@/lib/i18n';
 import { useLocale } from './SiteCopyProvider';
 
-/** next/link that keeps visitors in their current language. */
-export default function Link({ href, prefetch, ...props }: ComponentProps<typeof NextLink>) {
+/**
+ * next/link giữ khách ở đúng ngôn ngữ đang xem.
+ *
+ * Mặc định tắt prefetch: nội dung luôn lấy mới từ CMS (`cache: 'no-store'`) nên bản
+ * prefetch gần như vô dụng, trong khi header và footer có hàng chục link — hàng prefetch
+ * đó làm lần điều hướng kế tiếp phải chờ, và với đường dẫn tiếng Việt (được proxy rewrite
+ * sang /vi/...) còn khiến router bỏ qua luôn lần điều hướng.
+ */
+export default function Link({ href, prefetch = false, ...props }: ComponentProps<typeof NextLink>) {
   const locale = useLocale();
-  const target = typeof href === 'string' ? localizePath(href, locale) : href;
-  // Đường dẫn tiếng Việt không có tiền tố nên proxy phải rewrite sang /vi/...
-  // Bản prefetch của những đường dẫn đó khiến router bỏ qua lần điều hướng sau này.
-  const rewritten = locale === DEFAULT_LOCALE && typeof target === 'string' && target.startsWith('/');
-  return <NextLink href={target} prefetch={prefetch ?? (rewritten ? false : undefined)} {...props} />;
+  return (
+    <NextLink
+      href={typeof href === 'string' ? localizePath(href, locale) : href}
+      prefetch={prefetch}
+      {...props}
+    />
+  );
 }
