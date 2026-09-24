@@ -1,0 +1,106 @@
+/* 12-column layouts collapse to one column on narrow screens (gaps alone exceed phone width). */
+@media (max-width: 1024px) {
+  .news-layout,
+  .article-page-inner,
+  .service-detail-inner,
+  .contact-card,
+  .contact-intro,
+  .quote-top,
+  .why-card,
+  .industrial-cta-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .project-split {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+  .news-layout,
+  .article-page-inner,
+  .service-detail-inner,
+  .contact-card,
+  .contact-intro {
+    gap: 24px;
+  }
+}
+
+/* Generic CMS pages without a dedicated Figma frame (privacy, standards) reuse the article styles. */
+.page-page:not(.page-home) > .article-body,
+.page-page:not(.page-home) > .detail-section,
+.page-page:not(.page-home) > .section {
+  max-width: 1280px;
+  margin: 56px auto 80px;
+  padding-inline: var(--gutter);
+}
+.page-page > .article-body .article-sapo {
+  margin-top: 0;
+}
+.detail-section > h2 {
+  margin-bottom: 24px;
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.four-grid,
+.feature-grid,
+.three-grid,
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  list-style: none;
+}
+.four-grid > *,
+.feature-card,
+.metric-card,
+.timeline-card {
+  padding: 28px;
+  border: 1px solid #e6e6e3;
+  border-radius: 24px;
+  background: #f5f5f3;
+  transition:
+    border-color 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.four-grid > *:hover,
+.feature-card:hover {
+  border-color: #f1df57;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+}
+.four-grid h3,
+.feature-card h3,
+.timeline-card h3 {
+  margin: 12px 0 8px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.four-grid p,
+.feature-card p,
+.timeline-card p {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 22px;
+}
+.four-grid .icon-box,
+.metric-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #f1df57;
+  border-radius: 14px;
+  background: rgba(241, 223, 87, 0.3);
+}
+.detail-section > p {
+  margin-bottom: 24px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 26px;
+}

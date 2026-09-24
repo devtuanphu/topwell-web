@@ -1,0 +1,3277 @@
+{
+  "pages": {
+    "home-page": {
+      "title": "Smart industry & connected logistics",
+      "seo": {
+        "metaTitle": "Smart industry & connected logistics | TOP WELL International",
+        "metaDescription": "Engineering, equipment and logistics solutions supporting industrial operations in Vietnam and international supply chains.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.hero-slider",
+          "title": "Smart industry. Connected logistics.",
+          "cards": [
+            {
+              "title": "Run global logistics seamlessly and safely.",
+              "description": "Smart warehousing and multimodal transport for industrial equipment, machinery and oversized cargo.",
+              "eyebrow": "SMART LOGISTICS & SUPPLY CHAINS",
+              "image": {
+                "alt": "Run global logistics seamlessly and safely.",
+                "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+              },
+              "href": "/dich-vu/phan-phoi-kho-hang",
+              "label": "Explore our solutions",
+              "highlight": "seamlessly and safely."
+            },
+            {
+              "title": "Advanced machinery. Better production.",
+              "description": "Coordinate automation, equipment and engineering expertise to support your next production milestone.",
+              "eyebrow": "TECHNOLOGY & AUTOMATION",
+              "image": {
+                "alt": "Advanced machinery. Better production.",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              },
+              "href": "/dich-vu/production-lines",
+              "label": "Explore our solutions",
+              "highlight": "Better production."
+            },
+            {
+              "title": "Sustainable connections. Global partnerships.",
+              "description": "Connect with international equipment partners and experienced engineers throughout your project.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "image": {
+                "alt": "Sustainable connections. Global partnerships.",
+                "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+              },
+              "href": "/du-an",
+              "label": "Explore our solutions",
+              "highlight": "Global partnerships."
+            }
+          ]
+        },
+        {
+          "__component": "sections.services",
+          "title": "Comprehensive industrial and engineering solutions.",
+          "eyebrow": "OUR SERVICES",
+          "variant": "compact",
+          "ctaLabel": "Explore all services",
+          "ctaHref": "/dich-vu",
+          "highlight": "Comprehensive"
+        },
+        {
+          "__component": "sections.about",
+          "title": "Precision engineering. Sustainable connections.",
+          "eyebrow": "ABOUT TOP WELL",
+          "description": "We combine industrial expertise with an international partner network to support manufacturing, equipment sourcing and logistics.",
+          "image": {
+            "alt": "Precision engineering. Sustainable connections.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "cards": [
+            {
+              "title": "Strategic vision",
+              "description": "Become a trusted integration partner connecting manufacturing and supply networks.",
+              "icon": {
+                "alt": "TOP WELL industrial solutions",
+                "localPath": "/figma/da24f2a4-1e46-401d-ba1b-9621024cf8b8.svg"
+              }
+            },
+            {
+              "title": "A shared mission",
+              "description": "Remove technical barriers and reduce operational waste through coordinated solutions.",
+              "icon": {
+                "alt": "TOP WELL industrial solutions",
+                "localPath": "/figma/52654db5-e80d-4fa3-bbed-9725c00cd4cb.svg"
+              }
+            },
+            {
+              "title": "Core values",
+              "description": "Precision, responsive support and a commitment to long-term customer relationships.",
+              "icon": {
+                "alt": "TOP WELL industrial solutions",
+                "localPath": "/figma/b3e59d06-6773-44a0-a83a-7a75f68bb17f.svg"
+              }
+            }
+          ],
+          "highlight": "Sustainable connections."
+        },
+        {
+          "__component": "sections.capabilities",
+          "title": "A reliable technical foundation for every production line.",
+          "eyebrow": "TECHNICAL CAPABILITIES",
+          "cards": [
+            {
+              "title": "Equipment Supply",
+              "description": "Source industrial machinery from established manufacturers with documented origin and inspection records."
+            },
+            {
+              "title": "Engineering & System Integration",
+              "description": "Develop factory layouts, integrate collaborative robots and connect automation signals."
+            },
+            {
+              "title": "Preventive Maintenance",
+              "description": "Plan inspections, alignment and condition monitoring to reduce unplanned downtime."
+            },
+            {
+              "title": "Machine Retrofit & Modernization",
+              "description": "Upgrade control systems, improve energy efficiency and connect existing equipment to industrial data networks."
+            }
+          ]
+        },
+        {
+          "__component": "sections.projects",
+          "title": "Selected projects and delivery expertise.",
+          "eyebrow": "SELECTED PROJECTS",
+          "variant": "featured"
+        },
+        {
+          "__component": "sections.news",
+          "title": "The latest developments in industry.",
+          "eyebrow": "NEWS & INSIGHTS",
+          "variant": "rows"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        },
+        {
+          "__component": "sections.partners",
+          "title": "Creating value for global industry leaders.",
+          "eyebrow": "OUR PARTNER NETWORK",
+          "description": "Explore our international network of industrial partners.",
+          "cards": [
+            {
+              "title": "Recode",
+              "description": ""
+            },
+            {
+              "title": "Finorix",
+              "description": ""
+            },
+            {
+              "title": "Brivon",
+              "description": ""
+            },
+            {
+              "title": "RiHome",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    "about-page": {
+      "title": "About us",
+      "seo": {
+        "metaTitle": "About us | TOP WELL International",
+        "metaDescription": "Meet TOP WELL, an industrial solutions partner connecting engineering expertise, equipment and international supply chains.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.about-hero",
+          "title": "We move more than equipment. We create opportunities.",
+          "eyebrow": "ABOUT US",
+          "description": "TOP WELL was founded on the belief that manufacturing and supply chains should be smarter, faster and more connected.",
+          "image": {
+            "alt": "We move more than equipment. We create opportunities.",
+            "localPath": "/figma/67d7ce97-33af-4e31-a786-097cc5577ebb.png"
+          },
+          "cards": [
+            {
+              "title": "",
+              "description": "",
+              "image": {
+                "alt": "TOP WELL team and operations",
+                "localPath": "/figma/de9285be-7888-426a-9dd2-df61b53deb07.png"
+              }
+            },
+            {
+              "title": "",
+              "description": "",
+              "image": {
+                "alt": "TOP WELL team and operations",
+                "localPath": "/figma/90c82ec5-56b3-405d-9bf7-ace87d76ce7a.png"
+              }
+            }
+          ],
+          "ctaLabel": "Contact our team",
+          "ctaHref": "#tai-sao-chon",
+          "highlight": "We create opportunities.",
+          "story": {
+            "title": "Building value through connected engineering.",
+            "eyebrow": "THE TOP WELL STORY",
+            "description": "Our work connects manufacturing expertise, equipment and people across the industrial supply chain.",
+            "image": {
+              "alt": "Building value through connected engineering.",
+              "localPath": "/figma/082d6d2f-73fa-4d5d-a793-71cb3643e990.png"
+            },
+            "cards": [
+              {
+                "title": "1. A foundation in precision engineering",
+                "description": "Founded in 2010 as a supporting toolmaking workshop, TOP WELL developed its capabilities through precision work and long-term customer partnerships."
+              },
+              {
+                "title": "2. Three pillars of our approach",
+                "description": "Reliable technology, responsive field support and transparent project coordination guide our work from assessment through handover."
+              },
+              {
+                "title": "3. Looking towards smarter manufacturing",
+                "description": "We continue to develop expertise in automation, smart warehousing and connected industrial systems."
+              }
+            ]
+          }
+        },
+        {
+          "__component": "sections.about",
+          "title": "Precision engineering. Sustainable connections.",
+          "eyebrow": "ABOUT TOP WELL",
+          "description": "We combine industrial expertise with an international partner network to support manufacturing, equipment sourcing and logistics.",
+          "image": {
+            "alt": "Precision engineering. Sustainable connections.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "cards": [
+            {
+              "title": "Strategic vision",
+              "description": "Become a trusted integration partner connecting manufacturing and supply networks."
+            },
+            {
+              "title": "A shared mission",
+              "description": "Remove technical barriers and reduce operational waste through coordinated solutions."
+            },
+            {
+              "title": "Core values",
+              "description": "Precision, responsive support and a commitment to long-term customer relationships."
+            }
+          ]
+        },
+        {
+          "__component": "sections.metrics",
+          "title": "",
+          "cards": [
+            {
+              "title": "15+",
+              "description": "Years of experience",
+              "icon": {
+                "alt": "15+",
+                "localPath": "/figma/7af1b088-bd1c-4d58-9753-ba6c074a82fd.svg"
+              }
+            },
+            {
+              "title": "150+",
+              "description": "Large-scale projects",
+              "icon": {
+                "alt": "150+",
+                "localPath": "/figma/31883b8c-953c-43a7-9a3f-0189e9193e46.svg"
+              }
+            },
+            {
+              "title": "45+",
+              "description": "Industrial partners",
+              "icon": {
+                "alt": "45+",
+                "localPath": "/figma/f39048cf-7e01-486d-a107-4b5cae83a175.svg"
+              }
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target",
+              "icon": {
+                "alt": "99.2%",
+                "localPath": "/figma/5fd32e1c-46bd-408e-8e5e-46e983299768.svg"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.values",
+          "title": "Leading with precision and commitment.",
+          "eyebrow": "OUR VALUES",
+          "description": "Every step we take is focused on improving customer operations through practical engineering and responsible collaboration.",
+          "cards": [
+            {
+              "title": "Strategic vision",
+              "description": "Build an industrial ecosystem that connects reliable equipment, skilled people and transparent supply chains.",
+              "icon": {
+                "alt": "Strategic vision",
+                "localPath": "/figma/219709a3-3f39-4d70-85b4-9e1a99869fbc.svg"
+              }
+            },
+            {
+              "title": "A shared mission",
+              "description": "Make complex engineering projects easier to plan, implement and maintain.",
+              "icon": {
+                "alt": "A shared mission",
+                "localPath": "/figma/6b4120d7-4469-40dd-ac75-eb0078967f32.svg"
+              }
+            },
+            {
+              "title": "Core values",
+              "description": "Precision in our work. Accountability in our commitments. Collaboration across every project.",
+              "icon": {
+                "alt": "Core values",
+                "localPath": "/figma/f46510c1-33a0-4d33-ac60-90446bfc5e80.svg"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.timeline",
+          "title": "Fifteen years of continuous development.",
+          "eyebrow": "OUR JOURNEY",
+          "cards": [
+            {
+              "title": "Precision workshop established",
+              "description": "Opened a supporting toolmaking and precision machining workshop in Hai Phong.",
+              "eyebrow": "2010"
+            },
+            {
+              "title": "Equipment sourcing network expanded",
+              "description": "Built equipment supply relationships with manufacturers in Japan, Korea and Taiwan.",
+              "eyebrow": "2015"
+            },
+            {
+              "title": "TOP WELL Alliance launched",
+              "description": "Combined expertise in smart warehouses, conveyor systems and industrial robotics.",
+              "eyebrow": "2020"
+            },
+            {
+              "title": "Integrated solutions partner",
+              "description": "Developing coordinated production, equipment and supply chain solutions for industrial customers.",
+              "eyebrow": "Today"
+            }
+          ]
+        },
+        {
+          "__component": "sections.team",
+          "title": "Leadership and senior technical advisors.",
+          "eyebrow": "OUR EXPERTS",
+          "description": "A multidisciplinary team bringing together manufacturing, engineering and supply chain experience.",
+          "cards": [
+            {
+              "title": "Tran Minh Hoang",
+              "description": "Leads industrial integration strategy and manufacturing partnerships.",
+              "eyebrow": "Chief Executive Officer",
+              "image": {
+                "alt": "Tran Minh Hoang",
+                "localPath": "/figma/team-laboratory-clean.png"
+              }
+            },
+            {
+              "title": "Kenji Takahashi",
+              "description": "Advises on precision measurement, commissioning and production improvement.",
+              "eyebrow": "Chief Technical Advisor",
+              "image": {
+                "alt": "Kenji Takahashi",
+                "localPath": "/figma/0cfdea30-4c15-4554-8f7f-9df74ff440f1.png"
+              }
+            },
+            {
+              "title": "Nguyen Phuong Thao",
+              "description": "Coordinates equipment sourcing, spare parts and international partner relationships.",
+              "eyebrow": "Supply Chain & Partnerships Director",
+              "image": {
+                "alt": "Nguyen Phuong Thao",
+                "localPath": "/figma/56919aad-91a8-4483-90b0-b8fa096bbd41.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Partner with TOP WELL to advance your production capabilities.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "RFQ response target",
+              "description": "Within 4 working hours"
+            },
+            {
+              "title": "Site assessment",
+              "description": "Available by arrangement"
+            },
+            {
+              "title": "Tooling trials",
+              "description": "DFM review and sample support"
+            }
+          ],
+          "variant": "consultation",
+          "subtitle": "Need specialist support?",
+          "highlight": "advance"
+        }
+      ]
+    },
+    "services-page": {
+      "title": "Our services",
+      "seo": {
+        "metaTitle": "Our services | TOP WELL International",
+        "metaDescription": "Explore equipment sourcing, production systems, technical services and coordinated international logistics.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.page-hero",
+          "title": "Our services",
+          "description": "Explore equipment sourcing, production systems, technical services and coordinated international logistics.",
+          "variant": "warm"
+        },
+        {
+          "__component": "sections.services",
+          "title": "Coordinated operations. International standards.",
+          "eyebrow": "OUR SERVICES",
+          "variant": "logistics"
+        },
+        {
+          "__component": "sections.services",
+          "title": "Coordinated operations. International standards.",
+          "eyebrow": "OUR SERVICES",
+          "variant": "compact"
+        }
+      ]
+    },
+    "projects-page": {
+      "title": "Selected projects",
+      "seo": {
+        "metaTitle": "Selected projects | TOP WELL International",
+        "metaDescription": "Explore sample project profiles covering automation, precision machining, tooling and smart warehouse systems.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.page-hero",
+          "title": "Selected projects",
+          "description": "Explore sample project profiles covering automation, precision machining, tooling and smart warehouse systems."
+        },
+        {
+          "__component": "sections.projects",
+          "title": "Selected projects and delivery expertise.",
+          "variant": "listing"
+        }
+      ]
+    },
+    "news-page": {
+      "title": "News & industry insights",
+      "seo": {
+        "metaTitle": "News & industry insights | TOP WELL International",
+        "metaDescription": "Read insights on engineering, automation, precision measurement and reliable industrial supply chains.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.page-hero",
+          "title": "News & industry insights",
+          "description": "Read insights on engineering, automation, precision measurement and reliable industrial supply chains.",
+          "image": {
+            "alt": "Industrial solutions",
+            "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+          }
+        },
+        {
+          "__component": "sections.news",
+          "title": "The latest developments in industry.",
+          "variant": "listing"
+        }
+      ]
+    },
+    "contact-page": {
+      "title": "Contact us",
+      "seo": {
+        "metaTitle": "Contact us | TOP WELL International",
+        "metaDescription": "Contact TOP WELL for equipment requirements, engineering support and logistics enquiries.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.page-hero",
+          "title": "Contact us",
+          "image": {
+            "alt": "Industrial solutions",
+            "localPath": "/figma/e6a442d9-b41d-4e0b-989a-b170c442303f.png"
+          },
+          "variant": "contact",
+          "description": "Contact TOP WELL for equipment requirements, engineering support and logistics enquiries."
+        },
+        {
+          "__component": "sections.contact-form",
+          "title": "Helping your business operate without limits",
+          "eyebrow": "CONTACT US",
+          "description": "Get support from our engineering and logistics team for equipment, service and implementation enquiries.",
+          "image": {
+            "alt": "Helping your business operate without limits",
+            "localPath": "/figma/e6a442d9-b41d-4e0b-989a-b170c442303f.png"
+          },
+          "subtitle": "What you need to know about engineering and logistics support",
+          "highlight": "without limits"
+        },
+        {
+          "__component": "sections.network",
+          "title": "Our strategic engineering and logistics network",
+          "eyebrow": "GLOBAL OPERATIONS",
+          "description": "Connect with our coordination team to discuss site support, equipment delivery and international logistics.",
+          "image": {
+            "alt": "Our strategic engineering and logistics network",
+            "localPath": "/figma/global-network-clean.png"
+          },
+          "cards": [
+            {
+              "title": "Engineering Coordination Office",
+              "description": "Tech Tower, VSIP 1 Industrial Park, Thuan An, Binh Duong, Vietnam."
+            }
+          ],
+          "highlight": "engineering and logistics"
+        }
+      ]
+    },
+    "privacy-page": {
+      "title": "Privacy policy",
+      "seo": {
+        "metaTitle": "Privacy policy | TOP WELL International",
+        "metaDescription": "Learn how information submitted through the TOP WELL website is used to respond to enquiries and protect your privacy.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Industry insights",
+          "description": "This sample privacy notice describes how website enquiries are handled. Review and adapt it to the actual business process before publishing.",
+          "cards": [
+            {
+              "title": "Information you provide",
+              "description": "The contact form collects your name, email address, enquiry subject and message so our team can respond."
+            },
+            {
+              "title": "How information is used",
+              "description": "Enquiry information is used to review your request and contact you about relevant services. Newsletter requests are stored for follow-up; no automated marketing email is sent by this application."
+            },
+            {
+              "title": "Contact and access requests",
+              "description": "Contact our team if you need to update information you have submitted or ask about its handling."
+            }
+          ]
+        }
+      ]
+    },
+    "standards-page": {
+      "title": "Technical standards",
+      "seo": {
+        "metaTitle": "Technical standards | TOP WELL International",
+        "metaDescription": "Discover how project requirements, inspections and acceptance records support consistent technical delivery.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.page-hero",
+          "title": "Technical standards",
+          "description": "Discover how project requirements, inspections and acceptance records support consistent technical delivery."
+        },
+        {
+          "__component": "sections.commitments",
+          "title": "Delivery commitments and acceptance standards",
+          "cards": [
+            {
+              "title": "Application assessment",
+              "description": "Define the production process, material requirements and operating conditions."
+            },
+            {
+              "title": "System integration",
+              "description": "Agree communication interfaces, safety requirements and control architecture."
+            },
+            {
+              "title": "Performance verification",
+              "description": "Measure the agreed cycle time, quality requirements and equipment availability."
+            },
+            {
+              "title": "Technical handover",
+              "description": "Complete factory and site acceptance checks with documented operating instructions."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Production Lines",
+      "slug": "production-lines",
+      "category": "Industrial",
+      "summary": "Integrated assembly, material handling and production monitoring for industrial manufacturing.",
+      "image": {
+        "alt": "Production Lines",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/71f73042-a585-4b38-be5c-01de72adb10f.svg"
+      },
+      "seo": {
+        "metaTitle": "Production Lines | TOP WELL International",
+        "metaDescription": "Integrated assembly, material handling and production monitoring for industrial manufacturing.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Production Lines",
+          "description": "Integrated assembly, material handling and production monitoring for industrial manufacturing. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Production Lines",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Production Lines",
+              "description": "Integrate automated assembly, material handling and production monitoring.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Machinery",
+              "description": "Select CNC machining, forming and measurement equipment for the required process.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Spare Parts & Molds",
+              "description": "Develop precision tooling and source compatible components for production equipment.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Technical Services",
+              "description": "Coordinate calibration, commissioning, maintenance and operator training.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            }
+          ]
+        },
+        {
+          "__component": "sections.commitments",
+          "title": "Delivery commitments and acceptance standards",
+          "description": "Agree clear technical requirements, document inspections and validate performance before handover.",
+          "cards": [
+            {
+              "title": "Application assessment",
+              "description": "Define the production process, material requirements and operating conditions."
+            },
+            {
+              "title": "System integration",
+              "description": "Agree communication interfaces, safety requirements and control architecture."
+            },
+            {
+              "title": "Performance verification",
+              "description": "Measure the agreed cycle time, quality requirements and equipment availability."
+            },
+            {
+              "title": "Technical handover",
+              "description": "Complete factory and site acceptance checks with documented operating instructions."
+            }
+          ]
+        },
+        {
+          "__component": "sections.gallery",
+          "title": "Project delivery in practice",
+          "cards": [
+            {
+              "title": "Equipment inspection & acceptance",
+              "description": "",
+              "image": {
+                "alt": "Equipment inspection & acceptance",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Training & technology transfer",
+              "description": "",
+              "image": {
+                "alt": "Training & technology transfer",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Handover & operational support",
+              "description": "",
+              "image": {
+                "alt": "Handover & operational support",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            },
+            {
+              "title": "Can the solution integrate with existing systems?",
+              "description": "We assess the available interfaces and technical requirements before agreeing an integration plan."
+            },
+            {
+              "title": "Do you provide training and after-sales support?",
+              "description": "Yes. Training, maintenance requirements and technical support arrangements are defined as part of the project scope."
+            }
+          ]
+        }
+      ],
+      "group": "industrial"
+    },
+    {
+      "title": "Machinery",
+      "slug": "machinery",
+      "category": "Industrial",
+      "summary": "CNC machining, forming and measurement equipment selected for your production requirements.",
+      "image": {
+        "alt": "Machinery",
+        "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+      },
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/cffb5cb1-3cf0-40e4-98c0-882ac5f71f23.svg"
+      },
+      "seo": {
+        "metaTitle": "Machinery | TOP WELL International",
+        "metaDescription": "CNC machining, forming and measurement equipment selected for your production requirements.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Machinery",
+          "description": "CNC machining, forming and measurement equipment selected for your production requirements. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Machinery",
+            "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Production Lines",
+              "description": "Integrate automated assembly, material handling and production monitoring.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Machinery",
+              "description": "Select CNC machining, forming and measurement equipment for the required process.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Spare Parts & Molds",
+              "description": "Develop precision tooling and source compatible components for production equipment.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Technical Services",
+              "description": "Coordinate calibration, commissioning, maintenance and operator training.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            }
+          ]
+        },
+        {
+          "__component": "sections.commitments",
+          "title": "Delivery commitments and acceptance standards",
+          "description": "Agree clear technical requirements, document inspections and validate performance before handover.",
+          "cards": [
+            {
+              "title": "Application assessment",
+              "description": "Define the production process, material requirements and operating conditions."
+            },
+            {
+              "title": "System integration",
+              "description": "Agree communication interfaces, safety requirements and control architecture."
+            },
+            {
+              "title": "Performance verification",
+              "description": "Measure the agreed cycle time, quality requirements and equipment availability."
+            },
+            {
+              "title": "Technical handover",
+              "description": "Complete factory and site acceptance checks with documented operating instructions."
+            }
+          ]
+        },
+        {
+          "__component": "sections.gallery",
+          "title": "Project delivery in practice",
+          "cards": [
+            {
+              "title": "Equipment inspection & acceptance",
+              "description": "",
+              "image": {
+                "alt": "Equipment inspection & acceptance",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Training & technology transfer",
+              "description": "",
+              "image": {
+                "alt": "Training & technology transfer",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Handover & operational support",
+              "description": "",
+              "image": {
+                "alt": "Handover & operational support",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            },
+            {
+              "title": "Can the solution integrate with existing systems?",
+              "description": "We assess the available interfaces and technical requirements before agreeing an integration plan."
+            },
+            {
+              "title": "Do you provide training and after-sales support?",
+              "description": "Yes. Training, maintenance requirements and technical support arrangements are defined as part of the project scope."
+            }
+          ]
+        }
+      ],
+      "group": "industrial"
+    },
+    {
+      "title": "Spare Parts & Molds",
+      "slug": "spare-parts-molds",
+      "category": "Industrial",
+      "summary": "Precision tooling, molds and compatible spare parts for industrial equipment.",
+      "image": {
+        "alt": "Spare Parts & Molds",
+        "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+      },
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/e0a2cd59-ddec-4c5f-adc3-735596bb6678.svg"
+      },
+      "seo": {
+        "metaTitle": "Spare Parts & Molds | TOP WELL International",
+        "metaDescription": "Precision tooling, molds and compatible spare parts for industrial equipment.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Spare Parts & Molds",
+          "description": "Precision tooling, molds and compatible spare parts for industrial equipment. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Spare Parts & Molds",
+            "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Production Lines",
+              "description": "Integrate automated assembly, material handling and production monitoring.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Machinery",
+              "description": "Select CNC machining, forming and measurement equipment for the required process.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Spare Parts & Molds",
+              "description": "Develop precision tooling and source compatible components for production equipment.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Technical Services",
+              "description": "Coordinate calibration, commissioning, maintenance and operator training.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            }
+          ]
+        },
+        {
+          "__component": "sections.commitments",
+          "title": "Delivery commitments and acceptance standards",
+          "description": "Agree clear technical requirements, document inspections and validate performance before handover.",
+          "cards": [
+            {
+              "title": "Application assessment",
+              "description": "Define the production process, material requirements and operating conditions."
+            },
+            {
+              "title": "System integration",
+              "description": "Agree communication interfaces, safety requirements and control architecture."
+            },
+            {
+              "title": "Performance verification",
+              "description": "Measure the agreed cycle time, quality requirements and equipment availability."
+            },
+            {
+              "title": "Technical handover",
+              "description": "Complete factory and site acceptance checks with documented operating instructions."
+            }
+          ]
+        },
+        {
+          "__component": "sections.gallery",
+          "title": "Project delivery in practice",
+          "cards": [
+            {
+              "title": "Equipment inspection & acceptance",
+              "description": "",
+              "image": {
+                "alt": "Equipment inspection & acceptance",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Training & technology transfer",
+              "description": "",
+              "image": {
+                "alt": "Training & technology transfer",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Handover & operational support",
+              "description": "",
+              "image": {
+                "alt": "Handover & operational support",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            },
+            {
+              "title": "Can the solution integrate with existing systems?",
+              "description": "We assess the available interfaces and technical requirements before agreeing an integration plan."
+            },
+            {
+              "title": "Do you provide training and after-sales support?",
+              "description": "Yes. Training, maintenance requirements and technical support arrangements are defined as part of the project scope."
+            }
+          ]
+        }
+      ],
+      "group": "industrial"
+    },
+    {
+      "title": "Technical Services",
+      "slug": "technical-services",
+      "category": "Industrial",
+      "summary": "Commissioning, calibration, maintenance and operator training for industrial systems.",
+      "image": {
+        "alt": "Technical Services",
+        "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+      },
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/f7eeab15-fe3a-4b8a-b9ba-982793ff1c67.svg"
+      },
+      "seo": {
+        "metaTitle": "Technical Services | TOP WELL International",
+        "metaDescription": "Commissioning, calibration, maintenance and operator training for industrial systems.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Technical Services",
+          "description": "Commissioning, calibration, maintenance and operator training for industrial systems. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Technical Services",
+            "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Production Lines",
+              "description": "Integrate automated assembly, material handling and production monitoring.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Machinery",
+              "description": "Select CNC machining, forming and measurement equipment for the required process.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Spare Parts & Molds",
+              "description": "Develop precision tooling and source compatible components for production equipment.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            },
+            {
+              "title": "Technical Services",
+              "description": "Coordinate calibration, commissioning, maintenance and operator training.",
+              "eyebrow": "TOP WELL INTERNATIONAL",
+              "tags": "Engineering, Integration"
+            }
+          ]
+        },
+        {
+          "__component": "sections.commitments",
+          "title": "Delivery commitments and acceptance standards",
+          "description": "Agree clear technical requirements, document inspections and validate performance before handover.",
+          "cards": [
+            {
+              "title": "Application assessment",
+              "description": "Define the production process, material requirements and operating conditions."
+            },
+            {
+              "title": "System integration",
+              "description": "Agree communication interfaces, safety requirements and control architecture."
+            },
+            {
+              "title": "Performance verification",
+              "description": "Measure the agreed cycle time, quality requirements and equipment availability."
+            },
+            {
+              "title": "Technical handover",
+              "description": "Complete factory and site acceptance checks with documented operating instructions."
+            }
+          ]
+        },
+        {
+          "__component": "sections.gallery",
+          "title": "Project delivery in practice",
+          "cards": [
+            {
+              "title": "Equipment inspection & acceptance",
+              "description": "",
+              "image": {
+                "alt": "Equipment inspection & acceptance",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Training & technology transfer",
+              "description": "",
+              "image": {
+                "alt": "Training & technology transfer",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            },
+            {
+              "title": "Handover & operational support",
+              "description": "",
+              "image": {
+                "alt": "Handover & operational support",
+                "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            },
+            {
+              "title": "Can the solution integrate with existing systems?",
+              "description": "We assess the available interfaces and technical requirements before agreeing an integration plan."
+            },
+            {
+              "title": "Do you provide training and after-sales support?",
+              "description": "Yes. Training, maintenance requirements and technical support arrangements are defined as part of the project scope."
+            }
+          ]
+        }
+      ],
+      "group": "industrial"
+    },
+    {
+      "title": "Freight Transport",
+      "slug": "van-chuyen-hang-hoa",
+      "category": "Logistics",
+      "summary": "Coordinated road and multimodal freight planning for equipment and industrial cargo.",
+      "image": {
+        "alt": "Freight Transport",
+        "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+      },
+      "seo": {
+        "metaTitle": "Freight Transport | TOP WELL International",
+        "metaDescription": "Coordinated road and multimodal freight planning for equipment and industrial cargo.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Freight Transport",
+          "description": "Coordinated road and multimodal freight planning for equipment and industrial cargo. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Freight Transport",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/1e4e7181-8bb9-4f62-8e36-6ca1fccd1167.svg"
+      },
+      "group": "logistics"
+    },
+    {
+      "title": "Ocean Freight",
+      "slug": "van-tai-duong-bien",
+      "category": "Logistics",
+      "summary": "Ocean freight coordination, shipment documentation and delivery planning for international cargo.",
+      "image": {
+        "alt": "Ocean Freight",
+        "localPath": "/figma/68a64cea-4e0a-41bc-9544-41bea5c1d19a.png"
+      },
+      "seo": {
+        "metaTitle": "Ocean Freight | TOP WELL International",
+        "metaDescription": "Ocean freight coordination, shipment documentation and delivery planning for international cargo.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Ocean Freight",
+          "description": "Ocean freight coordination, shipment documentation and delivery planning for international cargo. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Ocean Freight",
+            "localPath": "/figma/68a64cea-4e0a-41bc-9544-41bea5c1d19a.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/8d0496ea-569b-42fc-af8a-ac176245220b.svg"
+      },
+      "group": "logistics"
+    },
+    {
+      "title": "Air Freight",
+      "slug": "van-tai-hang-khong",
+      "category": "Logistics",
+      "summary": "Air freight planning for time-sensitive industrial equipment and replacement components.",
+      "image": {
+        "alt": "Air Freight",
+        "localPath": "/figma/d801f9f3-eef2-42dc-827c-55851316c3cf.png"
+      },
+      "seo": {
+        "metaTitle": "Air Freight | TOP WELL International",
+        "metaDescription": "Air freight planning for time-sensitive industrial equipment and replacement components.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Air Freight",
+          "description": "Air freight planning for time-sensitive industrial equipment and replacement components. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Air Freight",
+            "localPath": "/figma/d801f9f3-eef2-42dc-827c-55851316c3cf.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/e5f788e4-e6a9-4d84-b841-02da8f603fae.svg"
+      },
+      "group": "logistics"
+    },
+    {
+      "title": "Rail Freight",
+      "slug": "van-tai-duong-sat",
+      "category": "Logistics",
+      "summary": "Rail freight coordination for suitable domestic and international industrial routes.",
+      "image": {
+        "alt": "Rail Freight",
+        "localPath": "/figma/27eb31c4-c084-494b-9673-40c434292273.png"
+      },
+      "seo": {
+        "metaTitle": "Rail Freight | TOP WELL International",
+        "metaDescription": "Rail freight coordination for suitable domestic and international industrial routes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Rail Freight",
+          "description": "Rail freight coordination for suitable domestic and international industrial routes. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Rail Freight",
+            "localPath": "/figma/27eb31c4-c084-494b-9673-40c434292273.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/61e85d17-9653-4d1a-b802-3afaaab4e821.svg"
+      },
+      "group": "logistics"
+    },
+    {
+      "title": "Warehousing & Distribution",
+      "slug": "phan-phoi-kho-hang",
+      "category": "Logistics",
+      "summary": "Warehouse planning, inventory handling and distribution support for equipment and components.",
+      "image": {
+        "alt": "Warehousing & Distribution",
+        "localPath": "/figma/7e03519e-a4d9-4435-831c-862142f6d89d.png"
+      },
+      "seo": {
+        "metaTitle": "Warehousing & Distribution | TOP WELL International",
+        "metaDescription": "Warehouse planning, inventory handling and distribution support for equipment and components.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Warehousing & Distribution",
+          "description": "Warehouse planning, inventory handling and distribution support for equipment and components. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Warehousing & Distribution",
+            "localPath": "/figma/7e03519e-a4d9-4435-831c-862142f6d89d.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/aab7f625-c098-45ca-8429-b25645be7d0c.svg"
+      },
+      "group": "logistics"
+    },
+    {
+      "title": "Customs Clearance",
+      "slug": "thu-tuc-hai-quan",
+      "category": "Logistics",
+      "summary": "Documentation review and customs coordination for compliant equipment and cargo movements.",
+      "image": {
+        "alt": "Customs Clearance",
+        "localPath": "/figma/90c82ec5-56b3-405d-9bf7-ace87d76ce7a.png"
+      },
+      "seo": {
+        "metaTitle": "Customs Clearance | TOP WELL International",
+        "metaDescription": "Documentation review and customs coordination for compliant equipment and cargo movements.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.service-intro",
+          "title": "Customs Clearance",
+          "description": "Documentation review and customs coordination for compliant equipment and cargo movements. Our team reviews the operational scope, agrees a delivery plan and coordinates technical handover.",
+          "image": {
+            "alt": "Customs Clearance",
+            "localPath": "/figma/90c82ec5-56b3-405d-9bf7-ace87d76ce7a.png"
+          }
+        },
+        {
+          "__component": "sections.feature-grid",
+          "title": "Integrated capabilities",
+          "cards": [
+            {
+              "title": "Assessment & planning",
+              "description": "Review cargo, route and delivery requirements."
+            },
+            {
+              "title": "Transport coordination",
+              "description": "Coordinate partners and track delivery milestones."
+            },
+            {
+              "title": "Cargo protection",
+              "description": "Plan packaging, handling and risk controls."
+            },
+            {
+              "title": "Handover & support",
+              "description": "Check documentation and confirm delivery completion."
+            }
+          ]
+        },
+        {
+          "__component": "sections.faq",
+          "title": "Frequently asked questions",
+          "cards": [
+            {
+              "title": "How do I request a quotation?",
+              "description": "Send your equipment or cargo requirements, location and preferred schedule through our contact form. Our team will review the scope and recommend the next steps."
+            }
+          ]
+        }
+      ],
+      "icon": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/be6c169e-a1c9-4430-819b-d9ebc3ac5103.svg"
+      },
+      "group": "logistics"
+    }
+  ],
+  "projects": [
+    {
+      "title": "EV Assembly Line Automation",
+      "slug": "tu-dong-hoa-day-chuyen-fdi",
+      "category": "Robotics & MES",
+      "summary": "A sample project profile demonstrating coordinated ev assembly line automation with documented acceptance and operator handover.",
+      "location": "Hai Phong",
+      "year": "2024",
+      "image": {
+        "alt": "EV Assembly Line Automation",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "seo": {
+        "metaTitle": "EV Assembly Line Automation | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated ev assembly line automation with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "EV Assembly Line Automation",
+          "description": "A sample project profile demonstrating coordinated ev assembly line automation with documented acceptance and operator handover.",
+          "image": {
+            "alt": "EV Assembly Line Automation",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2024"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "Robotics & MES"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Hai Phong"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "homeOrder": 0,
+      "homeTitle": "Topwell Alliance Consortium",
+      "homeSummary": "A sample project profile demonstrating coordinated ev assembly line automation with documented acceptance and operator handover.",
+      "homeImage": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+      },
+      "homeCategory": "Strategic Alliance"
+    },
+    {
+      "title": "Five-Axis Aerospace Machining Centre",
+      "slug": "trung-tam-gia-cong-5-truc",
+      "category": "5-Axis Aerospace",
+      "summary": "A sample project profile demonstrating coordinated five-axis aerospace machining centre with documented acceptance and operator handover.",
+      "location": "Hoa Lac",
+      "year": "2024",
+      "image": {
+        "alt": "Five-Axis Aerospace Machining Centre",
+        "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+      },
+      "seo": {
+        "metaTitle": "Five-Axis Aerospace Machining Centre | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated five-axis aerospace machining centre with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "Five-Axis Aerospace Machining Centre",
+          "description": "A sample project profile demonstrating coordinated five-axis aerospace machining centre with documented acceptance and operator handover.",
+          "image": {
+            "alt": "Five-Axis Aerospace Machining Centre",
+            "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2024"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "5-Axis Aerospace"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Hoa Lac"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "homeOrder": 2,
+      "homeTitle": "Precision Technical Line",
+      "homeSummary": "A sample project profile demonstrating coordinated five-axis aerospace machining centre with documented acceptance and operator handover.",
+      "homeImage": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+      },
+      "homeCategory": "Engineering"
+    },
+    {
+      "title": "Precision Molds for Medical Components",
+      "slug": "khuon-ep-nhua-y-te",
+      "category": "Tooling & Mold",
+      "summary": "A sample project profile demonstrating coordinated precision molds for medical components with documented acceptance and operator handover.",
+      "location": "Bac Ninh",
+      "year": "2023",
+      "image": {
+        "alt": "Precision Molds for Medical Components",
+        "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+      },
+      "seo": {
+        "metaTitle": "Precision Molds for Medical Components | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated precision molds for medical components with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "Precision Molds for Medical Components",
+          "description": "A sample project profile demonstrating coordinated precision molds for medical components with documented acceptance and operator handover.",
+          "image": {
+            "alt": "Precision Molds for Medical Components",
+            "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2023"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "Tooling & Mold"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Bac Ninh"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Laser Calibration & Dynamic Balancing",
+      "slug": "hieu-chuan-laser",
+      "category": "Laser Metrology",
+      "summary": "A sample project profile demonstrating coordinated laser calibration & dynamic balancing with documented acceptance and operator handover.",
+      "location": "Vinh Phuc",
+      "year": "2023",
+      "image": {
+        "alt": "Laser Calibration & Dynamic Balancing",
+        "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+      },
+      "seo": {
+        "metaTitle": "Laser Calibration & Dynamic Balancing | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated laser calibration & dynamic balancing with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "Laser Calibration & Dynamic Balancing",
+          "description": "A sample project profile demonstrating coordinated laser calibration & dynamic balancing with documented acceptance and operator handover.",
+          "image": {
+            "alt": "Laser Calibration & Dynamic Balancing",
+            "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2023"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "Laser Metrology"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Vinh Phuc"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Smart AS/RS Warehouse & AGV System",
+      "slug": "kho-thong-minh-asrs",
+      "category": "Intralogistics & AGV",
+      "summary": "A sample project profile demonstrating coordinated smart as/rs warehouse & agv system with documented acceptance and operator handover.",
+      "location": "Binh Duong",
+      "year": "2022",
+      "image": {
+        "alt": "Smart AS/RS Warehouse & AGV System",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "seo": {
+        "metaTitle": "Smart AS/RS Warehouse & AGV System | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated smart as/rs warehouse & agv system with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "Smart AS/RS Warehouse & AGV System",
+          "description": "A sample project profile demonstrating coordinated smart as/rs warehouse & agv system with documented acceptance and operator handover.",
+          "image": {
+            "alt": "Smart AS/RS Warehouse & AGV System",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2022"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "Intralogistics & AGV"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Binh Duong"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "homeOrder": 1,
+      "homeTitle": "Smart Logistics System",
+      "homeSummary": "A sample project profile demonstrating coordinated smart as/rs warehouse & agv system with documented acceptance and operator handover.",
+      "homeImage": {
+        "alt": "TOP WELL industrial solutions",
+        "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+      },
+      "homeCategory": "Smart Logistics"
+    },
+    {
+      "title": "Wear-Resistant Machining & PVD Coating",
+      "slug": "co-khi-phu-pvd",
+      "category": "PVD Surface & Tool",
+      "summary": "A sample project profile demonstrating coordinated wear-resistant machining & pvd coating with documented acceptance and operator handover.",
+      "location": "Dong Nai",
+      "year": "2022",
+      "image": {
+        "alt": "Wear-Resistant Machining & PVD Coating",
+        "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+      },
+      "seo": {
+        "metaTitle": "Wear-Resistant Machining & PVD Coating | TOP WELL International",
+        "metaDescription": "A sample project profile demonstrating coordinated wear-resistant machining & pvd coating with documented acceptance and operator handover.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.project-overview",
+          "title": "Wear-Resistant Machining & PVD Coating",
+          "description": "A sample project profile demonstrating coordinated wear-resistant machining & pvd coating with documented acceptance and operator handover.",
+          "image": {
+            "alt": "Wear-Resistant Machining & PVD Coating",
+            "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+          },
+          "cards": [
+            {
+              "title": "YEAR",
+              "description": "2022"
+            },
+            {
+              "title": "CLIENT",
+              "description": "Industrial manufacturing partner"
+            },
+            {
+              "title": "SECTOR",
+              "description": "PVD Surface & Tool"
+            },
+            {
+              "title": "LOCATION",
+              "description": "Dong Nai"
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-challenge",
+          "title": "Challenges & solutions",
+          "eyebrow": "THE CHALLENGE",
+          "description": "The project required a consistent production process and reliable communication between equipment. Our team combined site assessment, technical integration and operator training.",
+          "cards": [
+            {
+              "title": "Assess vibration, alignment and thermal stability.",
+              "description": ""
+            },
+            {
+              "title": "Automate material handling and inspection where appropriate.",
+              "description": ""
+            },
+            {
+              "title": "Connect equipment data to the production monitoring system.",
+              "description": ""
+            },
+            {
+              "title": "Provide documented operating procedures and practical training.",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-process",
+          "title": "Implementation process",
+          "eyebrow": "OUR PROCESS",
+          "description": "Our engineers assessed the site, agreed an equipment layout and coordinated installation. Commissioning included functional checks, acceptance testing and a structured handover to the local team.",
+          "cards": [
+            {
+              "title": "Site survey & equipment installation",
+              "description": "",
+              "image": {
+                "alt": "Site survey & equipment installation",
+                "localPath": "/figma/e4721e6c-9989-4abb-a974-7aeabad5daca.png"
+              }
+            },
+            {
+              "title": "CNC commissioning & calibration",
+              "description": "",
+              "image": {
+                "alt": "CNC commissioning & calibration",
+                "localPath": "/figma/1042bb5f-727a-4e6a-8d93-f5a994f3f31e.png"
+              }
+            },
+            {
+              "title": "Measurement checks & factory acceptance",
+              "description": "",
+              "image": {
+                "alt": "Measurement checks & factory acceptance",
+                "localPath": "/figma/eb41f649-f2f8-4cfc-b119-23089d6da91e.png"
+              }
+            }
+          ]
+        },
+        {
+          "__component": "sections.project-results",
+          "title": "Results & impact",
+          "eyebrow": "PROJECT OUTCOMES",
+          "description": "The completed system gives the customer a more consistent process, clearer operational data and a documented maintenance plan.",
+          "cards": [
+            {
+              "title": "More consistent production and inspection processes.",
+              "description": ""
+            },
+            {
+              "title": "Improved visibility of machine status and maintenance needs.",
+              "description": ""
+            },
+            {
+              "title": "A clear handover package for the operations team.",
+              "description": ""
+            },
+            {
+              "title": "Acceptance records linked to the agreed technical scope.",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Five-Axis CNC Commissioning and Acceptance Testing",
+      "slug": "quy-trinh-gia-cong-cnc-5-truc",
+      "summary": "Practical insights into five-axis cnc commissioning and acceptance testing, from planning and implementation to measurable operational outcomes.",
+      "category": "Engineering & Technology",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-03-18",
+      "image": {
+        "alt": "Five-Axis CNC Commissioning and Acceptance Testing",
+        "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+      },
+      "seo": {
+        "metaTitle": "Five-Axis CNC Commissioning and Acceptance Testing | TOP WELL International",
+        "metaDescription": "Practical insights into five-axis cnc commissioning and acceptance testing, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Five-Axis CNC Commissioning and Acceptance Testing",
+          "description": "Practical insights into five-axis cnc commissioning and acceptance testing, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "Five-Axis CNC Commissioning and Acceptance Testing",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "cards": [
+            {
+              "title": "1. Industrial requirements and vibration control",
+              "description": "Five-axis machining requires a stable installation, controlled operating conditions and repeatable measurement. The commissioning plan should define the equipment requirements before installation begins.\n\nMeasurements must be recorded using calibrated instruments and compared with the agreed acceptance criteria. Any corrective work should be verified before production handover.\n\n“Reliable commissioning connects equipment capability with a repeatable operating process.” — Kenji Takahashi, Technical Advisor"
+            }
+          ]
+        },
+        {
+          "__component": "sections.article-steps",
+          "title": "2. A five-stage technical handover process",
+          "description": "A structured sequence keeps installation, verification and operator training aligned.",
+          "cards": [
+            {
+              "title": "Foundation seating and levelling",
+              "description": "Check the foundation, lifting plan and machine levelling against the equipment installation requirements."
+            },
+            {
+              "title": "Laser alignment",
+              "description": "Measure axis alignment, straightness and squareness using calibrated instruments."
+            },
+            {
+              "title": "Kinematic compensation",
+              "description": "Review geometric measurements and apply approved compensation settings to the controller."
+            },
+            {
+              "title": "Endurance testing",
+              "description": "Run the agreed test programme while monitoring temperature, vibration and machining stability."
+            },
+            {
+              "title": "Operator training and handover",
+              "description": "Provide operating instructions, maintenance guidance and practical training for the site team."
+            }
+          ]
+        },
+        {
+          "__component": "sections.article-comparison",
+          "title": "3. Technical acceptance criteria",
+          "description": "Illustrative targets below show how an acceptance plan can document measurable requirements. Final values must be agreed for the selected equipment.",
+          "cards": [
+            {
+              "title": "Positioning repeatability",
+              "description": "Typical reference: ±0.005 mm",
+              "eyebrow": "Project target: ±0.0018 mm"
+            },
+            {
+              "title": "Spindle runout",
+              "description": "Typical reference: <0.003 mm",
+              "eyebrow": "Project target: <0.0012 mm at 20,000 rpm"
+            },
+            {
+              "title": "Continuous endurance test",
+              "description": "Typical reference: 24 hours",
+              "eyebrow": "Project target: 72 continuous hours"
+            },
+            {
+              "title": "Technical response time",
+              "description": "Typical reference: 24–48 working hours",
+              "eyebrow": "Project target: under 2 hours in the agreed service area"
+            }
+          ]
+        },
+        {
+          "__component": "sections.article-author",
+          "title": "Kenji Takahashi",
+          "eyebrow": "TECHNICAL EXPERT",
+          "description": "Senior technical advisor with experience in industrial commissioning, precision measurement and production improvement.",
+          "image": {
+            "alt": "Kenji Takahashi",
+            "localPath": "/figma/1b5e0555-cea4-4e8c-be27-ac70fdbdb6c7.png"
+          }
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "Building Resilient Supply Chains in Vietnam",
+      "slug": "chuoi-cung-ung-ben-vung",
+      "summary": "Practical insights into building resilient supply chains in vietnam, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "Building Resilient Supply Chains in Vietnam",
+        "localPath": "/figma/7cccf07a-1cfb-49d2-bda9-ede45929b388.png"
+      },
+      "seo": {
+        "metaTitle": "Building Resilient Supply Chains in Vietnam | TOP WELL International",
+        "metaDescription": "Practical insights into building resilient supply chains in vietnam, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Building Resilient Supply Chains in Vietnam",
+          "description": "Practical insights into building resilient supply chains in vietnam, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "Building Resilient Supply Chains in Vietnam",
+            "localPath": "/figma/7cccf07a-1cfb-49d2-bda9-ede45929b388.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "Warehouse Automation Trends for Manufacturers",
+      "slug": "xu-huong-tu-dong-hoa-kho-hang",
+      "summary": "Practical insights into warehouse automation trends for manufacturers, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "Warehouse Automation Trends for Manufacturers",
+        "localPath": "/figma/e35c9b18-cade-4a66-9cdb-616383c59dc5.png"
+      },
+      "seo": {
+        "metaTitle": "Warehouse Automation Trends for Manufacturers | TOP WELL International",
+        "metaDescription": "Practical insights into warehouse automation trends for manufacturers, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Warehouse Automation Trends for Manufacturers",
+          "description": "Practical insights into warehouse automation trends for manufacturers, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "Warehouse Automation Trends for Manufacturers",
+            "localPath": "/figma/e35c9b18-cade-4a66-9cdb-616383c59dc5.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "How Smart Warehousing Improves Supply Chains",
+      "slug": "kho-bai-thong-minh",
+      "summary": "Practical insights into how smart warehousing improves supply chains, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "How Smart Warehousing Improves Supply Chains",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "seo": {
+        "metaTitle": "How Smart Warehousing Improves Supply Chains | TOP WELL International",
+        "metaDescription": "Practical insights into how smart warehousing improves supply chains, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "How Smart Warehousing Improves Supply Chains",
+          "description": "Practical insights into how smart warehousing improves supply chains, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "How Smart Warehousing Improves Supply Chains",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "How Technology Is Changing Precision Measurement",
+      "slug": "cong-nghe-do-luong",
+      "summary": "Practical insights into how technology is changing precision measurement, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "How Technology Is Changing Precision Measurement",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "seo": {
+        "metaTitle": "How Technology Is Changing Precision Measurement | TOP WELL International",
+        "metaDescription": "Practical insights into how technology is changing precision measurement, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "How Technology Is Changing Precision Measurement",
+          "description": "Practical insights into how technology is changing precision measurement, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "How Technology Is Changing Precision Measurement",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "Addressing Global Supply Chain Challenges",
+      "slug": "thach-thuc-chuoi-cung-ung",
+      "summary": "Practical insights into addressing global supply chain challenges, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "Addressing Global Supply Chain Challenges",
+        "localPath": "/figma/d38ecf56-3a56-401a-990b-b5eb35f34521.png"
+      },
+      "seo": {
+        "metaTitle": "Addressing Global Supply Chain Challenges | TOP WELL International",
+        "metaDescription": "Practical insights into addressing global supply chain challenges, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Addressing Global Supply Chain Challenges",
+          "description": "Practical insights into addressing global supply chain challenges, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "Addressing Global Supply Chain Challenges",
+            "localPath": "/figma/d38ecf56-3a56-401a-990b-b5eb35f34521.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    },
+    {
+      "title": "Why Last-Mile Delivery Matters",
+      "slug": "giao-hang-chang-cuoi",
+      "summary": "Practical insights into why last-mile delivery matters, from planning and implementation to measurable operational outcomes.",
+      "category": "Logistics Innovation",
+      "author": "Kenji Takahashi",
+      "publishedDate": "2026-04-17",
+      "image": {
+        "alt": "Why Last-Mile Delivery Matters",
+        "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+      },
+      "seo": {
+        "metaTitle": "Why Last-Mile Delivery Matters | TOP WELL International",
+        "metaDescription": "Practical insights into why last-mile delivery matters, from planning and implementation to measurable operational outcomes.",
+        "noIndex": false,
+        "keywords": "industrial solutions, engineering, automation, logistics, TOP WELL"
+      },
+      "sections": [
+        {
+          "__component": "sections.article-body",
+          "title": "Why Last-Mile Delivery Matters",
+          "description": "Practical insights into why last-mile delivery matters, from planning and implementation to measurable operational outcomes.",
+          "image": {
+            "alt": "Why Last-Mile Delivery Matters",
+            "localPath": "/figma/3d88dd2d-b196-4d51-a60d-9f2c6cfcf572.png"
+          },
+          "cards": [
+            {
+              "title": "1. Operational context and production challenges",
+              "description": "Industrial supply chains demand reliable quality, shorter lead times and clear traceability. Coordinating machinery, warehouse operations and technical support helps manufacturers address these requirements."
+            },
+            {
+              "title": "2. A coordinated implementation approach",
+              "description": "Start with a review of the existing process, identify bottlenecks and agree measurable objectives. Connect equipment data with warehouse and delivery planning to improve coordination."
+            },
+            {
+              "title": "3. Measuring practical outcomes",
+              "description": "Track equipment availability, defect rates and order processing time. Use the results to prioritise maintenance, improve planning and refine operating procedures."
+            }
+          ]
+        },
+        {
+          "__component": "sections.related-articles",
+          "title": "Related articles & insights"
+        },
+        {
+          "__component": "sections.cta",
+          "title": "Take action for better production.",
+          "description": "Work with TOP WELL to develop practical equipment and technology solutions for the next stage of your business.",
+          "image": {
+            "alt": "Take action for better production.",
+            "localPath": "/figma/0b024f69-b6f6-4f88-8829-5afbf0464e26.png"
+          },
+          "ctaLabel": "Contact our team",
+          "ctaHref": "/lien-he",
+          "cards": [
+            {
+              "title": "45+",
+              "description": "Industrial partners"
+            },
+            {
+              "title": "150+",
+              "description": "Equipment delivery projects"
+            },
+            {
+              "title": "99.2%",
+              "description": "On-time delivery target"
+            },
+            {
+              "title": "24/7",
+              "description": "Technical support"
+            }
+          ],
+          "highlight": "better production."
+        }
+      ]
+    }
+  ],
+  "global": {
+    "title": "TOP WELL International",
+    "logo": {
+      "alt": "TOP WELL International logo",
+      "localPath": "/figma/2504768d-0eeb-4581-9bcb-a300e1d71b78.png"
+    },
+    "description": "TOP WELL International provides industrial equipment, production systems, precision tooling and coordinated engineering services.",
+    "email": "contact@topwell-international.com",
+    "phone": "(+84) 1900 xxxx",
+    "address": "Tech Tower, VSIP 1 Industrial Park, Thuan An, Binh Duong, Vietnam.",
+    "supportImage": {
+      "alt": "TOP WELL support team",
+      "localPath": "/figma/e6a442d9-b41d-4e0b-989a-b170c442303f.png"
+    },
+    "navigation": [
+      {
+        "title": "Home",
+        "description": "",
+        "href": "/"
+      },
+      {
+        "title": "About us",
+        "description": "",
+        "href": "/ve-chung-toi"
+      },
+      {
+        "title": "Services",
+        "description": "",
+        "href": "/dich-vu"
+      },
+      {
+        "title": "Projects",
+        "description": "",
+        "href": "/du-an"
+      },
+      {
+        "title": "News",
+        "description": "",
+        "href": "/tin-tuc"
+      },
+      {
+        "title": "Contact",
+        "description": "",
+        "href": "/lien-he"
+      }
+    ]
+  },
+  "header": {
+    "logo": {
+      "url": "/figma/2504768d-0eeb-4581-9bcb-a300e1d71b78.png"
+    },
+    "logoAlt": "TOP WELL International logo",
+    "navigation": [
+      {
+        "title": "Home",
+        "description": "",
+        "href": "/"
+      },
+      {
+        "title": "About us",
+        "description": "",
+        "href": "/ve-chung-toi"
+      },
+      {
+        "title": "Services",
+        "description": "",
+        "href": "/dich-vu"
+      },
+      {
+        "title": "Projects",
+        "description": "",
+        "href": "/du-an"
+      },
+      {
+        "title": "News",
+        "description": "",
+        "href": "/tin-tuc"
+      },
+      {
+        "title": "Contact",
+        "description": "",
+        "href": "/lien-he"
+      }
+    ],
+    "buttonLabel": "Request a quote",
+    "buttonHref": "/lien-he"
+  },
+  "site-settings": {
+    "common": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "news": "News",
+      "contact": "Contact",
+      "readMore": "Read more",
+      "readNext": "Continue reading",
+      "learnMore": "Learn more",
+      "viewService": "View service",
+      "projectDetails": "View project",
+      "allProjects": "View all projects",
+      "allNews": "View all news",
+      "allArticles": "All articles",
+      "loadMore": "Load more projects",
+      "all": "All",
+      "category": "Category",
+      "search": "Search articles",
+      "searchPlaceholder": "Enter a keyword…",
+      "noResults": "No matching articles found.",
+      "previous": "Previous page",
+      "next": "Next page",
+      "tags": "Tags",
+      "previousArticle": "Previous article",
+      "nextArticle": "Next article"
+    },
+    "routes": {
+      "home": "/",
+      "services": "/dich-vu",
+      "projects": "/du-an",
+      "news": "/tin-tuc",
+      "contact": "/lien-he",
+      "privacy": "/chinh-sach-bao-mat",
+      "standards": "/tieu-chuan-ky-thuat",
+      "siteSurvey": "/lien-he#contact-form",
+      "serviceBase": "/dich-vu/",
+      "projectBase": "/du-an/",
+      "articleBase": "/tin-tuc/"
+    },
+    "accessibility": {
+      "skip": "Skip to content",
+      "homeLink": "TOP WELL — Home",
+      "menuOpen": "Menu",
+      "menuClose": "Close",
+      "navigation": "Main navigation",
+      "breadcrumb": "Breadcrumb",
+      "hero": "Featured solutions",
+      "previousSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "slide": "Go to slide {number}",
+      "play": "Play slideshow",
+      "pause": "Pause slideshow",
+      "partners": "Partner network",
+      "projectFilters": "Filter projects",
+      "pagination": "Article pagination",
+      "comparison": "Technical comparison table",
+      "checklist": "Acceptance criteria",
+      "articleNavigation": "Article navigation",
+      "gallery": "Project gallery",
+      "zoomIn": "Zoom in on map",
+      "zoomOut": "Zoom out on map",
+      "closeStory": "Close story"
+    },
+    "about": {
+      "rating": "4.9/5",
+      "ratingStars": "★★★★★",
+      "ratingCaption": "Trusted by partners worldwide.",
+      "valueLabel": "Precision & commitment",
+      "valueHref": "/ve-chung-toi",
+      "readStory": "Read our story",
+      "readingTime": "6 min read",
+      "close": "Close",
+      "storyContact": "Explore a partnership",
+      "storyContactHref": "/lien-he"
+    },
+    "cta": {
+      "heroSecondaryLabel": "Explore a partnership",
+      "heroSecondaryHref": "/lien-he",
+      "consultationEyebrow": "TAKE ACTION FOR WHAT MATTERS",
+      "supportDescription": "Our engineering and automation specialists are ready to discuss your factory assessment and technical requirements.",
+      "supportLabel": "Request a CAD/STEP review",
+      "supportHref": "/lien-he",
+      "eyebrow": "WORK WITH TOP WELL",
+      "questionTitle": "Have another question?",
+      "questionDescription": "Our engineering and customer support teams are ready to help.",
+      "questionLabel": "Contact our team",
+      "questionHref": "/lien-he",
+      "articleEyebrow": "STRATEGIC INDUSTRIAL PARTNERSHIPS"
+    },
+    "sidebar": {
+      "servicesTitle": "Our services",
+      "supportTitle": "Contact our team",
+      "supportLabel": "Request a consultation",
+      "supportHref": "/lien-he",
+      "categoriesTitle": "Articles by category",
+      "recentTitle": "Latest articles",
+      "articleEyebrow": "TOP WELL INTERNATIONAL",
+      "articleTitle": "Solutions for your business",
+      "articleLabel": "Talk to our team",
+      "articleHref": "/lien-he"
+    },
+    "forms": {
+      "name": "Full name",
+      "namePlaceholder": "John Smith",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "subject": "Service requirements",
+      "subjectPlaceholder": "Production lines, CNC machinery, tooling…",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your requirements…",
+      "consent": "I agree to be contacted about this enquiry in accordance with the",
+      "privacyLabel": "privacy policy",
+      "submit": "Send message",
+      "pending": "Sending…",
+      "success": "Your enquiry has been received. Our team will contact you by email.",
+      "failure": "We could not submit your enquiry. Please try again.",
+      "invalid": "Please check your name, email, message and consent.",
+      "invalidField": "Please enter a valid value for this field.",
+      "tooLong": "The submitted content is too long.",
+      "rateLimit": "Too many requests. Please try again in ten minutes.",
+      "invalidOrigin": "The request could not be accepted from this source.",
+      "helpTitle": "Need assistance?",
+      "helpDescription": "Our technical support team is available to help with your project.",
+      "eyebrow": "QUESTIONS & ANSWERS",
+      "subtitleHighlight": "engineering and logistics support",
+      "siteSurvey": "Arrange a site assessment"
+    },
+    "newsletter": {
+      "title": "Industry newsletter",
+      "description": "Get updates on machinery, tooling technology and supply chain developments.",
+      "emailLabel": "Newsletter email",
+      "placeholder": "Your email address",
+      "submit": "Subscribe",
+      "pending": "Submitting…",
+      "consent": "By subscribing, you agree to receive updates by email.",
+      "privacyLabel": "Privacy policy",
+      "success": "Your newsletter request has been received.",
+      "failure": "We could not receive your request. Please try again.",
+      "requestName": "Newsletter subscription",
+      "requestSubject": "Industry newsletter subscription",
+      "requestMessage": "I agree to receive the industry newsletter at the email address provided."
+    },
+    "article": {
+      "comparisonItem": "Acceptance criterion",
+      "comparisonReference": "Industry reference",
+      "comparisonTarget": "Project target"
+    },
+    "system": {
+      "notFoundCode": "404",
+      "notFoundTitle": "Page not found",
+      "notFoundDescription": "The page may have moved or is no longer available.",
+      "homeLabel": "Back to home",
+      "errorTitle": "Content is temporarily unavailable",
+      "errorDescription": "Please try again in a moment.",
+      "retry": "Try again"
+    },
+    "metadata": {
+      "language": "en",
+      "locale": "en-US",
+      "openGraphLocale": "en_US",
+      "siteName": "TOP WELL International",
+      "defaultTitle": "TOP WELL International",
+      "description": "Industrial equipment, precision engineering and connected logistics solutions.",
+      "ogLineOne": "Industrial solutions.",
+      "ogLineTwo": "Connected globally.",
+      "ogTagline": "Precision · Technology · Logistics"
+    },
+    "assets": {
+      "phoneIcon": {
+        "alt": "Phone icon",
+        "localPath": "/figma/f01336ef-4e2c-423f-9e51-4affde6a3615.svg"
+      }
+    }
+  },
+  "footer": {
+    "logo": {
+      "alt": "TOP WELL International logo",
+      "localPath": "/figma/2504768d-0eeb-4581-9bcb-a300e1d71b78.png"
+    },
+    "logoHref": "/",
+    "description": "TOP WELL International provides industrial equipment, production systems, precision tooling and coordinated engineering services.",
+    "phoneLabel": "Hotline:",
+    "phoneSuffix": "Technical support",
+    "emailLabel": "Email:",
+    "addressLabel": "Address:",
+    "copyright": "© {year} TOP WELL INTERNATIONAL. All rights reserved.",
+    "columns": [
+      {
+        "title": "SERVICES",
+        "links": [
+          {
+            "title": "Production Lines",
+            "href": "/dich-vu/production-lines"
+          },
+          {
+            "title": "Machinery",
+            "href": "/dich-vu/machinery"
+          },
+          {
+            "title": "Spare Parts & Molds",
+            "href": "/dich-vu/spare-parts-molds"
+          },
+          {
+            "title": "Technical Services",
+            "href": "/dich-vu/technical-services"
+          }
+        ]
+      },
+      {
+        "title": "PROJECTS",
+        "links": [
+          {
+            "title": "EV Assembly Line Automation",
+            "href": "/du-an/tu-dong-hoa-day-chuyen-fdi"
+          },
+          {
+            "title": "Five-Axis Aerospace Machining Centre",
+            "href": "/du-an/trung-tam-gia-cong-5-truc"
+          },
+          {
+            "title": "Precision Molds for Medical Components",
+            "href": "/du-an/khuon-ep-nhua-y-te"
+          }
+        ]
+      },
+      {
+        "title": "INFORMATION",
+        "links": [
+          {
+            "title": "About us",
+            "href": "/ve-chung-toi"
+          },
+          {
+            "title": "Privacy policy",
+            "href": "/chinh-sach-bao-mat"
+          },
+          {
+            "title": "Technical standards",
+            "href": "/tieu-chuan-ky-thuat"
+          },
+          {
+            "title": "Request a quote",
+            "href": "/lien-he"
+          }
+        ]
+      }
+    ],
+    "socialLinks": []
+  }
+}
