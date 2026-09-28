@@ -805,7 +805,7 @@
 }
 .service-groups .center-heading h2 {
   color: #0f172a;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 48px;
   font-weight: 700;
   line-height: 48px;
@@ -939,7 +939,7 @@
 }
 .service-group-head h3 {
   color: #0f172a;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
@@ -1026,7 +1026,7 @@
 }
 .process-steps-inner .center-heading h2 {
   color: #111;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 30px;
   font-weight: 700;
   line-height: 38px;
@@ -1070,7 +1070,7 @@
 }
 .process-step-card b {
   color: #f1df57;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
@@ -1087,7 +1087,7 @@
 }
 .process-step-card h3 {
   color: #111;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
   line-height: 28px;
@@ -1123,7 +1123,7 @@
 .metrics-strip dt {
   padding-bottom: 6px;
   color: #f1df57;
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
   font-size: 36px;
   font-weight: 700;
   line-height: 40px;
