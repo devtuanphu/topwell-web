@@ -16,9 +16,11 @@ export default function ProjectsShowcase({
   const copy = useCopy();
   const track = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; left: number; moved: boolean } | null>(null);
-  const projects = context.projects
+  const featured = context.projects
     .filter((p) => p.featured)
     .sort((a, b) => (a.homeOrder || 0) - (b.homeOrder || 0));
+  // Bỏ trống "Số mục hiển thị" thì hiện tất cả dự án được đánh dấu nổi bật.
+  const projects = section.limit ? featured.slice(0, section.limit) : featured;
   return (
     <section className="home-projects">
       <div className="container home-projects-inner">

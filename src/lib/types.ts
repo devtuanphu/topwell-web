@@ -76,6 +76,8 @@ export interface Section {
   body?: string;
   images?: Picture[];
   slideSeconds?: number;
+  limit?: number;
+  group?: 'industrial' | 'logistics' | 'all';
   reviewRating?: string;
   reviewLabel?: string;
   reviewAvatars?: Picture[];

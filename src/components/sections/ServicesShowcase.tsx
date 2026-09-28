@@ -14,7 +14,11 @@ export default function ServicesShowcase({
   context: SectionContext;
 }) {
   const copy = useCopy();
-  const entries = context.services.filter((x) => x.group === 'industrial').slice(0, 3);
+  // Nhóm dịch vụ và số thẻ hiển thị lấy từ CMS.
+  const group = section.group || 'industrial';
+  const entries = context.services
+    .filter((x) => group === 'all' || x.group === group)
+    .slice(0, Math.max(1, section.limit || 3));
   return (
     <section className="home-services">
       <div className="home-services-band">

@@ -15,9 +15,10 @@ export default function NewsShowcase({
   context: SectionContext;
 }) {
   const copy = useCopy();
+  // Số bài hiển thị lấy từ CMS; bài mới nhất lên trước.
   const articles = [...context.articles]
     .sort((a, b) => (b.publishedDate || '').localeCompare(a.publishedDate || ''))
-    .slice(0, 3);
+    .slice(0, Math.max(1, section.limit || 3));
   return (
     <section className="home-news">
       <div className="container home-news-inner">
