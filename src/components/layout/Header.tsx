@@ -3,7 +3,7 @@ import { useCopy, useLocale } from '@/components/SiteCopyProvider';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from '@/components/Link';
-import type { Card, Entry, HeaderConfig, NavItem, ServiceGroup } from '@/lib/types';
+import type { Entry, HeaderConfig, NavItem, ServiceGroup } from '@/lib/types';
 import { mediaUrl, safeHref } from '@/lib/media';
 import { LOCALES, LOCALE_COOKIE, localizePath, stripLocale } from '@/lib/i18n';
 
@@ -69,19 +69,8 @@ export default function Header({
       localizePath(pathname, code) + window.location.search + window.location.hash,
     );
   };
-  // Menu lấy từ trường "Thanh menu" của CMS; chưa khai báo thì dùng lại danh sách cũ.
-  const items: NavItem[] = config.menu?.length
-    ? config.menu
-    : config.navigation.map((n: Card) => ({
-        title: n.title,
-        href: n.href,
-        source:
-          n.href === copy.routes.services
-            ? 'services'
-            : n.href === copy.routes.projects
-              ? 'projects'
-              : 'none',
-      }));
+  // Menu lấy từ trường "Thanh menu" của CMS.
+  const items: NavItem[] = config.menu || [];
   const groupBase = copy.routes.serviceGroupBase || '/dich-vu/nhom/';
   const submenu = (item: NavItem) => {
     if (item.source === 'manual')

@@ -161,7 +161,6 @@ export interface Global {
   supportEmail?: string;
   supportPhone?: string;
   promo?: Card;
-  navigation: Card[];
 }
 export interface NavItem {
   title: string;
@@ -173,7 +172,6 @@ export interface NavItem {
 export interface HeaderConfig {
   logo: Media;
   logoAlt: string;
-  navigation: Card[];
   menu?: NavItem[];
   buttonLabel: string;
   buttonHref: string;
