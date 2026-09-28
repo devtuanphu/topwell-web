@@ -61,3 +61,17 @@ test('the footer shows the CMS logo in the first column', async ({ page }) => {
   await expect(logo).toBeVisible();
   expect(await logo.evaluate((el: HTMLImageElement) => el.naturalWidth)).toBeGreaterThan(0);
 });
+
+test('the home hero matches the redesign: yellow lead, two buttons, no stats', async ({ page }) => {
+  await page.goto('/');
+  const hero = page.locator('.home-hero');
+  await expect(hero.locator('.hero-stats')).toHaveCount(0);
+  const slide = hero.locator('.hero-slide').first();
+  await expect(slide.locator('.hero-lead')).toBeVisible();
+  await expect(slide.locator('.hero-button')).toHaveCount(2);
+  await expect(slide.locator('.hero-button.ghost')).toBeVisible();
+  const box = await slide.locator('h1').boundingBox();
+  expect(Math.round(box!.x)).toBe(32);
+  const lead = await slide.locator('.hero-lead').evaluate((el) => getComputedStyle(el).color);
+  expect(lead).toBe('rgb(241, 223, 87)');
+});
