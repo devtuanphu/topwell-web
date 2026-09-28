@@ -40,7 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       siteName: copy.metadata.siteName,
       locale: copy.metadata.openGraphLocale,
-      alternateLocale: LOCALES.filter((l) => l.code !== lang).map((l) => l.hreflang.replace('-', '_')),
+      alternateLocale: LOCALES.filter((l) => l.code !== lang).map((l) =>
+        l.hreflang.replace('-', '_'),
+      ),
       type: 'website',
     },
   };
@@ -58,12 +60,22 @@ export default async function RootLayout({
   return (
     <html lang={lang} data-scroll-behavior="smooth">
       <body>
-        <NextTopLoader color="#f1df57" height={3} showSpinner={false} shadow="0 0 10px #f1df57,0 0 5px #f1df57" />
+        <NextTopLoader
+          color="#f1df57"
+          height={3}
+          showSpinner={false}
+          shadow="0 0 10px #f1df57,0 0 5px #f1df57"
+        />
         <SiteCopyProvider value={context.copy} locale={lang}>
           <a className="skip-link" href="#main-content">
             {context.copy.accessibility.skip}
           </a>
-          <Header config={context.header} services={context.services} projects={context.projects} />
+          <Header
+            config={context.header}
+            services={context.services}
+            projects={context.projects}
+            serviceGroups={context.serviceGroups}
+          />
           <main id="main-content">{children}</main>
           <Footer context={context} />
           <script

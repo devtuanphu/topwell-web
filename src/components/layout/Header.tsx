@@ -3,10 +3,9 @@ import { useCopy, useLocale } from '@/components/SiteCopyProvider';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from '@/components/Link';
-import type { Entry, HeaderConfig } from '@/lib/types';
+import type { Card, Entry, HeaderConfig, NavItem, ServiceGroup } from '@/lib/types';
 import { mediaUrl, safeHref } from '@/lib/media';
 import { LOCALES, LOCALE_COOKIE, localizePath, stripLocale } from '@/lib/i18n';
-
 
 function Chevron() {
   return (
@@ -20,10 +19,12 @@ export default function Header({
   config,
   services,
   projects = [],
+  serviceGroups = [],
 }: {
   config: HeaderConfig;
   services: Entry[];
   projects?: Entry[];
+  serviceGroups?: ServiceGroup[];
 }) {
   const copy = useCopy();
   const router = useRouter();
@@ -68,14 +69,35 @@ export default function Header({
       localizePath(pathname, code) + window.location.search + window.location.hash,
     );
   };
-  const submenu = (href?: string) =>
-    href === copy.routes.services
-      ? services.map((s) => ({ href: `${copy.routes.serviceBase}${s.slug}`, title: s.title }))
-      : href === copy.routes.projects
-        ? projects.map((p) => ({ href: `${copy.routes.projects}/${p.slug}`, title: p.title }))
-        : [];
+  // Menu lấy từ trường "Thanh menu" của CMS; chưa khai báo thì dùng lại danh sách cũ.
+  const items: NavItem[] = config.menu?.length
+    ? config.menu
+    : config.navigation.map((n: Card) => ({
+        title: n.title,
+        href: n.href,
+        source:
+          n.href === copy.routes.services
+            ? 'services'
+            : n.href === copy.routes.projects
+              ? 'projects'
+              : 'none',
+      }));
+  const groupBase = copy.routes.serviceGroupBase || '/dich-vu/nhom/';
+  const submenu = (item: NavItem) => {
+    if (item.source === 'manual')
+      return (item.links || []).map((l) => ({ href: safeHref(l.href), title: l.title }));
+    if (item.source === 'services')
+      return services.map((s) => ({ href: `${copy.routes.serviceBase}${s.slug}`, title: s.title }));
+    if (item.source === 'projects')
+      return projects.map((p) => ({ href: `${copy.routes.projects}/${p.slug}`, title: p.title }));
+    if (item.source === 'service-groups')
+      return serviceGroups.map((g) => ({ href: `${groupBase}${g.slug}`, title: g.title }));
+    return [];
+  };
   return (
-    <header className={`site-header ${pathname === "/" ? "" : "inner"} ${scrolled ? "is-scrolled" : ""}`}>
+    <header
+      className={`site-header ${pathname === '/' ? '' : 'inner'} ${scrolled ? 'is-scrolled' : ''}`}
+    >
       <div className="header-inner">
         <Link
           href={copy.routes.home}
@@ -101,8 +123,8 @@ export default function Header({
         </button>
         <div className={`header-panel ${open ? 'open' : ''}`}>
           <nav id="primary-nav" aria-label={copy.accessibility.navigation}>
-            {config.navigation.map((n) => {
-              const children = submenu(n.href);
+            {items.map((n) => {
+              const children = submenu(n);
               const active = n.href === '/' ? pathname === '/' : pathname.startsWith(n.href || '!');
               return (
                 <div className={`nav-item ${children.length ? 'has-children' : ''}`} key={n.href}>
@@ -129,7 +151,9 @@ export default function Header({
             onSubmit={(e) => {
               e.preventDefault();
               const q = String(new FormData(e.currentTarget).get('q') || '').trim();
-              router.push(localizePath(copy.routes.news, lang) + (q ? `?q=${encodeURIComponent(q)}` : ''));
+              router.push(
+                localizePath(copy.routes.news, lang) + (q ? `?q=${encodeURIComponent(q)}` : ''),
+              );
             }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
@@ -163,9 +187,7 @@ export default function Header({
                   strokeWidth="1.8"
                 />
               </svg>
-              <span className="lang-current">
-                {LOCALES.find((l) => l.code === lang)?.short}
-              </span>
+              <span className="lang-current">{LOCALES.find((l) => l.code === lang)?.short}</span>
             </button>
             {langOpen && (
               <ul role="listbox" className="lang-menu">

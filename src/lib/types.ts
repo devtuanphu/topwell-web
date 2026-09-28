@@ -163,10 +163,18 @@ export interface Global {
   promo?: Card;
   navigation: Card[];
 }
+export interface NavItem {
+  title: string;
+  href?: string;
+  /** Nguồn của menu con: danh sách tự sinh hoặc các liên kết nhập tay. */
+  source?: 'none' | 'manual' | 'services' | 'projects' | 'service-groups';
+  links?: Card[];
+}
 export interface HeaderConfig {
   logo: Media;
   logoAlt: string;
   navigation: Card[];
+  menu?: NavItem[];
   buttonLabel: string;
   buttonHref: string;
 }

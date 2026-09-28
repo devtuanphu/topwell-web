@@ -1,5 +1,6 @@
 import copy from '../../src/data/site-settings.json';
 import { test, expect } from '@playwright/test';
+const CMS = (process.env.TEST_CMS_URL || 'http://localhost:1337').replace(/\/$/, '');
 
 test('article categories lead to a filtered list and can be cleared', async ({ page }) => {
   await page.goto('/en/tin-tuc/quy-trinh-gia-cong-cnc-5-truc');
@@ -107,4 +108,25 @@ test('the home sections use the brand yellow and drop the parts the redesign rem
   await expect(page.locator('.about-contact')).toHaveCount(0);
   await expect(page.locator('.home-news-media > span')).toHaveCount(0);
   await expect(page.locator('.showcase-kicker')).toHaveCount(0);
+});
+
+test('the header menu and its dropdowns come from the CMS', async ({ page, request }) => {
+  const header = (await (await request.get(`${CMS}/api/site/header?locale=vi`)).json()).data;
+  const menu = header.menu as { title: string; source?: string }[];
+  expect(menu.length).toBeGreaterThan(0);
+  await page.goto('/');
+  const items = page.locator('#primary-nav .nav-item');
+  await expect(items).toHaveCount(menu.length);
+  for (const [i, entry] of menu.entries()) {
+    const item = items.nth(i);
+    await expect(item.locator('> a')).toContainText(entry.title);
+    const children = item.locator('.dropdown a');
+    if (
+      entry.source === 'services' ||
+      entry.source === 'projects' ||
+      entry.source === 'service-groups'
+    )
+      expect(await children.count()).toBeGreaterThan(0);
+    else await expect(children).toHaveCount(0);
+  }
 });
