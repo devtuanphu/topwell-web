@@ -8,20 +8,9 @@ import { Photo } from '../ui';
 import { UiIcon } from '../icons';
 import NewsSidebar from './NewsSidebar';
 import NewsShowcase from './NewsShowcase';
+import Pagination from '../Pagination';
 
 const PER_PAGE = 6;
-
-function pageList(count: number, page: number) {
-  if (count <= 5) return Array.from({ length: count }, (_, i) => i + 1);
-  const pages = new Set([1, count, page, page - 1, page + 1].filter((p) => p >= 1 && p <= count));
-  const sorted = [...pages].sort((a, b) => a - b);
-  const out: (number | '…')[] = [];
-  sorted.forEach((p, i) => {
-    if (i && p - sorted[i - 1] > 1) out.push('…');
-    out.push(p);
-  });
-  return out;
-}
 
 export function NewsCard({ article }: { article: Entry }) {
   const copy = useCopy();
@@ -127,42 +116,7 @@ export default function News({ section, context }: { section: Section; context: 
               {copy.common.noResults}
             </p>
           )}
-          {count > 1 && (
-            <nav className="pagination" aria-label={copy.accessibility.pagination}>
-              <button
-                type="button"
-                disabled={current === 1}
-                onClick={() => go(current - 1)}
-                aria-label={copy.common.previous}
-              >
-                <UiIcon name="chevronLeft" />
-              </button>
-              {pageList(count, current).map((p, i) =>
-                p === '…' ? (
-                  <span className="ellipsis" key={`e${i}`}>
-                    ...
-                  </span>
-                ) : (
-                  <button
-                    type="button"
-                    key={p}
-                    aria-current={current === p ? 'page' : undefined}
-                    onClick={() => go(p)}
-                  >
-                    {p}
-                  </button>
-                ),
-              )}
-              <button
-                type="button"
-                disabled={current === count}
-                onClick={() => go(current + 1)}
-                aria-label={copy.common.next}
-              >
-                <UiIcon name="chevronRight" />
-              </button>
-            </nav>
-          )}
+          <Pagination count={count} current={current} onChange={go} />
         </div>
         <NewsSidebar
           context={context}

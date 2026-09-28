@@ -14,7 +14,8 @@
   --radius: 16px;
   --container: 1280px;
   --gutter: 32px;
-  --font: 'Inter Variable', Inter, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', Arial, sans-serif;
+  --font:
+    'Inter Variable', Inter, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', Arial, sans-serif;
   --font-display: 'Space Grotesk Variable', 'Space Grotesk', var(--font);
   --font-jakarta: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', var(--font);
 }
@@ -176,7 +177,12 @@ mark {
   position: absolute;
   inset: 0 0 auto;
   z-index: 50;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition:
     background 0.25s,
@@ -459,8 +465,20 @@ mark {
 .footer-brand {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   gap: 15px;
+}
+/* Logo nằm ở đầu cột trái, phía trên tên công ty (Figma 196:4025). */
+.footer-logo {
+  display: block;
+  border-radius: 6px;
+}
+.footer-logo img {
+  display: block;
+  width: 120px;
+  height: 48px;
+  object-fit: contain;
+  object-position: left center;
 }
 .footer-company {
   font-size: 14px;
@@ -827,7 +845,7 @@ mark {
     padding-bottom: 48px;
   }
   .page-banner h1,
-.page-banner .h1 {
+  .page-banner .h1 {
     font-size: 36px;
     line-height: 42px;
   }
@@ -839,10 +857,9 @@ mark {
     padding-bottom: 36px;
   }
   .page-banner h1,
-.page-banner .h1 {
+  .page-banner .h1 {
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -0.6px;
   }
 }
-

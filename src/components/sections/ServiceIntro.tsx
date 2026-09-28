@@ -1,6 +1,5 @@
 import type { Section } from '@/lib/types';
 import { Photo } from '../ui';
-import { UiIcon } from '../icons';
 export default function ServiceIntro({ section }: { section: Section }) {
   const [lead, ...rest] = (section.description || '').split(/\n{2,}/);
   return (
@@ -14,14 +13,6 @@ export default function ServiceIntro({ section }: { section: Section }) {
         {section.title && <h2>{section.title}</h2>}
         {lead && <p>{lead}</p>}
       </div>
-      {section.quote && (
-        <div className="service-quote">
-          <span className="service-quote-icon">
-            <UiIcon name="quote" size={24} />
-          </span>
-          <blockquote>{section.quote}</blockquote>
-        </div>
-      )}
       {rest.map((p, i) => (
         <p className="service-text" key={i}>
           {p}

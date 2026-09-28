@@ -28,7 +28,6 @@ export default function HeroSlider({ section }: { section: Section }) {
     return () => clearTimeout(id);
   }, [index, paused, reduced, slides.length]);
   if (!slides.length) return null;
-  const stats = section.stats || [];
   return (
     <section
       className="home-hero"
@@ -54,7 +53,6 @@ export default function HeroSlider({ section }: { section: Section }) {
           >
             <Photo picture={s.image} priority={i === 0} />
             <div className="hero-content">
-              {s.eyebrow && <p className="hero-eyebrow">{s.eyebrow}</p>}
               {i === 0 ? (
                 <h1>
                   <Highlight text={s.title} phrase={s.highlight} />
@@ -64,21 +62,21 @@ export default function HeroSlider({ section }: { section: Section }) {
                   <Highlight text={s.title} phrase={s.highlight} />
                 </p>
               )}
+              {s.eyebrow && <p className="hero-lead">{s.eyebrow}</p>}
               {s.description && <p className="hero-text">{s.description}</p>}
-              {s.label && (
-                <Link className="hero-button" href={safeHref(s.href)}>
-                  {s.label} <span aria-hidden="true">→</span>
-                </Link>
-              )}
-              {stats.length > 0 && (
-                <dl className="hero-stats">
-                  {stats.map((st) => (
-                    <div key={st.title}>
-                      <dt>{st.title}</dt>
-                      <dd>{st.description}</dd>
-                    </div>
-                  ))}
-                </dl>
+              {(s.label || s.secondaryLabel) && (
+                <div className="hero-actions">
+                  {s.label && (
+                    <Link className="hero-button" href={safeHref(s.href)}>
+                      {s.label} <span aria-hidden="true">→</span>
+                    </Link>
+                  )}
+                  {s.secondaryLabel && (
+                    <Link className="hero-button ghost" href={safeHref(s.secondaryHref)}>
+                      {s.secondaryLabel}
+                    </Link>
+                  )}
+                </div>
               )}
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Link from '@/components/Link';
-import type { Entry, PageContent, Section, SectionContext } from '@/lib/types';
+import type { Entry, PageContent, Section, SectionContext, ServiceGroup } from '@/lib/types';
 import SectionRenderer from './SectionRenderer';
 import PageBanner, { type Crumb } from './PageBanner';
 import ArticleSidebar from './sections/ArticleSidebar';
@@ -24,14 +24,19 @@ export default function PageView({
 }) {
   const copy = context.copy;
   const entry = page as Entry;
-  const ctx = { ...context, currentSlug: entry.slug };
+  const group = page as ServiceGroup;
+  const ctx = {
+    ...context,
+    currentSlug: entry.slug,
+    currentGroup: kind === 'service-groups' ? group.key : undefined,
+  };
   const all = page.sections || [];
   const hero = all.find((s) => BANNER_SECTIONS.includes(s.__component));
   const sections = all.filter((s) => !BANNER_SECTIONS.includes(s.__component));
   const isHome = path === '/';
 
   const parent: Crumb | undefined =
-    kind === 'services'
+    kind === 'services' || kind === 'service-groups'
       ? { label: copy.common.services, href: copy.routes.services }
       : kind === 'projects'
         ? { label: copy.common.projects, href: copy.routes.projects }
@@ -53,7 +58,12 @@ export default function PageView({
   }));
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': kind === 'articles' ? 'Article' : kind === 'services' ? 'Service' : 'WebPage',
+    '@type':
+      kind === 'articles'
+        ? 'Article'
+        : kind === 'services' || kind === 'service-groups'
+          ? 'Service'
+          : 'WebPage',
     name: page.title,
     url: localeUrl(path, context.locale),
     inLanguage: context.locale,
@@ -97,7 +107,11 @@ export default function PageView({
         <PageBanner
           title={kind === 'articles' ? entry.category || copy.common.news : bannerTitle}
           titleTag={kind === 'articles' ? 'p' : 'h1'}
-          image={hero?.image || (kind !== 'page' ? entry.bannerImage : undefined) || context.global.bannerImage}
+          image={
+            hero?.image ||
+            (kind !== 'page' ? entry.bannerImage : undefined) ||
+            context.global.bannerImage
+          }
           crumbs={crumbs}
           label={copy.accessibility.breadcrumb}
         />
@@ -126,7 +140,11 @@ export default function PageView({
             <div className="article-page-inner">
               <article className="article-main">
                 <ArticleHeader entry={entry} context={ctx} />
-                {render(sections.filter((s) => inArticleColumn(s) && s.__component !== 'sections.article-author'))}
+                {render(
+                  sections.filter(
+                    (s) => inArticleColumn(s) && s.__component !== 'sections.article-author',
+                  ),
+                )}
                 <ArticleTags entry={entry} />
                 {render(sections.filter((s) => s.__component === 'sections.article-author'))}
                 <ArticleNavigation context={ctx} />

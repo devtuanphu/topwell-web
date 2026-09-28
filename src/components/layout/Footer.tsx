@@ -8,9 +8,21 @@ export default function Footer({ context }: { context: SectionContext }) {
       <div className="footer-shell">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href={safeHref(footer.logoHref)} className="footer-company">
-              {footer.companyName || global.title}
-            </Link>
+            {footer.logo?.media && (
+              <Link
+                href={safeHref(footer.logoHref)}
+                className="footer-logo"
+                aria-label={context.copy.accessibility.homeLink}
+              >
+                <img
+                  src={mediaUrl(footer.logo)}
+                  width={120}
+                  height={48}
+                  alt={footer.logo.alt || ''}
+                />
+              </Link>
+            )}
+            <p className="footer-company">{footer.companyName || global.title}</p>
             <p className="footer-tagline">{footer.description}</p>
           </div>
           {footer.columns.map((column) => (

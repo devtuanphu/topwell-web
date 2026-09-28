@@ -28,7 +28,8 @@
     "viewGoogleMaps": "View on Google Maps",
     "directions": "Get directions",
     "onlineStatus": "Online",
-    "view": "View"
+    "view": "View",
+    "exploreDetail": "Explore details"
   },
   "routes": {
     "home": "/",
@@ -41,7 +42,8 @@
     "siteSurvey": "/lien-he#contact-form",
     "serviceBase": "/dich-vu/",
     "projectBase": "/du-an/",
-    "articleBase": "/tin-tuc/"
+    "articleBase": "/tin-tuc/",
+    "serviceGroupBase": "/dich-vu/nhom/"
   },
   "accessibility": {
     "skip": "Skip to content",

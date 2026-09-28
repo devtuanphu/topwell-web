@@ -32,6 +32,8 @@ import Network from './sections/Network';
 import VideoCta from './sections/VideoCta';
 import QuoteForm from './sections/QuoteForm';
 import RichText from './sections/RichText';
+import ProcessSteps from './sections/ProcessSteps';
+import MetricsStrip from './sections/MetricsStrip';
 export default function SectionRenderer({
   section,
   context,
@@ -44,6 +46,10 @@ export default function SectionRenderer({
       return <HeroSlider section={section} />;
     case 'sections.services':
       return <Services section={section} context={context} />;
+    case 'sections.process-steps':
+      return <ProcessSteps section={section} />;
+    case 'sections.metrics-strip':
+      return <MetricsStrip section={section} />;
     case 'sections.about':
       return <About section={section} />;
     case 'sections.capabilities':

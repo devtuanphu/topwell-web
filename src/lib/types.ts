@@ -19,11 +19,15 @@ export interface Card {
   icon?: Picture;
   href?: string;
   label?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
   tags?: string;
 }
 export type SectionKind =
   | 'hero-slider'
   | 'services'
+  | 'process-steps'
+  | 'metrics-strip'
   | 'about'
   | 'capabilities'
   | 'projects'
@@ -69,12 +73,10 @@ export interface Section {
   variant?: string;
   ctaLabel?: string;
   ctaHref?: string;
-  quote?: string;
   body?: string;
   images?: Picture[];
   videoUrl?: string;
   videoLabel?: string;
-  stats?: Card[];
   badges?: Card[];
   secondaryLabel?: string;
   secondaryHref?: string;
@@ -155,7 +157,6 @@ export interface Global {
   supportEmail?: string;
   supportPhone?: string;
   promo?: Card;
-  workingHours?: Card[];
   navigation: Card[];
 }
 export interface HeaderConfig {
@@ -179,14 +180,30 @@ export interface FooterConfig {
   followTitle?: string;
   companyName?: string;
 }
+/** Nhóm dịch vụ: thẻ lớn ở trang Dịch vụ và trang riêng của từng nhóm (Figma v3 178:25). */
+export interface ServiceGroup extends PageContent {
+  slug: string;
+  key: 'industrial' | 'logistics';
+  eyebrow?: string;
+  summary?: string;
+  image?: Picture;
+  icon?: Picture;
+  badge?: string;
+  badgeNote?: string;
+  features?: { title: string }[];
+  ctaLabel?: string;
+  bannerImage?: Picture;
+}
 export interface SectionContext {
   locale: import('./i18n').Locale;
   copy: SiteCopy;
   footer: FooterConfig;
   header: HeaderConfig;
   services: Entry[];
+  serviceGroups: ServiceGroup[];
   projects: Entry[];
   articles: Entry[];
   global: Global;
   currentSlug?: string;
+  currentGroup?: 'industrial' | 'logistics';
 }

@@ -11,6 +11,7 @@ import type {
   FooterConfig,
   PageContent,
   SectionContext,
+  ServiceGroup,
 } from './types';
 export const pageRoutes: Record<string, string> = {
   '/': 'home-page',
@@ -27,6 +28,8 @@ export const collectionRoutes: Record<string, 'services' | 'projects' | 'article
   'du-an': 'projects',
   'tin-tuc': 'articles',
 };
+/** Trang riêng của nhóm dịch vụ: /dich-vu/nhom/<slug>. */
+export const SERVICE_GROUP_SEGMENT = 'nhom';
 export const demoMode = process.env.USE_DEMO_CONTENT === 'true';
 const base = process.env.STRAPI_URL || 'http://localhost:1337';
 export const getContent = cache(
@@ -59,21 +62,24 @@ export const getContent = cache(
 );
 export const getContext = cache(
   async (locale: Locale = DEFAULT_LOCALE): Promise<SectionContext> => {
-    const [services, projects, articles, global, header, copy, footer] = await Promise.all([
-      getContent<Entry[]>('services', undefined, locale),
-      getContent<Entry[]>('projects', undefined, locale),
-      getContent<Entry[]>('articles', undefined, locale),
-      getContent<Global>('global', undefined, locale),
-      getContent<HeaderConfig>('header', undefined, locale),
-      getContent<SiteCopy>('site-settings', undefined, locale),
-      getContent<FooterConfig>('footer', undefined, locale),
-    ]);
+    const [services, serviceGroups, projects, articles, global, header, copy, footer] =
+      await Promise.all([
+        getContent<Entry[]>('services', undefined, locale),
+        getContent<ServiceGroup[]>('service-groups', undefined, locale),
+        getContent<Entry[]>('projects', undefined, locale),
+        getContent<Entry[]>('articles', undefined, locale),
+        getContent<Global>('global', undefined, locale),
+        getContent<HeaderConfig>('header', undefined, locale),
+        getContent<SiteCopy>('site-settings', undefined, locale),
+        getContent<FooterConfig>('footer', undefined, locale),
+      ]);
     if (!global) throw new Error('Publish the Global single type in Strapi.');
     if (!copy || !footer) throw new Error('Publish Site settings and Footer in Strapi.');
     if (!header) throw new Error('Publish the Header single type in Strapi.');
     return {
       locale,
       services: services || [],
+      serviceGroups: serviceGroups || [],
       projects: projects || [],
       articles: articles || [],
       global,
@@ -92,6 +98,10 @@ export async function resolvePage(
     return page ? { page, kind: 'page' } : null;
   }
   const parts = path.split('/').filter(Boolean);
+  if (parts.length === 3 && parts[0] === 'dich-vu' && parts[1] === SERVICE_GROUP_SEGMENT) {
+    const group = await getContent<ServiceGroup>('service-groups', parts[2], locale);
+    return group ? { page: group, kind: 'service-groups' } : null;
+  }
   const type = collectionRoutes[parts[0]];
   if (parts.length !== 2 || !type) return null;
   const page = await getContent<Entry>(type, parts[1], locale);

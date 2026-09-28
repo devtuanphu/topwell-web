@@ -39,3 +39,25 @@ test('newsletter submits a consented request and reports server failure honestly
   await expect(widget.getByRole('status')).toContainText(copy.newsletter.success);
   await expect(widget.getByRole('textbox')).toBeEmpty();
 });
+
+test('the services page lists service groups, each with its own page, process and metrics', async ({
+  page,
+}) => {
+  await page.goto('/dich-vu');
+  const cards = page.locator('.service-group-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.first().locator('.service-group-features li')).toHaveCount(4);
+  await cards.first().locator('.service-group-cta').click();
+  await expect(page).toHaveURL(/\/dich-vu\/nhom\//);
+  await expect(page.locator('.page-banner nav [aria-current="page"]')).toBeVisible();
+  await expect(page.locator('.service-card').first()).toBeVisible();
+  await expect(page.locator('.process-step-card')).toHaveCount(4);
+  await expect(page.locator('.metrics-strip > div')).toHaveCount(3);
+});
+
+test('the footer shows the CMS logo in the first column', async ({ page }) => {
+  await page.goto('/');
+  const logo = page.locator('.footer-brand .footer-logo img');
+  await expect(logo).toBeVisible();
+  expect(await logo.evaluate((el: HTMLImageElement) => el.naturalWidth)).toBeGreaterThan(0);
+});

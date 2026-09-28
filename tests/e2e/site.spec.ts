@@ -38,8 +38,13 @@ test('all pages render with unique canonical, metadata and one H1 in every langu
           /[ĂăÂâĐđÊêÔôƠơƯưẠ-ỹ\u4e00-\u9fff]/u,
         );
       if (lang === 'zh')
-        expect(await page.locator('main').innerText(), url + ' Chinese text').toMatch(/[\u4e00-\u9fff]/u);
-      await expect(page.locator('meta[name="description"]'), url).toHaveAttribute('content', /.{10,}/);
+        expect(await page.locator('main').innerText(), url + ' Chinese text').toMatch(
+          /[\u4e00-\u9fff]/u,
+        );
+      await expect(page.locator('meta[name="description"]'), url).toHaveAttribute(
+        'content',
+        /.{10,}/,
+      );
       await expect(page.locator('link[rel="canonical"]'), url).toHaveAttribute(
         'href',
         SITE + (url === '/' ? '' : url),
@@ -78,6 +83,7 @@ test('responsive pages have no viewport overflow, and original images load', asy
       '/',
       '/ve-chung-toi',
       '/dich-vu',
+      '/dich-vu/nhom/thiet-bi-va-giai-phap',
       '/dich-vu/production-lines',
       '/du-an',
       '/du-an/tu-dong-hoa-day-chuyen-fdi',
@@ -170,11 +176,9 @@ test('contact form stores an inquiry and rejects invalid or unauthenticated requ
       })
     ).status(),
   ).toBe(403);
-  expect(
-    (
-      await request.post(`${CMS}/api/site-inquiry`, { data: { name: 'X' } })
-    ).status(),
-  ).toBe(401);
+  expect((await request.post(`${CMS}/api/site-inquiry`, { data: { name: 'X' } })).status()).toBe(
+    401,
+  );
   expect((await request.get(`${CMS}/api/inquiries`)).status()).toBe(403);
   expect((await request.get(`${CMS}/api/site/inquiries`)).status()).toBe(404);
 });

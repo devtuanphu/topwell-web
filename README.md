@@ -4,7 +4,7 @@ Website TOP WELL International, lấy nội dung từ Strapi. CMS nằm ở repo
 
 - Next.js 16 (App Router), React 19, TypeScript, CSS thuần.
 - Ba ngôn ngữ: Tiếng Việt (mặc định, không có tiền tố), English (`/en`), 中文 (`/zh`).
-- Giao diện dựng theo Figma "TOP WELL — Website Redesign V1".
+- Giao diện dựng theo Figma "TOP WELL — Website Redesign V1 (3)".
 
 ## Chạy trên máy
 
@@ -44,6 +44,7 @@ Nội dung được ghép từ Dynamic Zone của Strapi: `SectionRenderer` ch�
 ## Đa ngôn ngữ
 
 - `/du-an` (vi), `/en/du-an`, `/zh/du-an`. `/vi/...` chuyển hướng 308 về đường dẫn gốc.
+- Trang nhóm dịch vụ: `/dich-vu/nhom/<slug>`.
 - Link nội bộ dùng `@/components/Link` để tự thêm tiền tố ngôn ngữ.
 - Mỗi trang khai báo canonical theo ngôn ngữ, `hreflang` cho cả 3 bản và `x-default`; sitemap liệt kê đủ 3 phiên bản.
 

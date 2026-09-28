@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { getContent, pageRoutes, collectionRoutes } from '@/lib/cms';
-import type { Entry, PageContent } from '@/lib/types';
+import { getContent, pageRoutes, collectionRoutes, SERVICE_GROUP_SEGMENT } from '@/lib/cms';
+import type { Entry, PageContent, ServiceGroup } from '@/lib/types';
 import { LOCALES } from '@/lib/i18n';
 import { languageAlternates, localeUrl } from '@/lib/seo';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -22,5 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const [route, type] of Object.entries(collectionRoutes))
     for (const p of (await getContent<Entry[]>(type)) || [])
       if (!p.seo?.noIndex) add(`/${route}/${p.slug}`, p.updatedAt, 0.6);
+  for (const g of (await getContent<ServiceGroup[]>('service-groups')) || [])
+    if (!g.seo?.noIndex) add(`/dich-vu/${SERVICE_GROUP_SEGMENT}/${g.slug}`, g.updatedAt, 0.7);
   return urls;
 }

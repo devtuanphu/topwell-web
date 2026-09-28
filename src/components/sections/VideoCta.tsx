@@ -60,12 +60,8 @@ export default function VideoCta({ section }: { section: Section }) {
           </header>
           <div className="process-media">
             <Photo picture={section.image} />
-            {!url ? (
-              <span className="process-play" aria-hidden="true">
-                <span className="triangle" />
-                <span>{copy.accessibility.play}</span>
-              </span>
-            ) : (
+            {/* Figma v3 bỏ nút phát: không có video thì chỉ hiển thị ảnh. */}
+            {url && (
               <button
                 type="button"
                 className="process-play"

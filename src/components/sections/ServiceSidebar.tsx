@@ -14,7 +14,6 @@ export default function ServiceSidebar({
   const { copy, global } = context;
   const current = context.services.find((s) => s.slug === currentSlug);
   const list = context.services.filter((s) => !current || s.group === current.group);
-  const tel = (v: string) => `tel:${v.replace(/[^+0-9]/g, '')}`;
   return (
     <aside className="service-aside">
       <nav className="aside-card service-menu" aria-label={copy.sidebar.servicesTitle}>
@@ -53,50 +52,6 @@ export default function ServiceSidebar({
           </div>
         </div>
       )}
-      {global.workingHours && global.workingHours.length > 0 && (
-        <div className="aside-card info-card">
-          <h2>{copy.sidebar.hoursTitle}</h2>
-          <dl className="hours-list">
-            {global.workingHours.map((h, i) => (
-              <div key={i}>
-                <dt>{h.title}</dt>
-                <dd>{h.description}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      )}
-      <div className="aside-card info-card">
-        <h2>{copy.sidebar.contactTitle}</h2>
-        <div className="touch-list">
-          <div>
-            <span className="touch-icon">
-              <UiIcon name="mail" size={20} />
-            </span>
-            <div>
-              <a href={`mailto:${global.email}`}>{global.email}</a>
-              {global.supportEmail && (
-                <a className="sub" href={`mailto:${global.supportEmail}`}>
-                  {global.supportEmail}
-                </a>
-              )}
-            </div>
-          </div>
-          <div>
-            <span className="touch-icon">
-              <UiIcon name="phone" size={20} />
-            </span>
-            <div>
-              <a href={tel(global.phone)}>{global.phone}</a>
-              {global.supportPhone && (
-                <a className="sub" href={tel(global.supportPhone)}>
-                  {global.supportPhone}
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
     </aside>
   );
 }
