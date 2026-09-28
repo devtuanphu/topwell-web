@@ -73,7 +73,9 @@ test('the home hero matches the reference: kicker, two pill buttons and the revi
   const kicker = slide.locator('.hero-eyebrow');
   await expect(kicker).toBeVisible();
   const order = await slide.evaluate((el) => {
-    const nodes = [...el.querySelectorAll('.hero-eyebrow, h1, .hero-text, .hero-actions, .hero-reviews')];
+    const nodes = [
+      ...el.querySelectorAll('.hero-eyebrow, h1, .hero-text, .hero-actions, .hero-reviews'),
+    ];
     return nodes.map((n) => n.className.split(' ')[0] || n.tagName.toLowerCase());
   });
   expect(order).toEqual(['hero-eyebrow', 'h1', 'hero-text', 'hero-actions', 'hero-reviews']);
@@ -87,4 +89,22 @@ test('the home hero matches the reference: kicker, two pill buttons and the revi
   await expect(slide.locator('.hero-stars')).toHaveText('★★★★★');
   const box = await slide.locator('h1').boundingBox();
   expect(Math.round(box!.x)).toBe(32);
+});
+
+test('the home sections use the brand yellow and drop the parts the redesign removed', async ({
+  page,
+}) => {
+  await page.goto('/');
+  // Thẻ chồng trên ảnh ghép dùng vàng thương hiệu, không còn cam (Figma 145:6898).
+  const badge = page.locator('.about-badge');
+  await expect(badge).toHaveCSS('background-color', 'rgb(241, 223, 87)');
+  // Gạch nhãn đầu mục cũng là vàng thương hiệu.
+  await expect(page.locator('.eyebrow-line.before span').first()).toHaveCSS(
+    'background-color',
+    'rgb(241, 223, 87)',
+  );
+  // Thiết kế mới bỏ khối liên hệ trong phần Giới thiệu và nhãn danh mục trên ảnh tin tức.
+  await expect(page.locator('.about-contact')).toHaveCount(0);
+  await expect(page.locator('.home-news-media > span')).toHaveCount(0);
+  await expect(page.locator('.showcase-kicker')).toHaveCount(0);
 });

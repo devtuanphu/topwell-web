@@ -39,10 +39,13 @@ export default function NewsShowcase({
         </header>
         <div className="home-news-list">
           {articles.map((a) => (
-            <Link className="home-news-card" key={a.slug} href={`${copy.routes.articleBase}${a.slug}`}>
+            <Link
+              className="home-news-card"
+              key={a.slug}
+              href={`${copy.routes.articleBase}${a.slug}`}
+            >
               <div className="home-news-media">
                 <Photo picture={a.image} />
-                {a.category && <span>{a.category}</span>}
               </div>
               <div className="home-news-text">
                 <h3>{a.title}</h3>
@@ -50,13 +53,13 @@ export default function NewsShowcase({
                 <div className="home-news-meta">
                   {a.author && (
                     <span>
-                      <UiIcon name="userOrange" />
+                      <UiIcon name="userGrey" />
                       {a.author}
                     </span>
                   )}
                   {a.publishedDate && (
                     <span>
-                      <UiIcon name="calendarOrange" />
+                      <UiIcon name="calendarGrey" />
                       {formatDate(a.publishedDate, copy.metadata.locale)}
                     </span>
                   )}

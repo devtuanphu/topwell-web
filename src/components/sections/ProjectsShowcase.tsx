@@ -66,7 +66,6 @@ export default function ProjectsShowcase({
                 )}
               </div>
               <div className="showcase-body">
-                <p className="showcase-kicker">{p.category}</p>
                 <h3>{p.homeTitle || p.title}</h3>
                 <p>{p.homeSummary || p.summary}</p>
                 {p.tags && (

@@ -84,8 +84,6 @@ export interface Section {
   badges?: Card[];
   secondaryLabel?: string;
   secondaryHref?: string;
-  contactTitle?: string;
-  contactText?: string;
   panelEyebrow?: string;
   panelTitle?: string;
   panelText?: string;

@@ -66,17 +66,6 @@ export default function About({ section }: { section: Section }) {
                 <UiIcon name="arrowLongWhite" size={18} />
               </Link>
             )}
-            {section.contactTitle && (
-              <div className="about-contact">
-                <span className="about-phone">
-                  <UiIcon name="phoneDark" size={20} />
-                </span>
-                <div>
-                  <strong>{section.contactTitle}</strong>
-                  {section.contactText && <small>{section.contactText}</small>}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
