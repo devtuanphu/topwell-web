@@ -75,6 +75,9 @@ export interface Section {
   ctaHref?: string;
   body?: string;
   images?: Picture[];
+  reviewRating?: string;
+  reviewLabel?: string;
+  reviewAvatars?: Picture[];
   videoUrl?: string;
   videoLabel?: string;
   badges?: Card[];

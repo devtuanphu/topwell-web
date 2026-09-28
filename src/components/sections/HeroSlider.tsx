@@ -3,7 +3,7 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import { useEffect, useState } from 'react';
 import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
-import { safeHref } from '@/lib/media';
+import { mediaUrl, safeHref } from '@/lib/media';
 import { Photo, Highlight } from '../ui';
 import { UiIcon } from '../icons';
 
@@ -28,6 +28,29 @@ export default function HeroSlider({ section }: { section: Section }) {
     return () => clearTimeout(id);
   }, [index, paused, reduced, slides.length]);
   if (!slides.length) return null;
+  const avatars = section.reviewAvatars || [];
+  const stars = Math.max(0, Math.min(5, Number(section.reviewRating ?? 5) || 0));
+  // Khối đánh giá dưới hai nút, theo ảnh tham chiếu trong Figma (191:1564).
+  const reviews =
+    avatars.length > 0 || section.reviewLabel ? (
+      <div className="hero-reviews">
+        {avatars.length > 0 && (
+          <div className="hero-avatars" aria-hidden="true">
+            {avatars.map((a, n) => (
+              <img key={n} src={mediaUrl(a)} width={44} height={44} alt="" />
+            ))}
+          </div>
+        )}
+        <div className="hero-review-text">
+          {stars > 0 && (
+            <span className="hero-stars" aria-hidden="true">
+              {'\u2605'.repeat(stars)}
+            </span>
+          )}
+          {section.reviewLabel && <span>{section.reviewLabel}</span>}
+        </div>
+      </div>
+    ) : null;
   return (
     <section
       className="home-hero"
@@ -53,6 +76,7 @@ export default function HeroSlider({ section }: { section: Section }) {
           >
             <Photo picture={s.image} priority={i === 0} />
             <div className="hero-content">
+              {s.eyebrow && <p className="hero-eyebrow">{s.eyebrow}</p>}
               {i === 0 ? (
                 <h1>
                   <Highlight text={s.title} phrase={s.highlight} />
@@ -62,7 +86,6 @@ export default function HeroSlider({ section }: { section: Section }) {
                   <Highlight text={s.title} phrase={s.highlight} />
                 </p>
               )}
-              {s.eyebrow && <p className="hero-lead">{s.eyebrow}</p>}
               {s.description && <p className="hero-text">{s.description}</p>}
               {(s.label || s.secondaryLabel) && (
                 <div className="hero-actions">
@@ -78,6 +101,7 @@ export default function HeroSlider({ section }: { section: Section }) {
                   )}
                 </div>
               )}
+              {reviews}
             </div>
           </div>
         ))}

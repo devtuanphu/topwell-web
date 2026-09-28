@@ -62,16 +62,29 @@ test('the footer shows the CMS logo in the first column', async ({ page }) => {
   expect(await logo.evaluate((el: HTMLImageElement) => el.naturalWidth)).toBeGreaterThan(0);
 });
 
-test('the home hero matches the redesign: yellow lead, two buttons, no stats', async ({ page }) => {
+test('the home hero matches the reference: kicker, two pill buttons and the reviews row', async ({
+  page,
+}) => {
   await page.goto('/');
   const hero = page.locator('.home-hero');
   await expect(hero.locator('.hero-stats')).toHaveCount(0);
   const slide = hero.locator('.hero-slide').first();
-  await expect(slide.locator('.hero-lead')).toBeVisible();
+  // Nhãn viết hoa nằm trên tiêu đề.
+  const kicker = slide.locator('.hero-eyebrow');
+  await expect(kicker).toBeVisible();
+  const order = await slide.evaluate((el) => {
+    const nodes = [...el.querySelectorAll('.hero-eyebrow, h1, .hero-text, .hero-actions, .hero-reviews')];
+    return nodes.map((n) => n.className.split(' ')[0] || n.tagName.toLowerCase());
+  });
+  expect(order).toEqual(['hero-eyebrow', 'h1', 'hero-text', 'hero-actions', 'hero-reviews']);
   await expect(slide.locator('.hero-button')).toHaveCount(2);
-  await expect(slide.locator('.hero-button.ghost')).toBeVisible();
+  const radius = await slide
+    .locator('.hero-button')
+    .first()
+    .evaluate((el) => getComputedStyle(el).borderRadius);
+  expect(radius).toBe('9999px');
+  await expect(slide.locator('.hero-avatars img')).toHaveCount(4);
+  await expect(slide.locator('.hero-stars')).toHaveText('★★★★★');
   const box = await slide.locator('h1').boundingBox();
   expect(Math.round(box!.x)).toBe(32);
-  const lead = await slide.locator('.hero-lead').evaluate((el) => getComputedStyle(el).color);
-  expect(lead).toBe('rgb(241, 223, 87)');
 });
