@@ -7,7 +7,8 @@ import { mediaUrl, safeHref } from '@/lib/media';
 import { Photo, Highlight } from '../ui';
 import { UiIcon } from '../icons';
 
-const SLIDE_MS = 5000;
+// Mặc định theo ghi chú Figma 90:10: mỗi banner dừng 5 giây. Sửa được trong CMS.
+const DEFAULT_SLIDE_SECONDS = 5;
 
 export default function HeroSlider({ section }: { section: Section }) {
   const copy = useCopy();
@@ -15,6 +16,7 @@ export default function HeroSlider({ section }: { section: Section }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
+  const slideMs = Math.max(2, Number(section.slideSeconds) || DEFAULT_SLIDE_SECONDS) * 1000;
   useEffect(() => {
     const mq = matchMedia('(prefers-reduced-motion: reduce)');
     setReduced(mq.matches);
@@ -24,9 +26,9 @@ export default function HeroSlider({ section }: { section: Section }) {
   }, []);
   useEffect(() => {
     if (paused || reduced || slides.length < 2) return;
-    const id = setTimeout(() => setIndex((i) => (i + 1) % slides.length), SLIDE_MS);
+    const id = setTimeout(() => setIndex((i) => (i + 1) % slides.length), slideMs);
     return () => clearTimeout(id);
-  }, [index, paused, reduced, slides.length]);
+  }, [index, paused, reduced, slides.length, slideMs]);
   if (!slides.length) return null;
   const avatars = section.reviewAvatars || [];
   const stars = Math.max(0, Math.min(5, Number(section.reviewRating ?? 5) || 0));
@@ -54,7 +56,7 @@ export default function HeroSlider({ section }: { section: Section }) {
   return (
     <section
       className="home-hero"
-      aria-label={copy.accessibility.hero}
+      aria-label={section.title || copy.accessibility.hero}
       aria-roledescription="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

@@ -75,6 +75,7 @@ export interface Section {
   ctaHref?: string;
   body?: string;
   images?: Picture[];
+  slideSeconds?: number;
   reviewRating?: string;
   reviewLabel?: string;
   reviewAvatars?: Picture[];
