@@ -22,9 +22,9 @@
   place-items: center;
   width: 80px;
   height: 80px;
-  border: 2px dashed #f59e0b;
+  border: 2px dashed #f1df57;
   border-radius: 9999px;
-  color: #f59e0b;
+  color: #a08b00;
   font-size: 24px;
   font-weight: 800;
   line-height: 32px;
@@ -110,8 +110,8 @@
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #f59e0b;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+  border-color: #f1df57;
+  box-shadow: 0 0 0 3px rgba(241, 223, 87, 0.35);
 }
 .honeypot {
   position: absolute;
@@ -157,16 +157,16 @@
   cursor: pointer;
 }
 .topic-group input:checked {
-  border-color: #f59e0b;
-  background: #f59e0b;
+  border-color: #f1df57;
+  background: #f1df57;
 }
 .topic-group input:checked::after {
   content: '';
   width: 8px;
   height: 4px;
   margin-top: -2px;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-left: 2px solid #111;
+  border-bottom: 2px solid #111;
   transform: rotate(-45deg);
 }
 .contact-submit {
@@ -180,8 +180,8 @@
   min-height: 48px;
   padding: 14px 32px;
   border-radius: 9999px;
-  background: #f59e0b;
-  color: #fff;
+  background: #f1df57;
+  color: #111;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -191,7 +191,7 @@
   transition: background 0.2s;
 }
 .contact-submit button:hover:not(:disabled) {
-  background: #d97706;
+  background: #e6d23f;
 }
 .contact-submit small {
   color: #6b7280;
@@ -225,7 +225,7 @@
   gap: 24px;
   padding: 40px;
   border-radius: 24px;
-  background: #1d70b8;
+  background: #111;
   color: #fff;
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -270,15 +270,15 @@
   place-items: center;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(241, 223, 87, 0.6);
   border-radius: 9999px;
-  color: #fff;
+  color: rgba(241, 223, 87, 0.95);
   font-size: 12px;
   font-weight: 700;
   transition: background 0.2s;
 }
 .contact-socials a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(241, 223, 87, 0.18);
 }
 
 /* Network / map */
@@ -516,7 +516,7 @@
   color: #9ca3af;
 }
 .map-office-foot a {
-  color: #2563eb;
+  color: #a08b00;
   font-weight: 500;
 }
 .map-office-foot a:hover {
