@@ -211,3 +211,14 @@ test('the process steps section carries the yellow rule under its heading', asyn
   expect(rule).toEqual({ width: '80px', height: '4px', background: 'rgb(241, 223, 87)' });
   await expect(page.locator('.process-step-card')).toHaveCount(4);
 });
+
+test('the contact map carries its credit line from the CMS', async ({ page }) => {
+  const network = await fetch(`${CMS}/api/site/contact-page?locale=vi`)
+    .then((r) => r.json())
+    .then((r) =>
+      r.data.sections.find((s: { __component: string }) => s.__component === 'sections.network'),
+    );
+  expect(network.supportLabel).toBeTruthy();
+  await page.goto('/lien-he');
+  await expect(page.locator('.map-credit')).toHaveText(network.supportLabel);
+});

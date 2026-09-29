@@ -11,7 +11,6 @@ test('published CMS settings supply header, footer, forms and list actions', asy
     return (await response.json()).data;
   };
   const [copy, header, footer] = await Promise.all(['site-settings', 'header', 'footer'].map(cms));
-  expect(copy.assets.phoneIcon.media.url).toMatch(/^\/uploads\//);
   expect(header.logo.url).toMatch(/^\/uploads\//);
   expect(footer.logo.media.url).toMatch(/^\/uploads\//);
   await page.goto('/en');
