@@ -34,6 +34,8 @@ import QuoteForm from './sections/QuoteForm';
 import RichText from './sections/RichText';
 import ProcessSteps from './sections/ProcessSteps';
 import MetricsStrip from './sections/MetricsStrip';
+import CtaBar from './sections/CtaBar';
+import Testimonials from './sections/Testimonials';
 export default function SectionRenderer({
   section,
   context,
@@ -50,6 +52,10 @@ export default function SectionRenderer({
       return <ProcessSteps section={section} />;
     case 'sections.metrics-strip':
       return <MetricsStrip section={section} />;
+    case 'sections.cta-bar':
+      return <CtaBar section={section} context={context} />;
+    case 'sections.testimonials':
+      return <Testimonials section={section} />;
     case 'sections.about':
       return <About section={section} />;
     case 'sections.capabilities':

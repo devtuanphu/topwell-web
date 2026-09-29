@@ -70,12 +70,7 @@ export default async function RootLayout({
           <a className="skip-link" href="#main-content">
             {context.copy.accessibility.skip}
           </a>
-          <Header
-            config={context.header}
-            services={context.services}
-            projects={context.projects}
-            serviceGroups={context.serviceGroups}
-          />
+          <Header config={context.header} services={context.services} projects={context.projects} />
           <main id="main-content">{children}</main>
           <Footer context={context} />
           <script

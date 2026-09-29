@@ -2,6 +2,8 @@
 import { useCopy } from '@/components/SiteCopyProvider';
 import Link from '@/components/Link';
 import type { Section, SectionContext } from '@/lib/types';
+import { pathOf } from '@/lib/tree';
+import { pickEntries } from './ServiceCards';
 import { safeHref } from '@/lib/media';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';
@@ -14,11 +16,11 @@ export default function ServicesShowcase({
   context: SectionContext;
 }) {
   const copy = useCopy();
-  // Nhóm dịch vụ và số thẻ hiển thị lấy từ CMS.
-  const group = section.group || 'industrial';
-  const entries = context.services
-    .filter((x) => group === 'all' || x.group === group)
-    .slice(0, Math.max(1, section.limit || 3));
+  // Danh sách và số thẻ hiển thị lấy từ CMS.
+  const entries = pickEntries(
+    { ...section, limit: Math.max(1, section.limit || 3) },
+    context.services,
+  );
   return (
     <section className="home-services">
       <div className="home-services-band">
@@ -37,7 +39,11 @@ export default function ServicesShowcase({
       <div className="container home-services-body">
         <div className="home-service-cards">
           {entries.map((s) => (
-            <Link className="home-service-card" key={s.slug} href={`${copy.routes.serviceBase}${s.slug}`}>
+            <Link
+              className="home-service-card"
+              key={s.slug}
+              href={`${copy.routes.serviceBase}${pathOf(s, context.services)}`}
+            >
               <div className="home-service-media">
                 <Photo picture={s.image} />
                 {s.tag && <span className="home-service-tag">{s.tag}</span>}

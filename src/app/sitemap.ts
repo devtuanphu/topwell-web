@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
-import { getContent, pageRoutes, collectionRoutes, SERVICE_GROUP_SEGMENT } from '@/lib/cms';
-import type { Entry, PageContent, ServiceGroup } from '@/lib/types';
+import { getContent, pageRoutes, collectionRoutes } from '@/lib/cms';
+import type { Entry, PageContent } from '@/lib/types';
+import { pathOf } from '@/lib/tree';
 import { LOCALES } from '@/lib/i18n';
 import { languageAlternates, localeUrl } from '@/lib/seo';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -19,10 +20,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const p = await getContent<PageContent>(type);
     if (p && !p.seo?.noIndex) add(path, p.updatedAt, path === '/' ? 1 : 0.8);
   }
-  for (const [route, type] of Object.entries(collectionRoutes))
-    for (const p of (await getContent<Entry[]>(type)) || [])
-      if (!p.seo?.noIndex) add(`/${route}/${p.slug}`, p.updatedAt, 0.6);
-  for (const g of (await getContent<ServiceGroup[]>('service-groups')) || [])
-    if (!g.seo?.noIndex) add(`/dich-vu/${SERVICE_GROUP_SEGMENT}/${g.slug}`, g.updatedAt, 0.7);
+  for (const [route, type] of Object.entries(collectionRoutes)) {
+    const all = (await getContent<Entry[]>(type)) || [];
+    for (const p of all)
+      if (!p.seo?.noIndex)
+        add(
+          `/${route}/${type === 'articles' ? p.slug : pathOf(p, all)}`,
+          p.updatedAt,
+          p.parent ? 0.6 : 0.7,
+        );
+  }
   return urls;
 }

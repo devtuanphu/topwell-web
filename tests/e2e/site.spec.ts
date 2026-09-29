@@ -13,8 +13,7 @@ const pages = [
   '/lien-he',
   '/chinh-sach-bao-mat',
   '/tieu-chuan-ky-thuat',
-  ...content.services.map((s) => '/dich-vu/' + s.slug),
-  ...content.projects.map((s) => '/du-an/' + s.slug),
+  // Dịch vụ và Dự án xếp theo cây; đường dẫn lấy từ CMS trong chính bài kiểm thử.
   ...content.articles.map((s) => '/tin-tuc/' + s.slug),
 ];
 test('all pages render with unique canonical, metadata and one H1 in every language', async ({
@@ -67,13 +66,13 @@ test('language switcher keeps the current page and links stay in the chosen lang
     await page.locator(`.lang-menu [lang="${code}"]`).click();
     await expect(page.locator('.lang-menu')).toHaveCount(0);
   };
-  await page.goto('/dich-vu/production-lines');
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap/production-lines');
   await chooseLanguage('zh');
-  await expect(page).toHaveURL(/\/zh\/dich-vu\/production-lines$/);
+  await expect(page).toHaveURL(/\/zh\/dich-vu\/thiet-bi-va-giai-phap\/production-lines$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
   await expect(page.locator('#primary-nav a').first()).toHaveAttribute('href', '/zh');
   await chooseLanguage('vi');
-  await expect(page).toHaveURL(SITE + '/dich-vu/production-lines');
+  await expect(page).toHaveURL(SITE + '/dich-vu/thiet-bi-va-giai-phap/production-lines');
   expect((await page.goto('/vi/du-an'))?.url()).toBe(SITE + '/du-an');
 });
 test('responsive pages have no viewport overflow, and original images load', async ({ page }) => {
@@ -83,8 +82,8 @@ test('responsive pages have no viewport overflow, and original images load', asy
       '/',
       '/ve-chung-toi',
       '/dich-vu',
-      '/dich-vu/nhom/thiet-bi-va-giai-phap',
-      '/dich-vu/production-lines',
+      '/dich-vu/thiet-bi-va-giai-phap',
+      '/dich-vu/thiet-bi-va-giai-phap/production-lines',
       '/du-an',
       '/du-an/tu-dong-hoa-day-chuyen-fdi',
       '/tin-tuc',
@@ -135,7 +134,7 @@ test('mobile menu, carousel, service FAQ, language menu and news pagination work
   await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
   await page.getByRole('button', { name: copy.accessibility.language }).click();
   await expect(page.locator('.lang-menu').getByRole('option')).toHaveCount(3);
-  await page.goto('/en/dich-vu/production-lines');
+  await page.goto('/en/dich-vu/thiet-bi-va-giai-phap/production-lines');
   const faq = page.locator('.faq-item button');
   await expect(faq.nth(0)).toHaveAttribute('aria-expanded', 'true');
   await faq.nth(1).click();

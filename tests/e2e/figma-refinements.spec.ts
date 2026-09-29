@@ -41,19 +41,43 @@ test('newsletter submits a consented request and reports server failure honestly
   await expect(widget.getByRole('textbox')).toBeEmpty();
 });
 
-test('the services page lists service groups, each with its own page, process and metrics', async ({
-  page,
-}) => {
+test('services run three levels deep, each level reusing its own layout', async ({ page }) => {
   await page.goto('/dich-vu');
   const cards = page.locator('.service-group-card');
   await expect(cards).toHaveCount(2);
   await expect(cards.first().locator('.service-group-features li')).toHaveCount(4);
+
+  // Cấp 2: trang cha liệt kê mục con, có quy trình và dải kêu gọi.
   await cards.first().locator('.service-group-cta').click();
-  await expect(page).toHaveURL(/\/dich-vu\/nhom\//);
-  await expect(page.locator('.page-banner nav [aria-current="page"]')).toBeVisible();
-  await expect(page.locator('.service-card').first()).toBeVisible();
+  await expect(page).toHaveURL(/\/dich-vu\/[^/]+$/);
+  await expect(page.locator('.page-banner nav a')).toHaveCount(2);
   await expect(page.locator('.process-step-card')).toHaveCount(4);
-  await expect(page.locator('.metrics-strip > div')).toHaveCount(3);
+  await expect(page.locator('.cta-bar')).toBeVisible();
+  const child = page.locator('.service-card').first();
+  await expect(child).toBeVisible();
+
+  // Cấp 3: trang con dùng layout chi tiết với menu cùng cấp bên phải.
+  await child.click();
+  await expect(page).toHaveURL(/\/dich-vu\/[^/]+\/[^/]+$/);
+  await expect(page.locator('.page-banner nav a')).toHaveCount(3);
+  await expect(page.locator('.service-aside .service-menu a').first()).toBeVisible();
+  await expect(page.locator('.service-intro')).toBeVisible();
+});
+
+test('the services page shows customer testimonials with a quality score', async ({ page }) => {
+  await page.goto('/dich-vu');
+  await expect(page.locator('.testimonial-card')).toHaveCount(3);
+  await expect(page.locator('.testimonials-score-value strong')).toBeVisible();
+});
+
+test('the projects page lists wide rows without a category badge', async ({ page }) => {
+  await page.goto('/du-an');
+  const rows = page.locator('.project-row');
+  expect(await rows.count()).toBeGreaterThan(0);
+  await expect(page.locator('.project-badge')).toHaveCount(0);
+  await expect(page.locator('.projects-listing .dot-badge')).toBeVisible();
+  await rows.first().click();
+  await expect(page.locator('.cta-bar')).toBeVisible();
 });
 
 test('the footer shows the CMS logo in the first column', async ({ page }) => {
@@ -124,7 +148,7 @@ test('the header menu and its dropdowns come from the CMS', async ({ page, reque
     if (
       entry.source === 'services' ||
       entry.source === 'projects' ||
-      entry.source === 'service-groups'
+      entry.source === 'services-all'
     )
       expect(await children.count()).toBeGreaterThan(0);
     else await expect(children).toHaveCount(0);

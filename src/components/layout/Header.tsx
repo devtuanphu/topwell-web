@@ -3,7 +3,8 @@ import { useCopy, useLocale } from '@/components/SiteCopyProvider';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from '@/components/Link';
-import type { Entry, HeaderConfig, NavItem, ServiceGroup } from '@/lib/types';
+import type { Entry, HeaderConfig, NavItem } from '@/lib/types';
+import { childrenOf, pathOf } from '@/lib/tree';
 import { mediaUrl, safeHref } from '@/lib/media';
 import { LOCALES, LOCALE_COOKIE, localizePath, stripLocale } from '@/lib/i18n';
 
@@ -19,12 +20,10 @@ export default function Header({
   config,
   services,
   projects = [],
-  serviceGroups = [],
 }: {
   config: HeaderConfig;
   services: Entry[];
   projects?: Entry[];
-  serviceGroups?: ServiceGroup[];
 }) {
   const copy = useCopy();
   const router = useRouter();
@@ -71,16 +70,25 @@ export default function Header({
   };
   // Menu lấy từ trường "Thanh menu" của CMS.
   const items: NavItem[] = config.menu || [];
-  const groupBase = copy.routes.serviceGroupBase || '/dich-vu/nhom/';
   const submenu = (item: NavItem) => {
     if (item.source === 'manual')
       return (item.links || []).map((l) => ({ href: safeHref(l.href), title: l.title }));
+    // Menu con lấy mục gốc của cây; mục con hiện trong trang, không lồng trong menu.
     if (item.source === 'services')
-      return services.map((s) => ({ href: `${copy.routes.serviceBase}${s.slug}`, title: s.title }));
+      return childrenOf(undefined, services).map((s) => ({
+        href: `${copy.routes.serviceBase}${pathOf(s, services)}`,
+        title: s.title,
+      }));
+    if (item.source === 'services-all')
+      return services.map((s) => ({
+        href: `${copy.routes.serviceBase}${pathOf(s, services)}`,
+        title: s.title,
+      }));
     if (item.source === 'projects')
-      return projects.map((p) => ({ href: `${copy.routes.projects}/${p.slug}`, title: p.title }));
-    if (item.source === 'service-groups')
-      return serviceGroups.map((g) => ({ href: `${groupBase}${g.slug}`, title: g.title }));
+      return childrenOf(undefined, projects).map((p) => ({
+        href: `${copy.routes.projectBase}${pathOf(p, projects)}`,
+        title: p.title,
+      }));
     return [];
   };
   return (

@@ -28,6 +28,8 @@ export type SectionKind =
   | 'services'
   | 'process-steps'
   | 'metrics-strip'
+  | 'cta-bar'
+  | 'testimonials'
   | 'about'
   | 'capabilities'
   | 'projects'
@@ -77,7 +79,13 @@ export interface Section {
   images?: Picture[];
   slideSeconds?: number;
   limit?: number;
-  group?: 'industrial' | 'logistics' | 'all';
+  source?: 'roots' | 'children' | 'parent';
+  parentSlug?: string;
+  phoneLabel?: string;
+  score?: string;
+  scoreLabel?: string;
+  statusTitle?: string;
+  statusNote?: string;
   reviewRating?: string;
   reviewLabel?: string;
   reviewAvatars?: Picture[];
@@ -127,6 +135,14 @@ export interface PageContent {
 }
 export interface Entry extends PageContent {
   group?: 'industrial' | 'logistics';
+  /** Mục cha trong cây Dịch vụ / Dự án. */
+  parent?: { slug: string; title: string } | null;
+  order?: number;
+  eyebrow?: string;
+  badge?: string;
+  badgeNote?: string;
+  ctaLabel?: string;
+  features?: { title: string }[];
   slug: string;
   category: string;
   summary: string;
@@ -166,7 +182,7 @@ export interface NavItem {
   title: string;
   href?: string;
   /** Nguồn của menu con: danh sách tự sinh hoặc các liên kết nhập tay. */
-  source?: 'none' | 'manual' | 'services' | 'projects' | 'service-groups';
+  source?: 'none' | 'manual' | 'services' | 'services-all' | 'projects';
   links?: Card[];
 }
 export interface HeaderConfig {
@@ -190,27 +206,12 @@ export interface FooterConfig {
   followTitle?: string;
   companyName?: string;
 }
-/** Nhóm dịch vụ: thẻ lớn ở trang Dịch vụ và trang riêng của từng nhóm (Figma v3 178:25). */
-export interface ServiceGroup extends PageContent {
-  slug: string;
-  key: 'industrial' | 'logistics';
-  eyebrow?: string;
-  summary?: string;
-  image?: Picture;
-  icon?: Picture;
-  badge?: string;
-  badgeNote?: string;
-  features?: { title: string }[];
-  ctaLabel?: string;
-  bannerImage?: Picture;
-}
 export interface SectionContext {
   locale: import('./i18n').Locale;
   copy: SiteCopy;
   footer: FooterConfig;
   header: HeaderConfig;
   services: Entry[];
-  serviceGroups: ServiceGroup[];
   projects: Entry[];
   articles: Entry[];
   global: Global;

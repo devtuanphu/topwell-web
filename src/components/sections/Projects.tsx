@@ -3,6 +3,7 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import Link from '@/components/Link';
 import { useState } from 'react';
 import type { Section, SectionContext } from '@/lib/types';
+import { childrenOf, pathOf } from '@/lib/tree';
 import { formatDate } from '@/lib/format';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';
@@ -17,21 +18,32 @@ export default function Projects({
 }) {
   const copy = useCopy();
   const [limit, setLimit] = useState(6);
-  if (section.variant === 'featured') return <ProjectsShowcase section={section} context={context} />;
-  const entries = context.projects;
+  if (section.variant === 'featured')
+    return <ProjectsShowcase section={section} context={context} />;
+  // Trang Dự án liệt kê các mục gốc; mục con hiện trong trang cha tương ứng.
+  const entries = childrenOf(undefined, context.projects);
   return (
     <section className="projects-listing">
       <div className="projects-listing-inner">
-        <header className="center-heading">
-          {section.eyebrow && <p className="pill-badge">{section.eyebrow}</p>}
+        <header className="center-heading narrow">
+          {section.eyebrow && (
+            <p className="dot-badge">
+              <span aria-hidden="true" />
+              {section.eyebrow}
+            </p>
+          )}
           {section.title && <h2>{section.title}</h2>}
+          {section.description && <p>{section.description}</p>}
         </header>
         <div className="project-rows">
           {entries.slice(0, limit).map((p) => (
-            <Link className="project-row" key={p.slug} href={`${copy.routes.projectBase}${p.slug}`}>
+            <Link
+              className="project-row"
+              key={p.slug}
+              href={`${copy.routes.projectBase}${pathOf(p, context.projects)}`}
+            >
               <div className="project-row-media">
                 <Photo picture={p.image} />
-                {p.category && <span className="project-badge">{p.category}</span>}
               </div>
               <div className="project-row-body">
                 <h3>{p.title}</h3>
@@ -48,9 +60,7 @@ export default function Projects({
                   {(p.publishedDate || p.year) && (
                     <span>
                       <UiIcon name="calendar" />
-                      {p.publishedDate
-                        ? formatDate(p.publishedDate, copy.metadata.locale)
-                        : p.year}
+                      {p.publishedDate ? formatDate(p.publishedDate, copy.metadata.locale) : p.year}
                     </span>
                   )}
                 </div>

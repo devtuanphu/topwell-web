@@ -1176,3 +1176,331 @@
     line-height: 38px;
   }
 }
+
+/* Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 208:133) */
+.cta-bar-section {
+  padding: 24px 0 80px;
+  background: #fff;
+}
+.cta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 33px;
+  border-radius: 16px;
+  background: #111;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+.cta-bar-text {
+  display: flex;
+  flex: 1 1 420px;
+  flex-direction: column;
+  gap: 8px;
+}
+.cta-bar-eyebrow {
+  color: #f1df57;
+  font-family: var(--font-jakarta);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.55px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.cta-bar h2 {
+  max-width: 620px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.cta-bar-desc {
+  max-width: 620px;
+  color: #94a3b8;
+  font-family: var(--font-jakarta);
+  font-size: 13px;
+  line-height: 20px;
+}
+.cta-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+.cta-bar-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: var(--font-jakarta);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.cta-bar-phone img {
+  width: 18px;
+  height: 18px;
+}
+.cta-bar-phone a {
+  color: #f1df57;
+}
+.cta-bar-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  background: #f1df57;
+  color: #111;
+  font-family: var(--font-jakarta);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.cta-bar-button:hover {
+  background: #e6d23f;
+  transform: translateY(-1px);
+}
+@media (max-width: 760px) {
+  .cta-bar {
+    padding: 24px;
+  }
+  .cta-bar h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Đánh giá khách hàng ở trang Dịch vụ (Figma 194:2117) */
+.testimonials-section {
+  padding-top: 41px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  background: #fcfdff;
+}
+.testimonials-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 80px;
+}
+.testimonials-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.testimonials-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 672px;
+}
+.testimonials-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 7px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  background: #fff;
+  color: #a08b00;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.testimonials-intro h2 {
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.9px;
+}
+.testimonials-desc {
+  color: #475569;
+  font-family: var(--font-jakarta);
+  font-size: 16px;
+  line-height: 24px;
+}
+.testimonials-score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 17px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  background: #fff;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+}
+.testimonials-score-value {
+  padding-right: 17px;
+  border-right: 1px solid #e2e8f0;
+  text-align: center;
+}
+.testimonials-score-value p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.testimonials-score-value strong {
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.testimonials-score-value span {
+  color: #f1df57;
+  font-size: 18px;
+  line-height: 28px;
+}
+.testimonials-score-value small {
+  display: block;
+  color: #64748b;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.testimonials-status p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f172a;
+  font-family: var(--font-jakarta);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.testimonials-status p > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #10b981;
+}
+.testimonials-status small {
+  display: block;
+  color: #64748b;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  line-height: 16px;
+}
+.testimonials-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 33px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 24px;
+  background: #fff;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+  transition: border-color 0.2s ease;
+}
+.testimonial-card:hover {
+  border-color: #f1df57;
+}
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.testimonial-stars {
+  color: #f1df57;
+  font-size: 14px;
+  line-height: 20px;
+}
+.testimonial-tag {
+  padding: 3px 11px;
+  border-radius: 9999px;
+  color: #a08b00;
+  font-family: var(--font-jakarta);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.55px;
+  line-height: 16.5px;
+  text-transform: uppercase;
+}
+.testimonial-quote {
+  color: #334155;
+  font-family: var(--font-jakarta);
+  font-size: 14px;
+  line-height: 22.75px;
+}
+.testimonial-author {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 21px;
+  border-top: 1px solid #f1f5f9;
+}
+.testimonial-avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.testimonial-avatar.tone-0 {
+  background: #0f172a;
+  color: #fcd34d;
+}
+.testimonial-avatar.tone-1 {
+  background: #f1df57;
+  color: #020617;
+}
+.testimonial-avatar.tone-2 {
+  background: #334155;
+  color: #fff;
+}
+.testimonial-author strong {
+  display: block;
+  color: #0f172a;
+  font-family: var(--font-jakarta);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.testimonial-author small {
+  display: block;
+  color: #64748b;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  line-height: 16px;
+}
+@media (max-width: 1100px) {
+  .testimonials-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-intro h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}

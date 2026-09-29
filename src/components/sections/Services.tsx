@@ -7,7 +7,8 @@ import { Photo, Icon } from '../ui';
 import { UiIcon } from '../icons';
 import Pagination from '../Pagination';
 import ServicesShowcase from './ServicesShowcase';
-import ServiceGroups from './ServiceGroups';
+import ServiceCards, { pickEntries } from './ServiceCards';
+import { pathOf } from '@/lib/tree';
 
 const PER_PAGE = 6;
 
@@ -22,11 +23,17 @@ export default function Services({
   const [page, setPage] = useState(1);
   if (section.variant === 'compact' || section.variant === 'featured')
     return <ServicesShowcase section={section} context={context} />;
-  if (section.variant === 'groups') return <ServiceGroups section={section} context={context} />;
-  // Trang nhóm dịch vụ chỉ liệt kê dịch vụ của nhóm đó; nơi khác liệt kê tất cả.
-  const all = context.currentGroup
-    ? context.services.filter((x) => x.group === context.currentGroup)
-    : context.services;
+  const node = context.services.find((x) => x.slug === context.currentSlug);
+  if (section.variant === 'groups')
+    return (
+      <ServiceCards
+        section={section}
+        context={context}
+        entries={pickEntries(section, context.services, node)}
+      />
+    );
+  // Trang cha liệt kê mục con của chính nó; trang Dịch vụ liệt kê các mục gốc.
+  const all = pickEntries({ ...section, limit: undefined }, context.services, node);
   const count = Math.max(1, Math.ceil(all.length / PER_PAGE));
   const current = Math.min(page, count);
   const entries = all.slice((current - 1) * PER_PAGE, current * PER_PAGE);
@@ -41,7 +48,7 @@ export default function Services({
           {entries.map((s) => (
             <Link
               className="service-card"
-              href={`${copy.routes.serviceBase}${s.slug}`}
+              href={`${copy.routes.serviceBase}${pathOf(s, context.services)}`}
               key={s.slug}
             >
               <Photo picture={s.image} />

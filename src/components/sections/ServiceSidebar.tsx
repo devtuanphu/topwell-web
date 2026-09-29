@@ -1,5 +1,6 @@
 import Link from '@/components/Link';
 import type { SectionContext } from '@/lib/types';
+import { childrenOf, pathOf } from '@/lib/tree';
 import { safeHref } from '@/lib/media';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';
@@ -13,7 +14,9 @@ export default function ServiceSidebar({
 }) {
   const { copy, global } = context;
   const current = context.services.find((s) => s.slug === currentSlug);
-  const list = context.services.filter((s) => !current || s.group === current.group);
+  // Menu bên phải liệt kê các mục cùng cấp với trang đang xem.
+  const anchor = context.services.find((s) => s.slug === current?.parent?.slug);
+  const list = childrenOf(anchor, context.services);
   return (
     <aside className="service-aside">
       <nav className="aside-card service-menu" aria-label={copy.sidebar.servicesTitle}>
@@ -22,7 +25,7 @@ export default function ServiceSidebar({
           return (
             <Link
               key={s.slug}
-              href={`${copy.routes.serviceBase}${s.slug}`}
+              href={`${copy.routes.serviceBase}${pathOf(s, context.services)}`}
               aria-current={active ? 'page' : undefined}
             >
               <span>{s.title}</span>

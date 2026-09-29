@@ -42,8 +42,7 @@
     "siteSurvey": "/lien-he#contact-form",
     "serviceBase": "/dich-vu/",
     "projectBase": "/du-an/",
-    "articleBase": "/tin-tuc/",
-    "serviceGroupBase": "/dich-vu/nhom/"
+    "articleBase": "/tin-tuc/"
   },
   "accessibility": {
     "skip": "Skip to content",

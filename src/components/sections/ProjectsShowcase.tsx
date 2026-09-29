@@ -3,6 +3,7 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import Link from '@/components/Link';
 import { useRef } from 'react';
 import type { Section, SectionContext } from '@/lib/types';
+import { pathOf } from '@/lib/tree';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';
 
@@ -56,7 +57,7 @@ export default function ProjectsShowcase({
             <Link
               className="showcase-card"
               key={p.slug}
-              href={`${copy.routes.projectBase}${p.slug}`}
+              href={`${copy.routes.projectBase}${pathOf(p, context.projects)}`}
               draggable={false}
             >
               <div className="showcase-media">

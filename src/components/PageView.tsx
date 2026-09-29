@@ -1,5 +1,6 @@
 import Link from '@/components/Link';
-import type { Entry, PageContent, Section, SectionContext, ServiceGroup } from '@/lib/types';
+import type { Entry, PageContent, Section, SectionContext } from '@/lib/types';
+import { ancestorsOf, childrenOf, pathOf } from '@/lib/tree';
 import SectionRenderer from './SectionRenderer';
 import PageBanner, { type Crumb } from './PageBanner';
 import ArticleSidebar from './sections/ArticleSidebar';
@@ -24,29 +25,37 @@ export default function PageView({
 }) {
   const copy = context.copy;
   const entry = page as Entry;
-  const group = page as ServiceGroup;
-  const ctx = {
-    ...context,
-    currentSlug: entry.slug,
-    currentGroup: kind === 'service-groups' ? group.key : undefined,
-  };
+  // Cây dịch vụ / dự án: mục có con dùng layout trang cha, mục lá dùng layout chi tiết.
+  const tree = kind === 'services' ? context.services : kind === 'projects' ? context.projects : [];
+  const node = tree.find((e) => e.slug === entry.slug);
+  const kids = node ? childrenOf(node, tree) : [];
+  const ctx = { ...context, currentSlug: entry.slug };
   const all = page.sections || [];
   const hero = all.find((s) => BANNER_SECTIONS.includes(s.__component));
   const sections = all.filter((s) => !BANNER_SECTIONS.includes(s.__component));
   const isHome = path === '/';
 
-  const parent: Crumb | undefined =
-    kind === 'services' || kind === 'service-groups'
+  const base: Crumb | undefined =
+    kind === 'services'
       ? { label: copy.common.services, href: copy.routes.services }
       : kind === 'projects'
         ? { label: copy.common.projects, href: copy.routes.projects }
         : kind === 'articles'
           ? { label: copy.common.news, href: copy.routes.news }
           : undefined;
+  const collectionBase = kind === 'services' ? copy.routes.serviceBase : copy.routes.projectBase;
+  // Mỗi mục cha trong cây là một bậc của đường dẫn.
+  const ancestors: Crumb[] = node
+    ? ancestorsOf(node, tree).map((a) => ({
+        label: a.title,
+        href: `${collectionBase}${pathOf(a, tree)}`,
+      }))
+    : [];
   const bannerTitle = hero?.title || page.title;
   const crumbs: Crumb[] = [
     { label: copy.common.home, href: copy.routes.home },
-    ...(parent ? [parent] : []),
+    ...(base ? [base] : []),
+    ...ancestors,
     { label: kind === 'page' ? bannerTitle : page.title },
   ];
 
@@ -58,12 +67,7 @@ export default function PageView({
   }));
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type':
-      kind === 'articles'
-        ? 'Article'
-        : kind === 'services' || kind === 'service-groups'
-          ? 'Service'
-          : 'WebPage',
+    '@type': kind === 'articles' ? 'Article' : kind === 'services' ? 'Service' : 'WebPage',
     name: page.title,
     url: localeUrl(path, context.locale),
     inLanguage: context.locale,
@@ -116,13 +120,18 @@ export default function PageView({
           label={copy.accessibility.breadcrumb}
         />
       )}
-      {kind === 'services' ? (
+      {/* Mục còn mục con dùng layout trang cha (rộng hết khung); mục lá dùng layout chi tiết. */}
+      {kind === 'services' && kids.length > 0 ? (
+        render(sections)
+      ) : kind === 'services' ? (
         <div className="service-detail">
           <div className="service-detail-inner">
             <div className="service-main">{render(sections)}</div>
             <ServiceSidebar context={ctx} currentSlug={entry.slug} />
           </div>
         </div>
+      ) : kind === 'projects' && kids.length > 0 ? (
+        render(sections)
       ) : kind === 'projects' ? (
         <div className="case-study">
           <div className="case-study-inner">
