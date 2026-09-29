@@ -44,7 +44,7 @@ Nội dung được ghép từ Dynamic Zone của Strapi: `SectionRenderer` ch�
 ## Đa ngôn ngữ
 
 - `/du-an` (vi), `/en/du-an`, `/zh/du-an`. `/vi/...` chuyển hướng 308 về đường dẫn gốc.
-- Trang nhóm dịch vụ: `/dich-vu/nhom/<slug>`.
+- Dịch vụ và Dự án xếp theo cây, đường dẫn là chuỗi slug: `/dich-vu/<mục cha>/<mục con>`.
 - Link nội bộ dùng `@/components/Link` để tự thêm tiền tố ngôn ngữ.
 - Mỗi trang khai báo canonical theo ngôn ngữ, `hreflang` cho cả 3 bản và `x-default`; sitemap liệt kê đủ 3 phiên bản.
 
