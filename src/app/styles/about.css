@@ -249,9 +249,9 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border: 1px solid #f6ecad;
+  border: 1px solid #f1df57;
   border-radius: 12px;
-  background: #fdfbe9;
+  background: #fff;
 }
 .company-feature h3 {
   padding-bottom: 4px;
@@ -332,10 +332,10 @@
   justify-content: space-between;
   gap: 16px;
   padding: 33px;
-  border: 1px solid #fdf7dc;
+  border: 1px solid #f1df57;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
   transition:
     transform 0.25s,
     border-color 0.25s,
@@ -348,7 +348,7 @@
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.18);
 }
 .value-card.featured {
-  border-color: #f6ecad;
+  border-color: #f1df57;
 }
 .value-icon {
   display: grid;
@@ -356,9 +356,9 @@
   width: 56px;
   height: 56px;
   margin-bottom: 32px;
-  border: 1px solid #f6ecad;
+  border: 1px solid #f1df57;
   border-radius: 12px;
-  background: #fdfbe9;
+  background: #fffbeb;
 }
 .value-card.featured .value-icon {
   border-color: transparent;
@@ -857,7 +857,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 33px;
-  border: 1px solid #fdf7dc;
+  border: 1px solid #fef3c7;
   border-radius: 16px;
   background: #fff;
   color: #0b1c30;

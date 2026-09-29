@@ -550,7 +550,7 @@
 }
 .article-share button:hover {
   border-color: #f1df57;
-  background: #fdfbe9;
+  background: #fffbeb;
 }
 .article-sapo {
   margin-top: 24px;
@@ -792,7 +792,7 @@
   align-items: center;
   gap: 10px;
   padding: 13px;
-  border: 1px solid #f6ecad;
+  border: 1px solid #fde68a;
   border-radius: 12px;
   background: rgba(255, 251, 235, 0.4);
   color: #1e293b;
@@ -1062,7 +1062,7 @@
 .recent-rows a[aria-current] .photo {
   padding: 3px;
   border-color: #f1df57;
-  background-color: #fdf7dc;
+  background-color: #fef3c7;
 }
 .recent-rows .photo img {
   border-radius: 6px;
@@ -1215,7 +1215,7 @@
   padding: 25px;
   border: 1px solid rgba(253, 230, 138, 0.8);
   border-radius: 16px;
-  background: linear-gradient(149deg, #fdfbe9 0%, rgba(254, 252, 232, 0.5) 100%);
+  background: linear-gradient(149.3deg, #fffbeb 0%, rgba(254, 252, 232, 0.5) 100%);
 }
 .newsletter-box h2 {
   display: flex;

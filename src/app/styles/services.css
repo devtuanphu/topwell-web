@@ -489,7 +489,7 @@
     border-color 0.25s;
 }
 .faq-item.open {
-  border-color: #f1df57;
+  border-color: #fbbf24;
   background: rgba(241, 223, 87, 0.9);
 }
 .faq-item h3 {
@@ -530,11 +530,11 @@
   transform: rotate(90deg);
 }
 .faq-item:not(.open) button:hover .faq-toggle {
-  background: #f6ecad;
+  background: #fde68a;
 }
 .faq-panel {
   padding: 21px 20px 20px;
-  border-top: 1px solid #f1df57;
+  border-top: 1px solid #fcd34d;
   background: #fff;
 }
 .faq-panel p {
@@ -547,10 +547,11 @@
   border: 1px solid #e2e8f0;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
 }
 .service-menu {
-  padding: 11px 25px;
+  padding: 25px;
+  font-family: var(--font-jakarta);
 }
 .service-menu a {
   display: flex;
@@ -584,7 +585,7 @@
 }
 .promo-card {
   overflow: hidden;
-  border: 1px solid rgba(241, 223, 87, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 16px;
   background: #f1df57;
   box-shadow:
@@ -969,7 +970,7 @@
   height: 10px;
   border-radius: 9999px;
   background: rgba(241, 223, 87, 0.95);
-  box-shadow: 0 0 0 4px #fdf7dc;
+  box-shadow: 0 0 0 4px #fef3c7;
 }
 .service-group-action {
   margin-top: auto;
