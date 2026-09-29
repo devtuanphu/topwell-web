@@ -182,7 +182,7 @@ export interface NavItem {
   title: string;
   href?: string;
   /** Nguồn của menu con: danh sách tự sinh hoặc các liên kết nhập tay. */
-  source?: 'none' | 'manual' | 'services' | 'services-all' | 'projects';
+  source?: 'none' | 'manual' | 'services' | 'services-all' | 'projects' | 'projects-all';
   links?: Card[];
 }
 export interface HeaderConfig {

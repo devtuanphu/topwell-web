@@ -3,7 +3,7 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import Link from '@/components/Link';
 import { useState } from 'react';
 import type { Section, SectionContext } from '@/lib/types';
-import { childrenOf, pathOf } from '@/lib/tree';
+import { pathOf, pickEntries } from '@/lib/tree';
 import { formatDate } from '@/lib/format';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';
@@ -20,8 +20,9 @@ export default function Projects({
   const [limit, setLimit] = useState(6);
   if (section.variant === 'featured')
     return <ProjectsShowcase section={section} context={context} />;
-  // Trang Dự án liệt kê các mục gốc; mục con hiện trong trang cha tương ứng.
-  const entries = childrenOf(undefined, context.projects);
+  // Trang Dự án liệt kê mục gốc; trang cha liệt kê mục con của chính nó.
+  const node = context.projects.find((x) => x.slug === context.currentSlug);
+  const entries = pickEntries({ ...section, limit: undefined }, context.projects, node);
   return (
     <section className="projects-listing">
       <div className="projects-listing-head">

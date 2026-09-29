@@ -1,4 +1,4 @@
-import type { Entry } from './types';
+import type { Entry, Section } from './types';
 
 /**
  * Dịch vụ và Dự án xếp theo cây cha – con. Đường dẫn của một mục là chuỗi slug từ gốc,
@@ -42,4 +42,20 @@ export function ancestorsOf(entry: Entry, all: Entry[]): Entry[] {
     node = node.parent ? bySlug.get(node.parent.slug) : undefined;
   }
   return chain;
+}
+
+/**
+ * Danh sách hiển thị của khối Dịch vụ hoặc Dự án theo lựa chọn trong CMS:
+ * `roots` mục gốc, `children` mục con của trang hiện tại, `parent` mục con của một mục chỉ định.
+ */
+export function pickEntries(section: Section, all: Entry[], current?: Entry) {
+  const source = section.source || (current ? 'children' : 'roots');
+  const anchor =
+    source === 'parent'
+      ? all.find((e) => e.slug === section.parentSlug)
+      : source === 'children'
+        ? current
+        : undefined;
+  const list = source === 'roots' ? childrenOf(undefined, all) : childrenOf(anchor, all);
+  return section.limit ? list.slice(0, section.limit) : list;
 }

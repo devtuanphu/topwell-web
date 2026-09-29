@@ -2,8 +2,7 @@
 import { useCopy } from '@/components/SiteCopyProvider';
 import Link from '@/components/Link';
 import type { Section, SectionContext } from '@/lib/types';
-import { pathOf } from '@/lib/tree';
-import { pickEntries } from './ServiceCards';
+import { pathOf, pickEntries } from '@/lib/tree';
 import { safeHref } from '@/lib/media';
 import { Photo } from '../ui';
 import { UiIcon } from '../icons';

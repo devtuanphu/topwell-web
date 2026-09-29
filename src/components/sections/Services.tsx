@@ -7,8 +7,8 @@ import { Photo, Icon } from '../ui';
 import { UiIcon } from '../icons';
 import Pagination from '../Pagination';
 import ServicesShowcase from './ServicesShowcase';
-import ServiceCards, { pickEntries } from './ServiceCards';
-import { pathOf } from '@/lib/tree';
+import ServiceCards from './ServiceCards';
+import { pathOf, pickEntries } from '@/lib/tree';
 
 const PER_PAGE = 6;
 

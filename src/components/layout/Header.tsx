@@ -89,6 +89,11 @@ export default function Header({
         href: `${copy.routes.projectBase}${pathOf(p, projects)}`,
         title: p.title,
       }));
+    if (item.source === 'projects-all')
+      return projects.map((p) => ({
+        href: `${copy.routes.projectBase}${pathOf(p, projects)}`,
+        title: p.title,
+      }));
     return [];
   };
   return (

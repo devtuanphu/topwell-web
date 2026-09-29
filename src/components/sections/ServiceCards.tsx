@@ -2,7 +2,7 @@ import Link from '@/components/Link';
 import type { Entry, Section, SectionContext } from '@/lib/types';
 import { Photo, Icon } from '../ui';
 import { UiIcon } from '../icons';
-import { childrenOf, pathOf } from '@/lib/tree';
+import { pathOf } from '@/lib/tree';
 
 /**
  * Thẻ lớn cho từng mục dịch vụ (Figma 178:25). Dùng ở trang Dịch vụ để liệt kê các mục
@@ -81,20 +81,4 @@ export default function ServiceCards({
       </div>
     </section>
   );
-}
-
-/**
- * Lấy danh sách hiển thị theo lựa chọn trong CMS:
- * `roots` mục gốc, `children` mục con của trang hiện tại, `parent` mục con của một mục chỉ định.
- */
-export function pickEntries(section: Section, all: Entry[], current?: Entry) {
-  const source = section.source || (current ? 'children' : 'roots');
-  const anchor =
-    source === 'parent'
-      ? all.find((e) => e.slug === section.parentSlug)
-      : source === 'children'
-        ? current
-        : undefined;
-  const list = source === 'roots' ? childrenOf(undefined, all) : childrenOf(anchor, all);
-  return section.limit ? list.slice(0, section.limit) : list;
 }
