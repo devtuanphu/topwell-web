@@ -1,6 +1,6 @@
 import Link from '@/components/Link';
 import type { Entry, PageContent, Section, SectionContext } from '@/lib/types';
-import { ancestorsOf, childrenOf, pathOf } from '@/lib/tree';
+import { ancestorsOf, pathOf } from '@/lib/tree';
 import SectionRenderer from './SectionRenderer';
 import PageBanner, { type Crumb } from './PageBanner';
 import ArticleSidebar from './sections/ArticleSidebar';
@@ -25,12 +25,14 @@ export default function PageView({
 }) {
   const copy = context.copy;
   const entry = page as Entry;
-  // Cây dịch vụ / dự án: mục có con dùng layout trang cha, mục lá dùng layout chi tiết.
   const tree = kind === 'services' ? context.services : kind === 'projects' ? context.projects : [];
   const node = tree.find((e) => e.slug === entry.slug);
-  const kids = node ? childrenOf(node, tree) : [];
   const ctx = { ...context, currentSlug: entry.slug };
   const all = page.sections || [];
+  // Khối danh sách mục con quyết định trang dùng layout cha hay layout chi tiết.
+  const listsChildren = all.some((s) =>
+    ['sections.services', 'sections.projects'].includes(s.__component),
+  );
   const hero = all.find((s) => BANNER_SECTIONS.includes(s.__component));
   const sections = all.filter((s) => !BANNER_SECTIONS.includes(s.__component));
   const isHome = path === '/';
@@ -120,8 +122,9 @@ export default function PageView({
           label={copy.accessibility.breadcrumb}
         />
       )}
-      {/* Mục còn mục con dùng layout trang cha (rộng hết khung); mục lá dùng layout chi tiết. */}
-      {kind === 'services' && kids.length > 0 ? (
+      {/* Trang có khối danh sách mục con dùng layout trang cha (rộng hết khung);
+          các trang còn lại dùng layout chi tiết có menu cùng cấp bên phải. */}
+      {kind === 'services' && listsChildren ? (
         render(sections)
       ) : kind === 'services' ? (
         <div className="service-detail">
@@ -130,7 +133,7 @@ export default function PageView({
             <ServiceSidebar context={ctx} currentSlug={entry.slug} />
           </div>
         </div>
-      ) : kind === 'projects' && kids.length > 0 ? (
+      ) : kind === 'projects' && listsChildren ? (
         render(sections)
       ) : kind === 'projects' ? (
         <div className="case-study">
