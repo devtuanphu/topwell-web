@@ -132,6 +132,11 @@ test('the home sections use the brand yellow and drop the parts the redesign rem
   await expect(page.locator('.about-contact')).toHaveCount(0);
   await expect(page.locator('.home-news-media > span')).toHaveCount(0);
   await expect(page.locator('.showcase-kicker')).toHaveCount(0);
+  // Thẻ dịch vụ trang chủ không có nhãn chồng trên ảnh (Figma 127:1007, 127:1025, 127:1045).
+  await expect(page.locator('.home-service-tag')).toHaveCount(0);
+  const media = page.locator('.home-service-media').first();
+  await expect(media).toHaveCSS('border-radius', '24px');
+  await expect(media).toHaveCSS('background-color', 'rgb(23, 23, 23)');
 });
 
 test('the header menu and its dropdowns come from the CMS', async ({ page, request }) => {

@@ -45,7 +45,6 @@ export default function ServicesShowcase({
             >
               <div className="home-service-media">
                 <Photo picture={s.image} />
-                {s.tag && <span className="home-service-tag">{s.tag}</span>}
                 <span className="view-circle" aria-hidden="true">
                   {copy.common.view}
                 </span>
