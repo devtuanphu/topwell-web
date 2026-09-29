@@ -37,9 +37,12 @@ test('published CMS settings supply header, footer, forms and list actions', asy
   );
   await expect(page.getByRole('button', { name: copy.forms.submit })).toBeVisible();
   await page.goto('/en/tin-tuc');
-  await expect(page.locator('.news-search input')).toHaveAttribute(
+  // Thiết kế mới bỏ ô tìm kiếm trong cột phải; ô tìm kiếm nằm trên thanh đầu trang.
+  await expect(page.locator('.header-search input')).toHaveAttribute(
     'placeholder',
     copy.common.searchPlaceholder,
   );
-  await expect(page.locator('.news-card .read-more-button').first()).toHaveText(copy.common.readMore);
+  await expect(page.locator('.news-card .read-more-button').first()).toHaveText(
+    copy.common.readMore,
+  );
 });

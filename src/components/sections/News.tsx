@@ -118,21 +118,7 @@ export default function News({ section, context }: { section: Section; context: 
           )}
           <Pagination count={count} current={current} onChange={go} />
         </div>
-        <NewsSidebar
-          context={context}
-          promo={section.promo}
-          query={query}
-          onSearch={(q) => {
-            setQuery(q);
-            setPage(1);
-          }}
-          onTag={(t) => {
-            setTag(t);
-            setCategory('');
-            setPage(1);
-          }}
-          activeTag={tag}
-        />
+        <NewsSidebar context={context} promo={section.promo} />
       </div>
     </section>
   );

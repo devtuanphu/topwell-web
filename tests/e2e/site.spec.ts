@@ -145,8 +145,8 @@ test('mobile menu, carousel, service FAQ, language menu and news pagination work
   await page.goto('/en/tin-tuc');
   await page.getByRole('button', { name: '2', exact: true }).click();
   await expect(page.locator('.news-card')).toHaveCount(1);
-  await page.locator('.news-search input').fill('no matching article xyz');
-  await page.locator('.news-search').evaluate((f: HTMLFormElement) => f.requestSubmit());
+  // Tìm kiếm chuyển sang ô trên thanh đầu trang, kết quả đọc từ tham số q trên URL.
+  await page.goto('/en/tin-tuc?q=no%20matching%20article%20xyz');
   await expect(page.locator('.news-empty')).toHaveText(copy.common.noResults);
 });
 test('contact form stores an inquiry and rejects invalid or unauthenticated requests', async ({
