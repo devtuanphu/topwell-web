@@ -24,17 +24,14 @@ export default function Projects({
   const entries = childrenOf(undefined, context.projects);
   return (
     <section className="projects-listing">
-      <div className="projects-listing-inner">
+      <div className="projects-listing-head">
         <header className="center-heading narrow">
-          {section.eyebrow && (
-            <p className="dot-badge">
-              <span aria-hidden="true" />
-              {section.eyebrow}
-            </p>
-          )}
+          {section.eyebrow && <p className="dot-badge">{section.eyebrow}</p>}
           {section.title && <h2>{section.title}</h2>}
           {section.description && <p>{section.description}</p>}
         </header>
+      </div>
+      <div className="projects-listing-inner">
         <div className="project-rows">
           {entries.slice(0, limit).map((p) => (
             <Link

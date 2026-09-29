@@ -40,11 +40,12 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: rgba(245, 158, 11, 0.1) url('/figma-v2/90318f6f020e01e7b115dc1c1d8c3c6bcbaff0fa.svg') center / 15px no-repeat;
+  background: rgba(241, 223, 87, 0.1) url('/figma-v2/90318f6f020e01e7b115dc1c1d8c3c6bcbaff0fa.svg')
+    center / 15px no-repeat;
 }
 .mono-badge.amber {
   padding-bottom: 12px;
-  color: #d97706;
+  color: #f1df57;
 }
 .mono-badge.amber .mono-badge-icon {
   background-image: url('/figma-v2/e7fb93a78372a4afa1ef32dc8127f314bc6df210.svg');
@@ -53,7 +54,7 @@
   width: 48px;
   height: 2px;
   margin-left: 4px;
-  background: rgba(245, 158, 11, 0.6);
+  background: rgba(241, 223, 87, 0.6);
 }
 .about-hero-text h2 {
   padding-bottom: 24px;
@@ -198,7 +199,7 @@
     0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 .rating-pill .stars {
-  color: #fbbf24;
+  color: #f1df57;
   font-size: 15px;
   letter-spacing: 2px;
 }
@@ -248,9 +249,9 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border: 1px solid #fde68a;
+  border: 1px solid #f6ecad;
   border-radius: 12px;
-  background: #fffbeb;
+  background: #fdfbe9;
 }
 .company-feature h3 {
   padding-bottom: 4px;
@@ -295,7 +296,7 @@
   max-width: 672px;
 }
 .mono-eyebrow-amber {
-  color: #d97706;
+  color: #f1df57;
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
   font-size: 13px;
   font-weight: 700;
@@ -331,7 +332,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 33px;
-  border: 1px solid #fef3c7;
+  border: 1px solid #fdf7dc;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -347,7 +348,7 @@
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.18);
 }
 .value-card.featured {
-  border-color: #fde68a;
+  border-color: #f6ecad;
 }
 .value-icon {
   display: grid;
@@ -355,13 +356,13 @@
   width: 56px;
   height: 56px;
   margin-bottom: 32px;
-  border: 1px solid #fde68a;
+  border: 1px solid #f6ecad;
   border-radius: 12px;
-  background: #fffbeb;
+  background: #fdfbe9;
 }
 .value-card.featured .value-icon {
   border-color: transparent;
-  background: #fbbf24;
+  background: #f1df57;
 }
 .value-icon .icon {
   width: auto;
@@ -378,7 +379,7 @@
   text-transform: uppercase;
 }
 .value-card.featured .value-label {
-  color: #d97706;
+  color: #f1df57;
   font-weight: 700;
 }
 .value-card h3 {
@@ -417,7 +418,8 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url('/figma-v2/3e1bd55848afa82a904d4174173997fddb2f1bfe.svg') center / contain no-repeat;
+  background: url('/figma-v2/3e1bd55848afa82a904d4174173997fddb2f1bfe.svg') center / contain
+    no-repeat;
 }
 .value-card li strong {
   color: #0b1c30;
@@ -428,7 +430,7 @@
   align-items: center;
   gap: 8px;
   padding-top: 24px;
-  color: #d97706;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 16px;
   font-weight: 700;
@@ -519,7 +521,7 @@
   width: 112px;
   height: 112px;
   border-radius: 9999px;
-  background: #f59e0b;
+  background: #f1df57;
   color: #020617;
   font-family: var(--font-jakarta);
   font-size: 14px;
@@ -535,7 +537,7 @@
     background 0.25s;
 }
 .process-play:hover {
-  background: #fbbf24;
+  background: #f1df57;
   transform: translate(-50%, -50%) scale(1.05);
 }
 .process-play .triangle {
@@ -564,7 +566,7 @@
   transition: border-color 0.2s;
 }
 .process-steps li:hover {
-  border-color: #f59e0b;
+  border-color: #f1df57;
 }
 .process-steps li:not(:last-child)::after {
   content: '';
@@ -573,7 +575,8 @@
   right: -36px;
   width: 40px;
   height: 16px;
-  background: url('/figma-v2/f8f97365922092ae6e4897c7667170683dc62ed7.svg') center / contain no-repeat;
+  background: url('/figma-v2/f8f97365922092ae6e4897c7667170683dc62ed7.svg') center / contain
+    no-repeat;
 }
 .process-icon {
   position: relative;
@@ -588,7 +591,7 @@
   transition: border-color 0.2s;
 }
 .process-steps li:hover .process-icon {
-  border-color: #f59e0b;
+  border-color: #f1df57;
 }
 .process-icon .icon {
   width: 36px;
@@ -603,7 +606,7 @@
   width: 28px;
   height: 28px;
   border-radius: 9999px;
-  background: #f59e0b;
+  background: #f1df57;
   color: #020617;
   font-family: var(--font-jakarta);
   font-size: 12px;
@@ -644,7 +647,7 @@
     box-shadow 0.2s;
 }
 .team-card:hover {
-  border-color: #f59e0b;
+  border-color: #f1df57;
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.2);
 }
 .team-photo {
@@ -692,7 +695,7 @@
   line-height: 28px;
 }
 .team-role {
-  color: #d97706;
+  color: #f1df57;
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
   font-size: 13px;
   font-weight: 700;
@@ -757,7 +760,7 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 8px;
-  color: #fbbf24;
+  color: #f1df57;
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
   font-weight: 700;
@@ -768,7 +771,7 @@
 .cta-eyebrow span {
   width: 32px;
   height: 2px;
-  background: #fbbf24;
+  background: #f1df57;
 }
 .industrial-cta h2 {
   max-width: 760px;
@@ -780,7 +783,7 @@
   letter-spacing: -1.4px;
 }
 .industrial-cta h2 mark {
-  color: #fbbf24;
+  color: #f1df57;
 }
 .cta-lead {
   max-width: 672px;
@@ -802,7 +805,7 @@
   gap: 8px;
   padding: 12px 32px;
   border-radius: 12px;
-  background: #fbbf24;
+  background: #f1df57;
   color: #020617;
   font-family: var(--font-jakarta);
   font-size: 16px;
@@ -816,7 +819,7 @@
     transform 0.2s;
 }
 .cta-primary:hover {
-  background: #f59e0b;
+  background: #f1df57;
   transform: translateY(-2px);
 }
 .cta-support {
@@ -830,9 +833,9 @@
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(241, 223, 87, 0.3);
   border-radius: 12px;
-  background: rgba(251, 191, 36, 0.2);
+  background: rgba(241, 223, 87, 0.2);
 }
 .cta-support small {
   display: block;
@@ -854,7 +857,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 33px;
-  border: 1px solid #fef3c7;
+  border: 1px solid #fdf7dc;
   border-radius: 16px;
   background: #fff;
   color: #0b1c30;
@@ -898,7 +901,7 @@
 }
 .cta-panel dd {
   margin: 0;
-  color: #d97706;
+  color: #f1df57;
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
   font-size: 10px;
   font-weight: 700;
@@ -908,10 +911,10 @@
 }
 .cta-panel-button {
   padding: 13px 1px;
-  border: 1px solid rgba(251, 191, 36, 0.5);
+  border: 1px solid rgba(241, 223, 87, 0.5);
   border-radius: 12px;
   background: #020617;
-  color: #fbbf24;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 16px;
   font-weight: 700;
@@ -922,7 +925,7 @@
     border-color 0.2s;
 }
 .cta-panel-button:hover {
-  border-color: #fbbf24;
+  border-color: #f1df57;
   background: #0f172a;
 }
 

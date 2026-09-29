@@ -3,7 +3,7 @@ import type { Section, SectionContext } from '@/lib/types';
 import { safeHref } from '@/lib/media';
 import { UiIcon } from '../icons';
 
-/** Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 208:133, 208:2894). */
+/** Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 244:1544 ConsultationSection). */
 export default function CtaBar({
   section,
   context,
@@ -23,17 +23,17 @@ export default function CtaBar({
           </div>
           <div className="cta-bar-actions">
             {phone && (
-              <p className="cta-bar-phone">
-                <UiIcon name="phoneDark" size={18} />
+              <a className="cta-bar-phone" href={`tel:${phone.replace(/[^+0-9]/g, '')}`}>
+                <UiIcon name="phoneDark" size={16} />
                 <span>
-                  {section.phoneLabel} <a href={`tel:${phone.replace(/[^+0-9]/g, '')}`}>{phone}</a>
+                  {section.phoneLabel} {phone}
                 </span>
-              </p>
+              </a>
             )}
             {section.ctaLabel && (
               <Link className="cta-bar-button" href={safeHref(section.ctaHref)}>
                 {section.ctaLabel}
-                <UiIcon name="arrowSmall" size={12} className="arrow" />
+                <UiIcon name="arrowSmall" size={16} className="arrow" />
               </Link>
             )}
           </div>

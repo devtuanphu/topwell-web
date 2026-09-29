@@ -71,12 +71,14 @@
   height: 40px;
   margin-bottom: 16px;
   border-radius: 9999px;
-  background: #ff6b00;
-  filter: drop-shadow(0 1px 1px rgba(249, 115, 22, 0.2));
+  background: #f1df57;
+  filter: drop-shadow(0 1px 1px rgba(241, 223, 87, 0.4));
 }
 .service-icon .icon {
   width: 20px;
   height: 20px;
+  /* Biểu tượng trong vòng tròn vàng luôn là nét trắng (Figma 208:314). */
+  filter: brightness(0) invert(1);
 }
 .service-card-body h3 {
   margin-bottom: 10px;
@@ -115,7 +117,7 @@
   transition: transform 0.2s;
 }
 .service-card:hover .service-card-cta {
-  color: #d97706;
+  color: #111;
 }
 .service-card:hover .service-card-cta .arrow {
   transform: translateX(3px);
@@ -171,8 +173,8 @@
   border-radius: 9999px;
   background: #f1df57;
   box-shadow:
-    0 20px 25px -5px rgba(245, 158, 11, 0.3),
-    0 8px 10px -6px rgba(245, 158, 11, 0.3);
+    0 20px 25px -5px rgba(241, 223, 87, 0.3),
+    0 8px 10px -6px rgba(241, 223, 87, 0.3);
   transition: transform 0.25s ease;
 }
 .play-button::before {
@@ -284,9 +286,6 @@
   flex-direction: column;
   align-items: center;
   gap: 48px;
-}
-.gallery-section .pill-badge {
-  padding: 7px 15px;
 }
 .gallery-card {
   width: 100%;
@@ -449,9 +448,9 @@
   width: 48px;
   height: 48px;
   margin-top: 2px;
-  border: 1px solid #fcd34d;
+  border: 1px solid #f1df57;
   border-radius: 12px;
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(241, 223, 87, 0.1);
 }
 .service-quote blockquote {
   margin: 0;
@@ -490,8 +489,8 @@
     border-color 0.25s;
 }
 .faq-item.open {
-  border-color: #fbbf24;
-  background: rgba(251, 191, 36, 0.9);
+  border-color: #f1df57;
+  background: rgba(241, 223, 87, 0.9);
 }
 .faq-item h3 {
   margin: 0;
@@ -531,11 +530,11 @@
   transform: rotate(90deg);
 }
 .faq-item:not(.open) button:hover .faq-toggle {
-  background: #fde68a;
+  background: #f6ecad;
 }
 .faq-panel {
   padding: 21px 20px 20px;
-  border-top: 1px solid #fcd34d;
+  border-top: 1px solid #f1df57;
   background: #fff;
 }
 .faq-panel p {
@@ -570,7 +569,7 @@
 }
 .service-menu a:hover,
 .service-menu a[aria-current='page'] {
-  color: #d97706;
+  color: #f1df57;
 }
 .service-menu a[aria-current='page'] {
   font-weight: 700;
@@ -585,9 +584,9 @@
 }
 .promo-card {
   overflow: hidden;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(241, 223, 87, 0.3);
   border-radius: 16px;
-  background: #fbbf24;
+  background: #f1df57;
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -721,7 +720,7 @@
   line-height: 16px;
 }
 .touch-list a:hover {
-  color: #d97706;
+  color: #111;
 }
 
 @media (max-width: 1024px) {
@@ -818,26 +817,19 @@
   font-size: 18px;
   line-height: 28px;
 }
-.dot-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 17px;
-  border: 1px solid rgba(15, 23, 42, 0.15);
-  border-radius: 9999px;
-  background: rgba(15, 23, 42, 0.04);
-  color: #a08b00;
+/* Nhãn nhỏ phía trên tiêu đề khối: chữ vàng in hoa, không viền (Figma 30:3154, 29:2510) */
+.dot-badge,
+.pill-badge {
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.6px;
+  line-height: 16px;
   text-transform: uppercase;
 }
 .dot-badge > span {
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background: #f1df57;
+  display: none;
 }
 .service-group-cards {
   display: grid;
@@ -900,7 +892,7 @@
   line-height: 16px;
 }
 .service-group-rating b {
-  color: #a08b00;
+  color: #f1df57;
   font-weight: 700;
 }
 .service-group-rating span {
@@ -919,9 +911,9 @@
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(251, 191, 36, 0.2);
+  border: 1px solid rgba(241, 223, 87, 0.2);
   border-radius: 16px;
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(241, 223, 87, 0.1);
 }
 .service-group-icon img {
   width: 24px;
@@ -929,7 +921,7 @@
   object-fit: contain;
 }
 .service-group-eyebrow {
-  color: #a08b00;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 12px;
   font-weight: 600;
@@ -977,7 +969,7 @@
   height: 10px;
   border-radius: 9999px;
   background: rgba(241, 223, 87, 0.95);
-  box-shadow: 0 0 0 4px #fef3c7;
+  box-shadow: 0 0 0 4px #fdf7dc;
 }
 .service-group-action {
   margin-top: auto;
@@ -1015,31 +1007,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 }
 .process-steps-inner .center-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+  max-width: 768px;
   text-align: center;
 }
 .process-steps-inner .center-heading h2 {
   color: #111;
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 38px;
-  letter-spacing: -0.75px;
+  line-height: 40px;
+  letter-spacing: -0.9px;
+}
+.process-steps-inner .center-heading h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 9999px;
+  background: #f1df57;
 }
 .process-steps-inner .center-heading > p:last-child {
+  max-width: 672px;
   color: #475569;
   font-family: var(--font-jakarta);
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .process-steps-eyebrow {
-  color: #a08b00;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 11px;
   font-weight: 600;
@@ -1076,8 +1079,8 @@
   line-height: 32px;
 }
 .process-step-stage {
-  padding-top: 7px;
-  color: #a08b00;
+  padding-top: 11px;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 11px;
   font-weight: 600;
@@ -1177,7 +1180,7 @@
   }
 }
 
-/* Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 208:133) */
+/* Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 244:1544) */
 .cta-bar-section {
   padding: 24px 0 80px;
   background: #fff;
@@ -1188,7 +1191,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 33px;
+  overflow: hidden;
+  padding: 41px;
+  border: 1px solid #111;
   border-radius: 16px;
   background: #111;
   box-shadow:
@@ -1197,69 +1202,83 @@
 }
 .cta-bar-text {
   display: flex;
-  flex: 1 1 420px;
+  flex: 1 1 480px;
   flex-direction: column;
   gap: 8px;
+  max-width: 672px;
+  padding-top: 2px;
 }
 .cta-bar-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 13px;
+  border: 1px solid rgba(241, 223, 87, 0.2);
+  border-radius: 9999px;
+  background: rgba(241, 223, 87, 0.1);
   color: #f1df57;
-  font-family: var(--font-jakarta);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.55px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
   line-height: 16px;
   text-transform: uppercase;
 }
 .cta-bar h2 {
-  max-width: 620px;
   color: #fff;
-  font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 32px;
+  letter-spacing: -0.6px;
 }
 .cta-bar-desc {
-  max-width: 620px;
   color: #94a3b8;
-  font-family: var(--font-jakarta);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
+  white-space: pre-wrap;
 }
 .cta-bar-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex: none;
+  flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
+  width: 403px;
+  max-width: 100%;
 }
 .cta-bar-phone {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
+  width: 241px;
+  max-width: 100%;
+  padding: 13px 17px;
+  border: 1px solid rgba(17, 17, 17, 0.6);
+  border-radius: 12px;
+  background: rgba(17, 17, 17, 0.8);
   color: #fff;
-  font-family: var(--font-jakarta);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
 }
 .cta-bar-phone img {
-  width: 18px;
-  height: 18px;
-}
-.cta-bar-phone a {
-  color: #f1df57;
+  width: 16px;
+  height: 16px;
 }
 .cta-bar-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 14px 24px;
-  border-radius: 9999px;
+  border-radius: 12px;
   background: #f1df57;
   color: #111;
-  font-family: var(--font-jakarta);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
   transition:
     background 0.2s,
     transform 0.2s;
@@ -1268,9 +1287,13 @@
   background: #e6d23f;
   transform: translateY(-1px);
 }
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .cta-bar {
     padding: 24px;
+  }
+  .cta-bar-actions {
+    width: 100%;
+    align-items: stretch;
   }
   .cta-bar h2 {
     font-size: 20px;
@@ -1310,7 +1333,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 9999px;
   background: #fff;
-  color: #a08b00;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 12px;
   font-weight: 600;
@@ -1429,7 +1452,7 @@
 .testimonial-tag {
   padding: 3px 11px;
   border-radius: 9999px;
-  color: #a08b00;
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 11px;
   font-weight: 600;
@@ -1465,7 +1488,7 @@
 }
 .testimonial-avatar.tone-0 {
   background: #0f172a;
-  color: #fcd34d;
+  color: #f1df57;
 }
 .testimonial-avatar.tone-1 {
   background: #f1df57;

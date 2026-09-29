@@ -24,7 +24,7 @@
   height: 80px;
   border: 2px dashed #f1df57;
   border-radius: 9999px;
-  color: #a08b00;
+  color: #f1df57;
   font-size: 24px;
   font-weight: 800;
   line-height: 32px;
@@ -388,7 +388,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2));
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.2)
+  );
   pointer-events: none;
 }
 .map-marker {
@@ -516,7 +521,7 @@
   color: #9ca3af;
 }
 .map-office-foot a {
-  color: #a08b00;
+  color: #f1df57;
   font-weight: 500;
 }
 .map-office-foot a:hover {

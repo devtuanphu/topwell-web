@@ -3,7 +3,6 @@ import Link from '@/components/Link';
 import type { Card, SectionContext } from '@/lib/types';
 import { safeHref } from '@/lib/media';
 import { Photo } from '../ui';
-import { UiIcon } from '../icons';
 import Newsletter from './Newsletter';
 
 export function articleTags(context: SectionContext) {
@@ -28,19 +27,25 @@ export default function NewsSidebar({ promo }: { context: SectionContext; promo?
     <aside className="news-aside">
       {promo && (
         <div className="news-promo">
-          <Photo picture={promo.image} />
-          <div className="news-promo-top">
-            {promo.eyebrow && <span className="news-promo-name">{promo.eyebrow}</span>}
-            {promo.description && <span className="news-promo-role">{promo.description}</span>}
-          </div>
-          <div className="news-promo-bottom">
-            <p>{promo.title}</p>
-            {promo.label && (
-              <Link href={safeHref(promo.href)}>
-                {promo.label}
-                <UiIcon name="arrowDark" size={14} />
-              </Link>
+          <div className="news-promo-photo">
+            <Photo picture={promo.image} />
+            {promo.eyebrow && (
+              <p className="news-promo-badge">
+                <span aria-hidden="true" />
+                {promo.eyebrow}
+              </p>
             )}
+          </div>
+          <div className="news-promo-body">
+            {promo.title && <h3>{promo.title}</h3>}
+            {promo.description && <p className="news-promo-desc">{promo.description}</p>}
+            {(promo.tags || promo.highlight) && (
+              <div className="news-promo-hotline">
+                {promo.tags && <span>{promo.tags}</span>}
+                {promo.highlight && <strong>{promo.highlight}</strong>}
+              </div>
+            )}
+            {promo.label && <Link href={safeHref(promo.href)}>{promo.label}</Link>}
           </div>
         </div>
       )}

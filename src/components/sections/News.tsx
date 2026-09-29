@@ -19,7 +19,6 @@ export function NewsCard({ article }: { article: Entry }) {
     <article className="news-card">
       <Link href={href} className="news-card-media" tabIndex={-1} aria-hidden="true">
         <Photo picture={article.image} />
-        {article.category && <span className="news-badge">{article.category}</span>}
       </Link>
       <div className="news-card-body">
         <div className="news-card-meta">

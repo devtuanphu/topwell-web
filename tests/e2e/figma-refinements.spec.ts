@@ -154,3 +154,60 @@ test('the header menu and its dropdowns come from the CMS', async ({ page, reque
     else await expect(children).toHaveCount(0);
   }
 });
+
+test('the dark call-to-action bar matches Figma 244:1544', async ({ page }) => {
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap');
+  const bar = page.locator('.cta-bar');
+  await expect(bar).toBeVisible();
+  // Nhãn là viên thuốc nền vàng trong suốt, không phải chữ trần.
+  const eyebrow = bar.locator('.cta-bar-eyebrow');
+  await expect(eyebrow).toHaveCSS('background-color', 'rgba(241, 223, 87, 0.1)');
+  await expect(eyebrow).toHaveCSS('border-radius', '9999px');
+  // Số điện thoại nằm trên nút, cả hai xếp dọc trong cột phải.
+  const phone = await bar.locator('.cta-bar-phone').boundingBox();
+  const button = await bar.locator('.cta-bar-button').boundingBox();
+  expect(phone && button && phone.y + phone.height).toBeLessThanOrEqual(button!.y + 1);
+  await expect(bar.locator('.cta-bar-button')).toHaveCSS('border-radius', '12px');
+});
+
+test('section eyebrows are plain yellow text, not badges', async ({ page }) => {
+  for (const [url, selector] of [
+    ['/dich-vu', '.service-groups .dot-badge'],
+    ['/du-an', '.projects-listing .dot-badge'],
+  ]) {
+    await page.goto(url);
+    const eyebrow = page.locator(selector).first();
+    await expect(eyebrow).toHaveCSS('color', 'rgb(241, 223, 87)');
+    await expect(eyebrow).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+    await expect(eyebrow).toHaveCSS('border-top-width', '0px');
+  }
+});
+
+test('the news support card shows the hotline above the call button', async ({ page }) => {
+  await page.goto('/tin-tuc');
+  const promo = page.locator('.news-promo');
+  await expect(promo.locator('.news-promo-badge')).toBeVisible();
+  await expect(promo.locator('.news-promo-hotline strong')).toHaveCSS('color', 'rgb(241, 223, 87)');
+  await expect(promo.locator('.news-promo-body > a')).toBeVisible();
+  // Bản thiết kế mới bỏ nhãn danh mục trên ảnh bài viết.
+  await expect(page.locator('.news-badge')).toHaveCount(0);
+});
+
+test('the project page opens with the image, without a facts strip', async ({ page }) => {
+  await page.goto('/du-an/tu-dong-hoa-day-chuyen-fdi');
+  await expect(page.locator('.project-facts')).toHaveCount(0);
+  await expect(page.locator('.case-crumb')).toHaveCount(0);
+  await expect(page.locator('.project-hero-card')).toBeVisible();
+});
+
+test('the process steps section carries the yellow rule under its heading', async ({ page }) => {
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap');
+  const heading = page.locator('.process-steps-inner .center-heading h2');
+  await expect(heading).toHaveCSS('font-size', '36px');
+  const rule = await heading.evaluate((el) => {
+    const s = getComputedStyle(el, '::after');
+    return { width: s.width, height: s.height, background: s.backgroundColor };
+  });
+  expect(rule).toEqual({ width: '80px', height: '4px', background: 'rgb(241, 223, 87)' });
+  await expect(page.locator('.process-step-card')).toHaveCount(4);
+});

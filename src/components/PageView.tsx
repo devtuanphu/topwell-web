@@ -1,4 +1,3 @@
-import Link from '@/components/Link';
 import type { Entry, PageContent, Section, SectionContext } from '@/lib/types';
 import { ancestorsOf, pathOf } from '@/lib/tree';
 import SectionRenderer from './SectionRenderer';
@@ -138,11 +137,6 @@ export default function PageView({
       ) : kind === 'projects' ? (
         <div className="case-study">
           <div className="case-study-inner">
-            <nav className="case-crumb" aria-label={copy.accessibility.breadcrumb}>
-              <Link href={copy.routes.projects}>{copy.common.projects}</Link>
-              <span aria-hidden="true">/</span>
-              <span aria-current="page">{entry.category || page.title}</span>
-            </nav>
             <div className="case-body">{render(sections)}</div>
           </div>
         </div>
