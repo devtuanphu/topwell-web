@@ -1,5 +1,5 @@
 import type { Entry, PageContent, Section, SectionContext } from '@/lib/types';
-import { ancestorsOf, pathOf } from '@/lib/tree';
+import { ancestorsOf, childrenOf, pathOf } from '@/lib/tree';
 import SectionRenderer from './SectionRenderer';
 import PageBanner, { type Crumb } from './PageBanner';
 import ArticleSidebar from './sections/ArticleSidebar';
@@ -28,12 +28,19 @@ export default function PageView({
   const node = tree.find((e) => e.slug === entry.slug);
   const ctx = { ...context, currentSlug: entry.slug };
   const all = page.sections || [];
-  // Khối danh sách mục con quyết định trang dùng layout cha hay layout chi tiết.
-  const listsChildren = all.some((s) =>
-    ['sections.services', 'sections.projects'].includes(s.__component),
-  );
+  // Mục có mục con dùng layout trang cha, mục không có mục con dùng layout trang chi tiết,
+  // nên cây 2 cấp hay 3 cấp đều tự đúng layout (Dịch vụ › Thiết bị và giải pháp › Thiết bị).
+  const hasChildren = Boolean(node && childrenOf(node, tree).length);
+  const listComponent = kind === 'services' ? 'sections.services' : 'sections.projects';
   const hero = all.find((s) => BANNER_SECTIONS.includes(s.__component));
-  const sections = all.filter((s) => !BANNER_SECTIONS.includes(s.__component));
+  const body = all.filter((s) => !BANNER_SECTIONS.includes(s.__component));
+  // Trang cha luôn có lưới mục con; biên tập viên chưa thêm khối danh sách thì tự thêm.
+  const sections =
+    hasChildren && !body.some((s) => s.__component === listComponent)
+      ? [{ __component: listComponent, source: 'children' } as Section, ...body]
+      : body;
+  // Ở trang cha, các khối hồ sơ dự án (tổng quan, thách thức…) nằm trong khung chi tiết bên dưới.
+  const isCaseBlock = (s: Section) => s.__component.startsWith('sections.project-');
   const isHome = path === '/';
 
   const base: Crumb | undefined =
@@ -123,7 +130,7 @@ export default function PageView({
       )}
       {/* Trang có khối danh sách mục con dùng layout trang cha (rộng hết khung);
           các trang còn lại dùng layout chi tiết có menu cùng cấp bên phải. */}
-      {kind === 'services' && listsChildren ? (
+      {kind === 'services' && hasChildren ? (
         render(sections)
       ) : kind === 'services' ? (
         <div className="service-detail">
@@ -132,8 +139,18 @@ export default function PageView({
             <ServiceSidebar context={ctx} currentSlug={entry.slug} />
           </div>
         </div>
-      ) : kind === 'projects' && listsChildren ? (
-        render(sections)
+      ) : kind === 'projects' && hasChildren ? (
+        <>
+          {render(sections.filter((s) => !isCaseBlock(s) && s.__component === listComponent))}
+          {sections.some(isCaseBlock) && (
+            <div className="case-study">
+              <div className="case-study-inner">
+                <div className="case-body">{render(sections.filter(isCaseBlock))}</div>
+              </div>
+            </div>
+          )}
+          {render(sections.filter((s) => !isCaseBlock(s) && s.__component !== listComponent))}
+        </>
       ) : kind === 'projects' ? (
         <div className="case-study">
           <div className="case-study-inner">

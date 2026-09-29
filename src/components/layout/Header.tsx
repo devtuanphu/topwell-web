@@ -16,6 +16,54 @@ function Chevron() {
   );
 }
 
+type MenuLink = { href: string; title: string; children?: MenuLink[] };
+
+/** Mũi tên vàng cạnh mục cấp 2 trong menu con (Figma 217:341). */
+function RowArrow() {
+  return (
+    <svg className="dropdown-arrow" width="13" height="18" viewBox="0 0 13 18" aria-hidden="true">
+      <path d="M3 3l6 6-6 6" fill="none" stroke="#fc0" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/**
+ * Menu con. Khi có mục cấp 3, mỗi hàng là một mục cấp 2 và cột bên phải liệt kê các mục
+ * con của nó; không có mục cấp 3 thì là danh sách một cột.
+ */
+function Dropdown({ links }: { links: MenuLink[] }) {
+  const nested = links.some((l) => l.children?.length);
+  if (!nested)
+    return (
+      <div className="dropdown">
+        {links.map((l) => (
+          <Link key={l.href} href={l.href}>
+            {l.title}
+          </Link>
+        ))}
+      </div>
+    );
+  return (
+    <div className="dropdown mega">
+      {links.map((l) => (
+        <div className="dropdown-row" key={l.href}>
+          <Link className="dropdown-parent" href={l.href}>
+            <span>{l.title}</span>
+            {l.children?.length ? <RowArrow /> : null}
+          </Link>
+          <div className="dropdown-children">
+            {l.children?.map((c) => (
+              <Link key={c.href} href={c.href}>
+                {c.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Header({
   config,
   services,
@@ -70,30 +118,21 @@ export default function Header({
   };
   // Menu lấy từ trường "Thanh menu" của CMS.
   const items: NavItem[] = config.menu || [];
-  const submenu = (item: NavItem) => {
+  // Nguồn Dịch vụ / Dự án dựng cả cây: mục cấp 2 kèm các mục cấp 3 của nó (Figma 217:341).
+  const tree = (list: Entry[], base: string): MenuLink[] =>
+    childrenOf(undefined, list).map((root) => ({
+      href: `${base}${pathOf(root, list)}`,
+      title: root.title,
+      children: childrenOf(root, list).map((child) => ({
+        href: `${base}${pathOf(child, list)}`,
+        title: child.title,
+      })),
+    }));
+  const submenu = (item: NavItem): MenuLink[] => {
     if (item.source === 'manual')
       return (item.links || []).map((l) => ({ href: safeHref(l.href), title: l.title }));
-    // Menu con lấy mục gốc của cây; mục con hiện trong trang, không lồng trong menu.
-    if (item.source === 'services')
-      return childrenOf(undefined, services).map((s) => ({
-        href: `${copy.routes.serviceBase}${pathOf(s, services)}`,
-        title: s.title,
-      }));
-    if (item.source === 'services-all')
-      return services.map((s) => ({
-        href: `${copy.routes.serviceBase}${pathOf(s, services)}`,
-        title: s.title,
-      }));
-    if (item.source === 'projects')
-      return childrenOf(undefined, projects).map((p) => ({
-        href: `${copy.routes.projectBase}${pathOf(p, projects)}`,
-        title: p.title,
-      }));
-    if (item.source === 'projects-all')
-      return projects.map((p) => ({
-        href: `${copy.routes.projectBase}${pathOf(p, projects)}`,
-        title: p.title,
-      }));
+    if (item.source === 'services') return tree(services, copy.routes.serviceBase);
+    if (item.source === 'projects') return tree(projects, copy.routes.projectBase);
     return [];
   };
   return (
@@ -134,15 +173,7 @@ export default function Header({
                     {n.title}
                     {children.length > 0 && <Chevron />}
                   </Link>
-                  {children.length > 0 && (
-                    <div className="dropdown">
-                      {children.map((c) => (
-                        <Link key={c.href} href={c.href}>
-                          {c.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  {children.length > 0 && <Dropdown links={children} />}
                 </div>
               );
             })}

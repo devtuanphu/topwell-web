@@ -20,22 +20,30 @@ export default function Pagination({
   count,
   current,
   onChange,
+  variant,
 }: {
   count: number;
   current: number;
   onChange: (page: number) => void;
+  /** `labelled` là kiểu của trang Dịch vụ: nút lùi/tiến có chữ (Figma 208:288). */
+  variant?: 'labelled';
 }) {
   const copy = useCopy();
   if (count <= 1) return null;
+  const labelled = variant === 'labelled';
   return (
-    <nav className="pagination" aria-label={copy.accessibility.pagination}>
+    <nav
+      className={`pagination${labelled ? ' labelled' : ''}`}
+      aria-label={copy.accessibility.pagination}
+    >
       <button
         type="button"
         disabled={current === 1}
         onClick={() => onChange(current - 1)}
-        aria-label={copy.common.previous}
+        aria-label={labelled ? undefined : copy.common.previous}
       >
         <UiIcon name="chevronLeft" />
+        {labelled && <span>{copy.common.previous}</span>}
       </button>
       {pageList(count, current).map((p, i) =>
         p === '…' ? (
@@ -57,8 +65,9 @@ export default function Pagination({
         type="button"
         disabled={current === count}
         onClick={() => onChange(current + 1)}
-        aria-label={copy.common.next}
+        aria-label={labelled ? undefined : copy.common.next}
       >
+        {labelled && <span>{copy.common.next}</span>}
         <UiIcon name="chevronRight" />
       </button>
     </nav>

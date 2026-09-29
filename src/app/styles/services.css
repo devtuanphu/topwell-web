@@ -1528,3 +1528,31 @@
     line-height: 34px;
   }
 }
+
+/* Thanh chuyển trang của trang Dịch vụ: nút lùi/tiến kèm chữ (Figma 208:288) */
+.pagination.labelled button {
+  width: 36px;
+  height: 36px;
+  font-family: var(--font-jakarta);
+  font-size: 12px;
+  line-height: 16px;
+}
+.pagination.labelled button:first-child,
+.pagination.labelled button:last-child {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 9px 15px;
+  border-color: #e2e8f0;
+}
+.pagination.labelled button:first-child:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  opacity: 0.6;
+}
+.pagination.labelled button img {
+  width: 14px;
+  height: 14px;
+}

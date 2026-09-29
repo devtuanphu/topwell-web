@@ -34,6 +34,7 @@ export default function Services({
     );
   // Trang cha liệt kê mục con của chính nó; trang Dịch vụ liệt kê các mục gốc.
   const all = pickEntries({ ...section, limit: undefined }, context.services, node);
+  if (!all.length) return null;
   const count = Math.max(1, Math.ceil(all.length / PER_PAGE));
   const current = Math.min(page, count);
   const entries = all.slice((current - 1) * PER_PAGE, current * PER_PAGE);
@@ -67,6 +68,7 @@ export default function Services({
           ))}
         </div>
         <Pagination
+          variant="labelled"
           count={count}
           current={current}
           onChange={(p) => {

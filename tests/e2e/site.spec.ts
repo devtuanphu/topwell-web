@@ -66,13 +66,13 @@ test('language switcher keeps the current page and links stay in the chosen lang
     await page.locator(`.lang-menu [lang="${code}"]`).click();
     await expect(page.locator('.lang-menu')).toHaveCount(0);
   };
-  await page.goto('/dich-vu/thiet-bi-va-giai-phap/production-lines');
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat');
   await chooseLanguage('zh');
-  await expect(page).toHaveURL(/\/zh\/dich-vu\/thiet-bi-va-giai-phap\/production-lines$/);
+  await expect(page).toHaveURL(/\/zh\/dich-vu\/thiet-bi-va-giai-phap\/day-chuyen-san-xuat$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
   await expect(page.locator('#primary-nav a').first()).toHaveAttribute('href', '/zh');
   await chooseLanguage('vi');
-  await expect(page).toHaveURL(SITE + '/dich-vu/thiet-bi-va-giai-phap/production-lines');
+  await expect(page).toHaveURL(SITE + '/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat');
   expect((await page.goto('/vi/du-an'))?.url()).toBe(SITE + '/du-an');
 });
 test('responsive pages have no viewport overflow, and original images load', async ({ page }) => {
@@ -83,9 +83,9 @@ test('responsive pages have no viewport overflow, and original images load', asy
       '/ve-chung-toi',
       '/dich-vu',
       '/dich-vu/thiet-bi-va-giai-phap',
-      '/dich-vu/thiet-bi-va-giai-phap/production-lines',
+      '/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat',
       '/du-an',
-      '/du-an/tu-dong-hoa-day-chuyen-fdi',
+      '/du-an/oulide-ada-smart-warehouse',
       '/tin-tuc',
       '/tin-tuc/quy-trinh-gia-cong-cnc-5-truc',
       '/lien-he',
@@ -134,14 +134,14 @@ test('mobile menu, carousel, service FAQ, language menu and news pagination work
   await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
   await page.getByRole('button', { name: copy.accessibility.language }).click();
   await expect(page.locator('.lang-menu').getByRole('option')).toHaveCount(3);
-  await page.goto('/en/dich-vu/thiet-bi-va-giai-phap/production-lines');
+  await page.goto('/en/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat');
   const faq = page.locator('.faq-item button');
   await expect(faq.nth(0)).toHaveAttribute('aria-expanded', 'true');
   await faq.nth(1).click();
   await expect(faq.nth(1)).toHaveAttribute('aria-expanded', 'true');
   await expect(faq.nth(0)).toHaveAttribute('aria-expanded', 'false');
   await page.goto('/en/du-an');
-  await expect(page.locator('.project-row')).toHaveCount(6);
+  await expect(page.locator('.project-row')).toHaveCount(2);
   await page.goto('/en/tin-tuc');
   await page.getByRole('button', { name: '2', exact: true }).click();
   await expect(page.locator('.news-card')).toHaveCount(1);

@@ -150,13 +150,74 @@ test('the header menu and its dropdowns come from the CMS', async ({ page, reque
     const item = items.nth(i);
     await expect(item.locator('> a')).toContainText(entry.title);
     const children = item.locator('.dropdown a');
-    if (
-      entry.source === 'services' ||
-      entry.source === 'projects' ||
-      entry.source === 'services-all'
-    )
+    if (entry.source === 'services' || entry.source === 'projects')
       expect(await children.count()).toBeGreaterThan(0);
     else await expect(children).toHaveCount(0);
+  }
+});
+
+test('the services menu is a two-tier submenu: level-2 rows with their level-3 pages', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const services = page.locator('#primary-nav .nav-item').filter({ has: page.locator('.mega') });
+  await services.hover();
+  const rows = services.locator('.dropdown-row');
+  await expect(rows).toHaveCount(2);
+  await expect(rows.nth(0).locator('.dropdown-parent')).toHaveText('Thiết bị và giải pháp');
+  await expect(rows.nth(0).locator('.dropdown-children a')).toHaveText([
+    'Thiết bị',
+    'Dây chuyền sản xuất',
+    'Dự án chìa khóa trao tay',
+  ]);
+  await expect(rows.nth(1).locator('.dropdown-parent')).toHaveText('Phụ tùng và linh kiện');
+  await expect(rows.nth(1).locator('.dropdown-children a')).toHaveText([
+    'Cung cấp phụ tùng thay thế',
+    'Hỗ trợ kỹ thuật & giải pháp linh kiện',
+  ]);
+  // Menu con theo Figma 217:341: nền #f8faff, chữ 18px đậm.
+  await expect(services.locator('.mega')).toHaveCSS('background-color', 'rgb(248, 250, 255)');
+  await expect(rows.nth(0).locator('.dropdown-children a').first()).toHaveCSS('font-size', '18px');
+});
+
+test('services and projects keep the layout of their level', async ({ page }) => {
+  // Cấp 2 có mục con: layout trang cha.
+  for (const url of ['/dich-vu/thiet-bi-va-giai-phap', '/dich-vu/phu-tung-va-linh-kien']) {
+    await page.goto(url);
+    await expect(page.locator('.services-listing'), url).toBeVisible();
+    await expect(page.locator('.service-detail'), url).toHaveCount(0);
+  }
+  // Cấp 3: layout chi tiết với menu cùng cấp.
+  for (const url of [
+    '/dich-vu/thiet-bi-va-giai-phap/thiet-bi',
+    '/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat',
+    '/dich-vu/thiet-bi-va-giai-phap/du-an-chia-khoa-trao-tay',
+    '/dich-vu/phu-tung-va-linh-kien/cung-cap-phu-tung-thay-the',
+    '/dich-vu/phu-tung-va-linh-kien/ho-tro-ky-thuat-giai-phap-linh-kien',
+  ]) {
+    await page.goto(url);
+    await expect(page.locator('.service-detail'), url).toBeVisible();
+    await expect(page.locator('.page-banner nav a'), url).toHaveCount(3);
+  }
+  // Dự án chưa có dự án con: layout chi tiết ngay ở cấp 2.
+  for (const url of [
+    '/du-an/oulide-ada-smart-warehouse',
+    '/du-an/tongjun-environmental-new-materials',
+  ]) {
+    await page.goto(url);
+    await expect(page.locator('.case-study'), url).toBeVisible();
+  }
+});
+
+test('old service and project addresses redirect to the new tree', async ({ request }) => {
+  for (const [from, to] of [
+    ['/dich-vu/production-lines', '/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat'],
+    ['/dich-vu/thiet-bi-va-giai-phap/machinery', '/dich-vu/thiet-bi-va-giai-phap/thiet-bi'],
+    ['/du-an/kho-thong-minh-asrs', '/du-an/oulide-ada-smart-warehouse'],
+  ]) {
+    const response = await request.get(from, { maxRedirects: 0 });
+    expect(response.status(), from).toBe(308);
+    expect(new URL(response.headers().location, 'http://x').pathname, from).toBe(to);
   }
 });
 
@@ -199,7 +260,7 @@ test('the news support card shows the hotline above the call button', async ({ p
 });
 
 test('the project page opens with the image, without a facts strip', async ({ page }) => {
-  await page.goto('/du-an/tu-dong-hoa-day-chuyen-fdi');
+  await page.goto('/du-an/oulide-ada-smart-warehouse');
   await expect(page.locator('.project-facts')).toHaveCount(0);
   await expect(page.locator('.case-crumb')).toHaveCount(0);
   await expect(page.locator('.project-hero-card')).toBeVisible();

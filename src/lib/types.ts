@@ -134,7 +134,6 @@ export interface PageContent {
   updatedAt?: string;
 }
 export interface Entry extends PageContent {
-  group?: 'industrial' | 'logistics';
   /** Mục cha trong cây Dịch vụ / Dự án. */
   parent?: { slug: string; title: string } | null;
   order?: number;
@@ -182,7 +181,7 @@ export interface NavItem {
   title: string;
   href?: string;
   /** Nguồn của menu con: danh sách tự sinh hoặc các liên kết nhập tay. */
-  source?: 'none' | 'manual' | 'services' | 'services-all' | 'projects' | 'projects-all';
+  source?: 'none' | 'manual' | 'services' | 'projects';
   links?: Card[];
 }
 export interface HeaderConfig {
@@ -216,5 +215,4 @@ export interface SectionContext {
   articles: Entry[];
   global: Global;
   currentSlug?: string;
-  currentGroup?: 'industrial' | 'logistics';
 }

@@ -23,6 +23,7 @@ export default function Projects({
   // Trang Dự án liệt kê mục gốc; trang cha liệt kê mục con của chính nó.
   const node = context.projects.find((x) => x.slug === context.currentSlug);
   const entries = pickEntries({ ...section, limit: undefined }, context.projects, node);
+  if (!entries.length) return null;
   return (
     <section className="projects-listing">
       <div className="projects-listing-head">
