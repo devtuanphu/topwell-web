@@ -9,6 +9,7 @@
   text-align: center;
 }
 .center-heading h2 {
+  white-space: pre-line;
   color: #0f172a;
   font-family: var(--font-display);
   font-size: 48px;
