@@ -87,33 +87,32 @@ test('the footer shows the CMS logo in the first column', async ({ page }) => {
   expect(await logo.evaluate((el: HTMLImageElement) => el.naturalWidth)).toBeGreaterThan(0);
 });
 
-test('the home hero matches the reference: kicker, two pill buttons and the reviews row', async ({
+test('the home hero matches Figma 235:550: title, text and a yellow and a dark button', async ({
   page,
 }) => {
   await page.goto('/');
   const hero = page.locator('.home-hero');
-  await expect(hero.locator('.hero-stats')).toHaveCount(0);
+  await expect(hero.locator('.hero-eyebrow, .hero-reviews, .hero-arrow')).toHaveCount(0);
   const slide = hero.locator('.hero-slide').first();
-  // Nhãn viết hoa nằm trên tiêu đề.
-  const kicker = slide.locator('.hero-eyebrow');
-  await expect(kicker).toBeVisible();
-  const order = await slide.evaluate((el) => {
-    const nodes = [
-      ...el.querySelectorAll('.hero-eyebrow, h1, .hero-text, .hero-actions, .hero-reviews'),
-    ];
-    return nodes.map((n) => n.className.split(' ')[0] || n.tagName.toLowerCase());
-  });
-  expect(order).toEqual(['hero-eyebrow', 'h1', 'hero-text', 'hero-actions', 'hero-reviews']);
-  await expect(slide.locator('.hero-button')).toHaveCount(2);
-  const radius = await slide
-    .locator('.hero-button')
-    .first()
-    .evaluate((el) => getComputedStyle(el).borderRadius);
-  expect(radius).toBe('9999px');
-  await expect(slide.locator('.hero-avatars img')).toHaveCount(4);
-  await expect(slide.locator('.hero-stars')).toHaveText('★★★★★');
-  const box = await slide.locator('h1').boundingBox();
-  expect(Math.round(box!.x)).toBe(32);
+  const h1 = slide.locator('h1');
+  await expect(h1).toHaveCSS('font-size', '70px');
+  await expect(h1).toHaveCSS('font-weight', '700');
+  await expect(h1).toHaveCSS('color', 'rgb(255, 255, 255)');
+  const box = await h1.boundingBox();
+  expect([Math.round(box!.x), Math.round(box!.y)]).toEqual([38, 176]);
+  await expect(slide.locator('.hero-text')).toHaveCSS('font-size', '22px');
+  await expect(slide.locator('.hero-text')).toHaveCSS('font-weight', '800');
+  const [primary, secondary] = [
+    slide.locator('.hero-button').nth(0),
+    slide.locator('.hero-button').nth(1),
+  ];
+  await expect(primary).toHaveText('Nhận báo giá');
+  await expect(primary).toHaveCSS('background-color', 'rgb(241, 223, 87)');
+  await expect(secondary).toHaveText('Xem thêm');
+  await expect(secondary).toHaveCSS('background-color', 'rgb(17, 17, 17)');
+  await expect(secondary).toHaveCSS('color', 'rgb(255, 255, 255)');
+  const button = await primary.boundingBox();
+  expect([Math.round(button!.y), Math.round(button!.height)]).toEqual([543, 52]);
 });
 
 test('the home sections use the brand yellow and drop the parts the redesign removed', async ({

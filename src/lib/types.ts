@@ -86,9 +86,6 @@ export interface Section {
   scoreLabel?: string;
   statusTitle?: string;
   statusNote?: string;
-  reviewRating?: string;
-  reviewLabel?: string;
-  reviewAvatars?: Picture[];
   videoUrl?: string;
   videoLabel?: string;
   badges?: Card[];

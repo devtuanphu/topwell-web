@@ -130,7 +130,7 @@ test('mobile menu, carousel, service FAQ, language menu and news pagination work
   await page.goto('/en');
   const dots = page.locator('.hero-dots button');
   await expect(dots.first()).toHaveAttribute('aria-current', 'true');
-  await page.getByRole('button', { name: copy.accessibility.nextSlide, exact: true }).click();
+  await dots.nth(1).click();
   await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
   await page.getByRole('button', { name: copy.accessibility.language }).click();
   await expect(page.locator('.lang-menu').getByRole('option')).toHaveCount(3);

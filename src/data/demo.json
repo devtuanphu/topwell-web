@@ -3072,8 +3072,6 @@
       "navigation": "Main navigation",
       "breadcrumb": "Breadcrumb",
       "hero": "Featured solutions",
-      "previousSlide": "Previous slide",
-      "nextSlide": "Next slide",
       "slide": "Go to slide {number}",
       "play": "Play slideshow",
       "pause": "Pause slideshow",

@@ -3,9 +3,8 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import { useEffect, useState } from 'react';
 import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
-import { mediaUrl, safeHref } from '@/lib/media';
-import { Photo, Highlight } from '../ui';
-import { UiIcon } from '../icons';
+import { safeHref } from '@/lib/media';
+import { Photo } from '../ui';
 
 // Mặc định theo ghi chú Figma 90:10: mỗi banner dừng 5 giây. Sửa được trong CMS.
 const DEFAULT_SLIDE_SECONDS = 5;
@@ -30,29 +29,6 @@ export default function HeroSlider({ section }: { section: Section }) {
     return () => clearTimeout(id);
   }, [index, paused, reduced, slides.length, slideMs]);
   if (!slides.length) return null;
-  const avatars = section.reviewAvatars || [];
-  const stars = Math.max(0, Math.min(5, Number(section.reviewRating ?? 5) || 0));
-  // Khối đánh giá dưới hai nút, theo ảnh tham chiếu trong Figma (191:1564).
-  const reviews =
-    avatars.length > 0 || section.reviewLabel ? (
-      <div className="hero-reviews">
-        {avatars.length > 0 && (
-          <div className="hero-avatars" aria-hidden="true">
-            {avatars.map((a, n) => (
-              <img key={n} src={mediaUrl(a)} width={44} height={44} alt="" />
-            ))}
-          </div>
-        )}
-        <div className="hero-review-text">
-          {stars > 0 && (
-            <span className="hero-stars" aria-hidden="true">
-              {'\u2605'.repeat(stars)}
-            </span>
-          )}
-          {section.reviewLabel && <span>{section.reviewLabel}</span>}
-        </div>
-      </div>
-    ) : null;
   return (
     <section
       className="home-hero"
@@ -78,54 +54,28 @@ export default function HeroSlider({ section }: { section: Section }) {
           >
             <Photo picture={s.image} priority={i === 0} />
             <div className="hero-content">
-              {s.eyebrow && <p className="hero-eyebrow">{s.eyebrow}</p>}
-              {i === 0 ? (
-                <h1>
-                  <Highlight text={s.title} phrase={s.highlight} />
-                </h1>
-              ) : (
-                <p className="hero-title">
-                  <Highlight text={s.title} phrase={s.highlight} />
-                </p>
-              )}
+              {i === 0 ? <h1>{s.title}</h1> : <p className="hero-title">{s.title}</p>}
               {s.description && <p className="hero-text">{s.description}</p>}
               {(s.label || s.secondaryLabel) && (
                 <div className="hero-actions">
                   {s.label && (
                     <Link className="hero-button" href={safeHref(s.href)}>
-                      {s.label} <span aria-hidden="true">→</span>
+                      {s.label}
                     </Link>
                   )}
                   {s.secondaryLabel && (
-                    <Link className="hero-button ghost" href={safeHref(s.secondaryHref)}>
+                    <Link className="hero-button dark" href={safeHref(s.secondaryHref)}>
                       {s.secondaryLabel}
                     </Link>
                   )}
                 </div>
               )}
-              {reviews}
             </div>
           </div>
         ))}
       </div>
       {slides.length > 1 && (
         <>
-          <button
-            type="button"
-            className="hero-arrow prev"
-            aria-label={copy.accessibility.previousSlide}
-            onClick={() => setIndex((index - 1 + slides.length) % slides.length)}
-          >
-            <UiIcon name="heroPrev" size={24} />
-          </button>
-          <button
-            type="button"
-            className="hero-arrow next"
-            aria-label={copy.accessibility.nextSlide}
-            onClick={() => setIndex((index + 1) % slides.length)}
-          >
-            <UiIcon name="heroNext" size={24} />
-          </button>
           <div className="hero-dots">
             {slides.map((_, i) => (
               <button
