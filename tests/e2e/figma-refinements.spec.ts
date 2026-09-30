@@ -353,6 +353,13 @@ test('about value cards use the Figma icons at their natural size', async ({ pag
     [20, 23],
     [21, 28],
   ]);
+  for (const label of await page.locator('.value-label').all())
+    await expect(label).toHaveCSS('color', 'rgb(241, 223, 87)');
+  const bullet = await page
+    .locator('.value-card li')
+    .first()
+    .evaluate((el) => getComputedStyle(el, '::before').content);
+  expect(bullet).toBe('none');
   for (const box of await page.locator('.value-icon').all())
     await expect(box).toHaveCSS('background-color', 'rgb(241, 223, 87)');
   await expect(page.locator('.value-card').nth(2).locator('.value-link')).toContainText(

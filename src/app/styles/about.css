@@ -377,7 +377,7 @@
 }
 .value-label {
   margin-bottom: 6px;
-  color: #565e74;
+  color: #f1df57;
   font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
   font-size: 10px;
   font-weight: 500;
@@ -411,22 +411,11 @@
 }
 .value-card li {
   position: relative;
-  padding-left: 24px;
   color: #565e74;
   font-family: var(--font-jakarta);
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
-}
-.value-card li::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  background: url('/figma-v2/3e1bd55848afa82a904d4174173997fddb2f1bfe.svg') center / contain
-    no-repeat;
 }
 .value-card li strong {
   color: #0b1c30;
