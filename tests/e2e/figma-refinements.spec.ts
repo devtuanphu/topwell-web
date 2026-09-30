@@ -308,3 +308,32 @@ test('detail pages carry the Figma copy: project title, line FAQ and sample arti
   await expect(page.locator('.article-table thead')).toContainText('Hạng mục kiểm nghiệm');
   await expect(page.getByText('Bài viết gần đây')).toBeVisible();
 });
+
+test('the home banner autoplays every 4 seconds, even under the mouse', async ({ page }) => {
+  await page.goto('/');
+  const dots = page.locator('.hero-dots button');
+  await expect(dots.first()).toHaveAttribute('aria-current', 'true');
+  await page.locator('.home-hero').hover();
+  await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true', { timeout: 6000 });
+});
+
+test('review fixes: process header, full-width project CTA and yellow contact socials', async ({
+  page,
+}) => {
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap');
+  await expect(page.locator('.process-steps-eyebrow')).toHaveCount(0);
+  await expect(page.locator('.process-steps-section h2')).toHaveText(
+    'Quy Trình Tiếp Nhận & Triển Khai Kỹ Thuật',
+  );
+  await page.goto('/du-an/oulide-ada-smart-warehouse');
+  const bar = await page.locator('.cta-bar').boundingBox();
+  expect(Math.round(bar!.width)).toBe(1216);
+  expect(Math.abs(bar!.height - 210)).toBeLessThanOrEqual(4);
+  await page.goto('/lien-he');
+  const socials = page.locator('.contact-socials > *');
+  await expect(socials.first()).toHaveAttribute('aria-label', 'LinkedIn');
+  await expect(socials.first().locator('.social-mask')).toHaveCSS(
+    'background-color',
+    'rgba(241, 223, 87, 0.95)',
+  );
+});

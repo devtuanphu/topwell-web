@@ -180,7 +180,8 @@ export default function ContactForm({
               {section.requestText && <p>{section.requestText}</p>}
               {footer?.socialLinks && footer.socialLinks.length > 0 && (
                 <div className="contact-socials">
-                  {footer.socialLinks.map((s) =>
+                  {/* Figma 146:9329: LinkedIn, Facebook, Instagram, ngược thứ tự chân trang. */}
+                  {[...footer.socialLinks].reverse().map((s) =>
                     s.href ? (
                       <a
                         key={s.title}
@@ -190,7 +191,14 @@ export default function ContactForm({
                         aria-label={s.title}
                       >
                         {s.icon ? (
-                          <img src={mediaUrl(s.icon)} width={16} height={16} alt="" />
+                          <span
+                            className="social-mask"
+                            style={{
+                              maskImage: `url(${mediaUrl(s.icon)})`,
+                              WebkitMaskImage: `url(${mediaUrl(s.icon)})`,
+                            }}
+                            aria-hidden="true"
+                          />
                         ) : (
                           s.eyebrow || s.title[0]
                         )}
@@ -198,7 +206,14 @@ export default function ContactForm({
                     ) : (
                       <span key={s.title} aria-label={s.title} role="img">
                         {s.icon ? (
-                          <img src={mediaUrl(s.icon)} width={16} height={16} alt="" />
+                          <span
+                            className="social-mask"
+                            style={{
+                              maskImage: `url(${mediaUrl(s.icon)})`,
+                              WebkitMaskImage: `url(${mediaUrl(s.icon)})`,
+                            }}
+                            aria-hidden="true"
+                          />
                         ) : (
                           s.eyebrow || s.title[0]
                         )}

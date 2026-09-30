@@ -6,36 +6,27 @@ import type { Section } from '@/lib/types';
 import { safeHref } from '@/lib/media';
 import { Photo } from '../ui';
 
-// Mặc định theo ghi chú Figma 90:10: mỗi banner dừng 5 giây. Sửa được trong CMS.
-const DEFAULT_SLIDE_SECONDS = 5;
+// Mỗi banner dừng 4 giây rồi tự chuyển. Sửa được trong CMS (ô Số giây mỗi banner).
+const DEFAULT_SLIDE_SECONDS = 4;
 
 export default function HeroSlider({ section }: { section: Section }) {
   const copy = useCopy();
   const slides = section.cards || [];
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [reduced, setReduced] = useState(false);
   const slideMs = Math.max(2, Number(section.slideSeconds) || DEFAULT_SLIDE_SECONDS) * 1000;
   useEffect(() => {
-    const mq = matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(mq.matches);
-    const fn = () => setReduced(mq.matches);
-    mq.addEventListener('change', fn);
-    return () => mq.removeEventListener('change', fn);
-  }, []);
-  useEffect(() => {
-    if (paused || reduced || slides.length < 2) return;
+    // Vẫn tự chuyển khi máy bật "giảm chuyển động"; lúc đó CSS bỏ hiệu ứng trượt (site.css).
+    if (paused || slides.length < 2) return;
     const id = setTimeout(() => setIndex((i) => (i + 1) % slides.length), slideMs);
     return () => clearTimeout(id);
-  }, [index, paused, reduced, slides.length, slideMs]);
+  }, [index, paused, slides.length, slideMs]);
   if (!slides.length) return null;
   return (
     <section
       className="home-hero"
       aria-label={section.title || copy.accessibility.hero}
       aria-roledescription="carousel"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false);

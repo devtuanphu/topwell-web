@@ -9,7 +9,7 @@
 .h2-48 {
   color: #0a0a0a;
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 900; /* Figma 145:6889, 87:272, 135:1519: Inter font-black */
   line-height: 48px;
   letter-spacing: -1.2px;
   /* Xuống dòng nhập trong CMS giữ nguyên như bản thiết kế. */

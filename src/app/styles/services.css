@@ -815,6 +815,7 @@
   text-align: center;
 }
 .service-groups .center-heading h2 {
+  white-space: pre-line;
   color: #0f172a;
   font-family: var(--font-display);
   font-size: 48px;
@@ -1012,7 +1013,7 @@
 
 /* Quy trình 4 bước trên trang nhóm dịch vụ (Figma v3 196:3319) */
 .process-steps-section {
-  padding: 80px 0 40px;
+  padding: 64px 0 0;
   background: #fff;
 }
 .process-steps-inner {
@@ -1194,7 +1195,7 @@
 
 /* Dải kêu gọi nền tối cuối trang dịch vụ và dự án (Figma 244:1544) */
 .cta-bar-section {
-  padding: 24px 0 80px;
+  padding: 6px 0 30px;
   background: #fff;
 }
 .cta-bar {
@@ -1214,10 +1215,10 @@
 }
 .cta-bar-text {
   display: flex;
-  flex: 1 1 480px;
+  flex: 0 1 573px;
   flex-direction: column;
   gap: 8px;
-  max-width: 672px;
+  max-width: 573px;
   padding-top: 2px;
 }
 .cta-bar-eyebrow {
@@ -1281,6 +1282,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-width: 240px;
   padding: 14px 24px;
   border-radius: 12px;
   background: #f1df57;

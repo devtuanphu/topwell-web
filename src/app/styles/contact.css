@@ -119,7 +119,7 @@
 }
 .topic-group {
   margin: 0;
-  padding: 22px 0 0;
+  padding: 0;
   border: 0;
 }
 .topic-group legend {
@@ -617,4 +617,14 @@
     right: 12px;
     max-width: none;
   }
+}
+
+/* Icon mạng xã hội tô vàng như Figma 146:9329 (icon tải lên là màu trắng). */
+.social-mask {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: rgba(241, 223, 87, 0.95);
+  mask: center / contain no-repeat;
+  -webkit-mask: center / contain no-repeat;
 }

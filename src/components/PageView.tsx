@@ -152,11 +152,15 @@ export default function PageView({
           {render(sections.filter((s) => !isCaseBlock(s) && s.__component !== listComponent))}
         </>
       ) : kind === 'projects' ? (
-        <div className="case-study">
-          <div className="case-study-inner">
-            <div className="case-body">{render(sections)}</div>
+        <>
+          <div className="case-study">
+            <div className="case-study-inner">
+              <div className="case-body">{render(sections.filter(isCaseBlock))}</div>
+            </div>
           </div>
-        </div>
+          {/* Dải kêu gọi và các khối chung khác rộng hết khung như Figma 212:277. */}
+          {render(sections.filter((s) => !isCaseBlock(s)))}
+        </>
       ) : kind === 'articles' ? (
         <>
           <div className="article-page">

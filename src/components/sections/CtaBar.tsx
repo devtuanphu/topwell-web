@@ -24,7 +24,7 @@ export default function CtaBar({
           <div className="cta-bar-actions">
             {phone && (
               <a className="cta-bar-phone" href={`tel:${phone.replace(/[^+0-9]/g, '')}`}>
-                <UiIcon name="phoneDark" size={16} />
+                <UiIcon name="phoneYellow" size={16} />
                 <span>
                   {section.phoneLabel} {phone}
                 </span>
@@ -33,7 +33,7 @@ export default function CtaBar({
             {section.ctaLabel && (
               <Link className="cta-bar-button" href={safeHref(section.ctaHref)}>
                 {section.ctaLabel}
-                <UiIcon name="arrowSmall" size={16} className="arrow" />
+                <UiIcon name="arrowRightDark" size={16} className="arrow" />
               </Link>
             )}
           </div>

@@ -23,6 +23,8 @@ export const ICONS = {
   userYellow: '/figma-v4-icons/user-yellow.svg',
   calendarGrey: '/figma-v3/calendar-grey.svg',
   calendarYellow: '/figma-v4-icons/calendar-yellow.svg',
+  phoneYellow: '/figma-v4-icons/phone-yellow.svg',
+  arrowRightDark: '/figma-v4-icons/arrow-right-dark.svg',
   calendarOrange: '/figma-v2/c479da68ce3b72a03de1e3d93506a99447f1795f.svg',
   clock: '/figma-v2/e98479330dfaec36e6e7de6daac3332d642d342e.svg',
   calendarMuted: '/figma-v2/4a2964a47def86e92e441ab26af1676061fa34e5.svg',
