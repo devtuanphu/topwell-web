@@ -364,12 +364,8 @@
   width: 56px;
   height: 56px;
   margin-bottom: 32px;
-  border: 1px solid #f1df57;
   border-radius: 12px;
-  background: #fffbeb;
-}
-.value-card.featured .value-icon {
-  border-color: transparent;
+  /* Ô nền vàng cố định trong giao diện; icon bên trong tải lên từ CMS (ô Icon của thẻ). */
   background: #f1df57;
 }
 /* Kích thước gốc của từng icon như Figma (mắt 29×20, cờ 20×23, huy chương 21×28). */
