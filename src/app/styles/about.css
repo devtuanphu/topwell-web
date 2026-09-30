@@ -372,9 +372,12 @@
   border-color: transparent;
   background: #f1df57;
 }
+/* Kích thước gốc của từng icon như Figma (mắt 29×20, cờ 20×23, huy chương 21×28). */
 .value-icon .icon {
   width: auto;
-  height: 28px;
+  height: auto;
+  max-width: 36px;
+  max-height: 36px;
 }
 .value-label {
   margin-bottom: 6px;
@@ -446,7 +449,9 @@
 }
 .value-link .icon {
   width: auto;
-  height: 15px;
+  height: auto;
+  max-width: 20px;
+  max-height: 20px;
 }
 
 /* Process video (civil & commercial services) */

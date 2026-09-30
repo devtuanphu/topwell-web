@@ -337,3 +337,23 @@ test('review fixes: process header, full-width project CTA and yellow contact so
     'rgba(241, 223, 87, 0.95)',
   );
 });
+
+test('about value cards use the Figma icons at their natural size', async ({ page }) => {
+  await page.goto('/ve-chung-toi');
+  const sizes = await page
+    .locator('.value-icon .icon')
+    .evaluateAll((els) =>
+      els.map((e) => [
+        Math.round(e.getBoundingClientRect().width),
+        Math.round(e.getBoundingClientRect().height),
+      ]),
+    );
+  expect(sizes).toEqual([
+    [29, 20],
+    [20, 23],
+    [21, 28],
+  ]);
+  await expect(page.locator('.value-card').nth(2).locator('.value-link')).toContainText(
+    'Tiêu chuẩn Nhật Bản & Châu Âu',
+  );
+});
