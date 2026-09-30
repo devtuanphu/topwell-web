@@ -38,15 +38,17 @@ export function Button({
   href,
   children,
   outline = false,
+  arrow = true,
 }: {
   href?: string;
   children: React.ReactNode;
   outline?: boolean;
+  arrow?: boolean;
 }) {
   return (
     <Link className={`button ${outline ? 'outline' : ''}`} href={safeHref(href)}>
       {children}
-      <span aria-hidden="true">→</span>
+      {arrow && <span aria-hidden="true">→</span>}
     </Link>
   );
 }

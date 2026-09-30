@@ -25,7 +25,11 @@ export default function CompanyProfile({ section }: { section: Section }) {
               <span
                 className="mono-badge-icon"
                 aria-hidden="true"
-                style={section.eyebrowIcon ? { backgroundImage: `url(${mediaUrl(section.eyebrowIcon)})` } : undefined}
+                style={
+                  section.eyebrowIcon
+                    ? { backgroundImage: `url(${mediaUrl(section.eyebrowIcon)})` }
+                    : undefined
+                }
               />
               {section.eyebrow}
               <span className="mono-badge-line" aria-hidden="true" />

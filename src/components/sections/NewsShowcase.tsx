@@ -54,14 +54,14 @@ export default function NewsShowcase({
                 <div className="home-news-meta">
                   {a.author && (
                     <span>
-                      <UiIcon name="userGrey" />
+                      <UiIcon name="userYellow" />
                       {a.author}
                     </span>
                   )}
                   {a.publishedDate && (
                     <span>
-                      <UiIcon name="calendarGrey" />
-                      {formatDate(a.publishedDate, copy.metadata.locale)}
+                      <UiIcon name="calendarYellow" />
+                      {formatDate(a.publishedDate, copy.metadata.locale, 'full')}
                     </span>
                   )}
                 </div>

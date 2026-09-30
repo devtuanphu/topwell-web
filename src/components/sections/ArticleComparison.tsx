@@ -11,7 +11,12 @@ export default function ArticleComparison({ section }: { section: Section }) {
     <section className="article-prose" id="standards">
       <h2>{section.title}</h2>
       {section.description && <p>{section.description}</p>}
-      <div className="table-scroll" tabIndex={0} role="region" aria-label={copy.accessibility.comparison}>
+      <div
+        className="table-scroll"
+        tabIndex={0}
+        role="region"
+        aria-label={copy.accessibility.comparison}
+      >
         <table className="article-table">
           <thead>
             <tr>

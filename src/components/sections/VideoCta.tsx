@@ -7,9 +7,17 @@ import { useCopy } from '../SiteCopyProvider';
 
 export function embedUrl(url: string) {
   const yt = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
-  if (yt) return { kind: 'iframe' as const, src: `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0` };
+  if (yt)
+    return {
+      kind: 'iframe' as const,
+      src: `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0`,
+    };
   const vimeo = url.match(/vimeo\.com\/(\d+)/);
-  if (vimeo) return { kind: 'iframe' as const, src: `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1` };
+  if (vimeo)
+    return {
+      kind: 'iframe' as const,
+      src: `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1`,
+    };
   if (/\.(mp4|webm|ogg)(\?|$)/i.test(url)) return { kind: 'video' as const, src: url };
   if (/\.pdf(\?|$)/i.test(url)) return { kind: 'iframe' as const, src: url };
   return null;
@@ -31,14 +39,30 @@ export function MediaDialog({
   }, []);
   const media = embedUrl(url);
   return (
-    <dialog ref={ref} className="media-dialog" aria-label={title} onClose={onClose} onClick={(e) => e.target === ref.current && ref.current?.close()}>
-      <button className="media-close" type="button" onClick={() => ref.current?.close()} aria-label={copy.about.close}>
+    <dialog
+      ref={ref}
+      className="media-dialog"
+      aria-label={title}
+      onClose={onClose}
+      onClick={(e) => e.target === ref.current && ref.current?.close()}
+    >
+      <button
+        className="media-close"
+        type="button"
+        onClick={() => ref.current?.close()}
+        aria-label={copy.about.close}
+      >
         ×
       </button>
       {media?.kind === 'video' ? (
         <video src={media.src} controls autoPlay playsInline />
       ) : media ? (
-        <iframe src={media.src} title={title} allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
+        <iframe
+          src={media.src}
+          title={title}
+          allow="autoplay; encrypted-media; fullscreen"
+          allowFullScreen
+        />
       ) : null}
     </dialog>
   );
@@ -89,7 +113,11 @@ export default function VideoCta({ section }: { section: Section }) {
           )}
         </div>
         {open && playable && (
-          <MediaDialog url={url} title={section.videoLabel || section.title || ''} onClose={() => setOpen(false)} />
+          <MediaDialog
+            url={url}
+            title={section.videoLabel || section.title || ''}
+            onClose={() => setOpen(false)}
+          />
         )}
       </section>
     );
@@ -101,35 +129,41 @@ export default function VideoCta({ section }: { section: Section }) {
           <span className="play-button" aria-hidden="true">
             <span />
           </span>
+        ) : playable ? (
+          <button
+            type="button"
+            className="play-button"
+            aria-label={section.videoLabel || copy.accessibility.play}
+            onClick={() => setOpen(true)}
+          >
+            <span aria-hidden="true" />
+          </button>
         ) : (
-          playable ? (
-            <button
-              type="button"
-              className="play-button"
-              aria-label={section.videoLabel || copy.accessibility.play}
-              onClick={() => setOpen(true)}
-            >
-              <span aria-hidden="true" />
-            </button>
-          ) : (
-            <a
-              className="play-button"
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={section.videoLabel || copy.accessibility.play}
-            >
-              <span aria-hidden="true" />
-            </a>
-          )
+          <a
+            className="play-button"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={section.videoLabel || copy.accessibility.play}
+          >
+            <span aria-hidden="true" />
+          </a>
         )}
         {section.eyebrow && <p className="video-eyebrow">{section.eyebrow}</p>}
         {section.title && <h2>{section.title}</h2>}
         {section.description && <p className="video-text">{section.description}</p>}
-        {section.ctaLabel && <Button href={section.ctaHref}>{section.ctaLabel}</Button>}
+        {section.ctaLabel && (
+          <Button href={section.ctaHref} arrow={false}>
+            {section.ctaLabel}
+          </Button>
+        )}
       </div>
       {open && playable && (
-        <MediaDialog url={url} title={section.videoLabel || section.title || ''} onClose={() => setOpen(false)} />
+        <MediaDialog
+          url={url}
+          title={section.videoLabel || section.title || ''}
+          onClose={() => setOpen(false)}
+        />
       )}
     </section>
   );

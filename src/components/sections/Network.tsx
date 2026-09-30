@@ -45,7 +45,12 @@ export default function Network({ section, global }: { section: Section; global?
               allowFullScreen
             />
           ) : (
-            <button type="button" className="map-mock" onClick={() => setLive(true)} aria-label={copy.common.viewGoogleMaps}>
+            <button
+              type="button"
+              className="map-mock"
+              onClick={() => setLive(true)}
+              aria-label={copy.common.viewGoogleMaps}
+            >
               <span className="map-layer" style={{ transform: `scale(${zoom})` }}>
                 <Photo picture={section.image} />
                 <i className="map-marker main" style={{ left: '51.3%', top: '40.3%' }} />
@@ -62,7 +67,12 @@ export default function Network({ section, global }: { section: Section; global?
                   <h3>{office.title}</h3>
                   <p>{office.description}</p>
                 </div>
-                <a href={directions} target="_blank" rel="noopener noreferrer" aria-label={copy.common.directions}>
+                <a
+                  href={directions}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={copy.common.directions}
+                >
                   <UiIcon name="pin" />
                 </a>
               </div>
@@ -99,7 +109,9 @@ export default function Network({ section, global }: { section: Section; global?
               −
             </button>
           </div>
-          {!live && section.supportLabel && <span className="map-credit">{section.supportLabel}</span>}
+          {!live && section.supportLabel && (
+            <span className="map-credit">{section.supportLabel}</span>
+          )}
         </div>
       </div>
     </section>

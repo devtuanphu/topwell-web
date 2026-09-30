@@ -5,7 +5,9 @@ export default function ProjectProcess({ section }: { section: Section }) {
   return (
     <section className="project-split project-process">
       <ProjectSplitHead section={section} />
-      <div className="project-split-body">{section.description && <p>{section.description}</p>}</div>
+      <div className="project-split-body">
+        {section.description && <p>{section.description}</p>}
+      </div>
       {section.cards && section.cards.length > 0 && (
         <div className="process-shots">
           {section.cards.map((c, i) => (

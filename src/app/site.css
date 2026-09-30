@@ -210,6 +210,11 @@ mark {
   place-items: center;
   width: 95px;
   height: 44px;
+  /* Khung logo trang chủ (Figma 136:2073). */
+  border: 1px solid rgba(241, 223, 87, 0.6);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 .brand-lockup .brand-logo {
   display: block;
@@ -350,7 +355,7 @@ mark {
   border: 1px solid var(--line);
   border-radius: 9999px;
   background: #fff;
-  color: #eab308;
+  color: #f1df57;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .header-search svg {
@@ -485,7 +490,8 @@ mark {
 .footer-shell {
   max-width: var(--container);
   margin-inline: auto;
-  padding: 64px var(--gutter) 48px;
+  /* Khung Figma 87:456 khóa cao 518px nên dưới dòng bản quyền chỉ còn 13px. */
+  padding: 64px var(--gutter) 13px;
 }
 .footer-grid {
   display: grid;
@@ -555,7 +561,8 @@ mark {
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: 32px;
-  padding: 48px 0 56px;
+  /* Khối liên hệ Figma 87:494 khóa cao 189px: đệm dưới hiển thị 21px. */
+  padding: 48px 0 21px;
   border-top: 1px solid #fff;
 }
 .footer-bottom address {
@@ -823,6 +830,11 @@ mark {
 .site-header.inner:not(.is-scrolled) .brand-lockup {
   width: auto;
   height: auto;
+  /* Khung logo trang con (Figma 171:728). */
+  padding: 7px 13px;
+  border-color: rgba(226, 232, 240, 0.5);
+  border-radius: 8px;
+  background: rgba(241, 245, 249, 0.9);
 }
 .site-header.inner:not(.is-scrolled) .brand-lockup .brand-logo {
   width: 90px;

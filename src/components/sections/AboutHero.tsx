@@ -11,9 +11,11 @@ function Emphasis({ text }: { text: string }) {
   // **word** in CMS text renders as emphasised copy (Figma: SemiBold #1e293b).
   return (
     <>
-      {text.split(/(\*\*[^*]+\*\*)/).map((part, i) =>
-        part.startsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : part,
-      )}
+      {text
+        .split(/(\*\*[^*]+\*\*)/)
+        .map((part, i) =>
+          part.startsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : part,
+        )}
     </>
   );
 }
@@ -34,7 +36,11 @@ export default function AboutHero({ section }: { section: Section }) {
               <span
                 className="mono-badge-icon"
                 aria-hidden="true"
-                style={section.eyebrowIcon ? { backgroundImage: `url(${mediaUrl(section.eyebrowIcon)})` } : undefined}
+                style={
+                  section.eyebrowIcon
+                    ? { backgroundImage: `url(${mediaUrl(section.eyebrowIcon)})` }
+                    : undefined
+                }
               />
               {section.eyebrow}
               <span className="mono-badge-line" aria-hidden="true" />
@@ -73,7 +79,9 @@ export default function AboutHero({ section }: { section: Section }) {
           {small && <Photo picture={small} className="collage-small" />}
         </div>
       </div>
-      {open && media && <MediaDialog url={href} title={section.ctaLabel || ''} onClose={() => setOpen(false)} />}
+      {open && media && (
+        <MediaDialog url={href} title={section.ctaLabel || ''} onClose={() => setOpen(false)} />
+      )}
     </section>
   );
 }

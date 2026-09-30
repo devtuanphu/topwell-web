@@ -1,12 +1,21 @@
 import type { Section } from '@/lib/types';
 
-/** Chữ viết tắt lấy từ tên người đánh giá, ví dụ "Ông Toru Shinohara" → "TS". */
+/**
+ * Chữ viết tắt lấy hai từ đầu của tên sau danh xưng, như Figma 194:2117:
+ * "Ông Toru Shinohara" → "TS", "Ông Nguyễn Văn Tuấn" → "NV".
+ */
 function initials(name = '') {
   const words = name
-    .replace(/^(Ông|Bà|Mr\.?|Ms\.?|Mrs\.?)\s+/i, '')
+    .replace(/^(Ông|Bà|Anh|Chị|Mr\.?|Ms\.?|Mrs\.?)\s+/i, '')
     .split(/\s+/)
     .filter(Boolean);
-  return (words.slice(-2).map((w) => w[0]) || []).join('').toUpperCase() || '★';
+  return (
+    words
+      .slice(0, 2)
+      .map((w) => w[0])
+      .join('')
+      .toUpperCase() || '★'
+  );
 }
 
 /** Đánh giá khách hàng ở trang Dịch vụ (Figma 194:2117). */

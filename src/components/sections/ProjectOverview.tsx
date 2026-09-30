@@ -8,6 +8,7 @@ export default function ProjectOverview({ section }: { section: Section }) {
           <Photo picture={section.image} priority />
         </div>
       )}
+      {section.title && <h2 className="project-title">{section.title}</h2>}
       {section.description && <p className="project-lead">{section.description}</p>}
     </section>
   );

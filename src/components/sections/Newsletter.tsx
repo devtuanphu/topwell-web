@@ -72,8 +72,8 @@ export default function Newsletter() {
           {pending ? copy.newsletter.pending : copy.newsletter.submit}
         </button>
         <small>
-          {copy.newsletter.consent} <Link href={copy.routes.privacy}>{copy.newsletter.privacyLabel}</Link>
-          .
+          {copy.newsletter.consent}{' '}
+          <Link href={copy.routes.privacy}>{copy.newsletter.privacyLabel}</Link>.
         </small>
         <p role="status">{status}</p>
       </form>

@@ -238,10 +238,17 @@
   align-items: flex-start;
   gap: 16px;
 }
+.company-feature {
+  /* Mỗi mục có đường gạch đứt phía dưới (Figma 208:2623). */
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #e2e8f0;
+}
 .company-feature + .company-feature {
   margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px dashed #e2e8f0;
+}
+/* Figma 208:2605 để trống khung nhãn nhưng giữ khoảng 40px phía trên tiêu đề. */
+.company-text > .company-title:first-child {
+  padding-top: 40px;
 }
 .company-feature-icon {
   flex: none;
@@ -323,7 +330,8 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
-  align-items: start;
+  /* Ba thẻ cao bằng nhau, dòng liên kết cuối thẻ thẳng hàng (Figma 208:2654). */
+  align-items: stretch;
   width: 100%;
 }
 .value-card {
@@ -462,7 +470,8 @@
   text-align: center;
 }
 .process-eyebrow {
-  color: #64748b;
+  /* Figma 208:2720: nhãn màu vàng thương hiệu. */
+  color: #f1df57;
   font-family: var(--font-jakarta);
   font-size: 12px;
   font-weight: 600;
@@ -768,13 +777,9 @@
   letter-spacing: 0.55px;
   text-transform: uppercase;
 }
-.cta-eyebrow span {
-  width: 32px;
-  height: 2px;
-  background: #f1df57;
-}
 .industrial-cta h2 {
-  max-width: 760px;
+  /* Figma 208:2801: tiêu đề rộng 794px. */
+  max-width: 794px;
   margin-bottom: 20px;
   font-family: var(--font-display);
   font-size: 56px;

@@ -58,12 +58,25 @@ export default function Partners({ section }: { section: Section }) {
               const logo = (
                 <>
                   {c.icon && <img src={mediaUrl(c.icon)} width={24} height={24} alt="" />}
-                  {c.image ? <img className="partner-logo" src={mediaUrl(c.image)} alt={c.title} /> : <strong>{c.title}</strong>}
+                  {c.image ? (
+                    <img className="partner-logo" src={mediaUrl(c.image)} alt={c.title} />
+                  ) : (
+                    <strong>{c.title}</strong>
+                  )}
                 </>
               );
               const hidden = i >= cards.length;
               return c.href ? (
-                <a key={i} className="partner-card" href={safeHref(c.href)} target="_blank" rel="noopener noreferrer" aria-hidden={hidden || undefined} tabIndex={hidden ? -1 : undefined} draggable={false}>
+                <a
+                  key={i}
+                  className="partner-card"
+                  href={safeHref(c.href)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-hidden={hidden || undefined}
+                  tabIndex={hidden ? -1 : undefined}
+                  draggable={false}
+                >
                   {logo}
                 </a>
               ) : (

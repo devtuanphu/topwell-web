@@ -32,7 +32,7 @@ export function NewsCard({ article }: { article: Entry }) {
             <span>
               <UiIcon name="calendarAmber" size={14} />
               <time dateTime={article.publishedDate}>
-                {formatDate(article.publishedDate, copy.metadata.locale)}
+                {formatDate(article.publishedDate, copy.metadata.locale, 'full')}
               </time>
             </span>
           )}

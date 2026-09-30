@@ -8,7 +8,13 @@ import { UiIcon } from '../icons';
 import DatePicker from '../DatePicker';
 import { useInquiry } from './ContactForm';
 
-export default function QuoteForm({ section, context }: { section: Section; context: SectionContext }) {
+export default function QuoteForm({
+  section,
+  context,
+}: {
+  section: Section;
+  context: SectionContext;
+}) {
   const copy = useCopy();
   const { status, message, submit } = useInquiry('quote');
   return (
@@ -32,9 +38,33 @@ export default function QuoteForm({ section, context }: { section: Section; cont
             onInputCapture={(e) => validateField(e, '')}
           >
             <div className="quote-row">
-              <input className="quote-field" name="name" required maxLength={100} autoComplete="name" placeholder={copy.forms.quoteName} aria-label={copy.forms.name} />
-              <input className="quote-field" name="email" type="email" required maxLength={254} autoComplete="email" placeholder={copy.forms.quoteEmail} aria-label={copy.forms.email} />
-              <input className="quote-field" name="company" maxLength={200} autoComplete="organization" placeholder={copy.forms.quoteCompany} aria-label={copy.forms.quoteCompany} />
+              <input
+                className="quote-field"
+                name="name"
+                required
+                maxLength={100}
+                autoComplete="name"
+                placeholder={copy.forms.quoteName}
+                aria-label={copy.forms.name}
+              />
+              <input
+                className="quote-field"
+                name="email"
+                type="email"
+                required
+                maxLength={254}
+                autoComplete="email"
+                placeholder={copy.forms.quoteEmail}
+                aria-label={copy.forms.email}
+              />
+              <input
+                className="quote-field"
+                name="company"
+                maxLength={200}
+                autoComplete="organization"
+                placeholder={copy.forms.quoteCompany}
+                aria-label={copy.forms.quoteCompany}
+              />
             </div>
             <div className="quote-row">
               <label className="quote-select">
@@ -49,7 +79,11 @@ export default function QuoteForm({ section, context }: { section: Section; cont
                 </select>
                 <UiIcon name="selectChevron" />
               </label>
-              <DatePicker name="preferredDate" placeholder={copy.forms.quoteDate} locale={copy.metadata.locale} />
+              <DatePicker
+                name="preferredDate"
+                placeholder={copy.forms.quoteDate}
+                locale={copy.metadata.locale}
+              />
               <button type="submit" className="quote-submit" disabled={status === 'pending'}>
                 {status === 'pending' ? copy.forms.pending : section.ctaLabel || copy.forms.submit}
               </button>
@@ -59,7 +93,8 @@ export default function QuoteForm({ section, context }: { section: Section; cont
               <input name="website" tabIndex={-1} autoComplete="off" />
             </label>
             <p className="quote-notice">
-              {copy.forms.privacyNotice} <Link href={copy.routes.privacy}>{copy.forms.privacyLabel}</Link>.
+              {copy.forms.privacyNotice}{' '}
+              <Link href={copy.routes.privacy}>{copy.forms.privacyLabel}</Link>.
             </p>
             <p className={`form-message ${status}`} role="status" aria-live="polite">
               {message}

@@ -13,12 +13,7 @@ export default function Cta({ section }: { section: Section }) {
       <Photo picture={section.image} />
       <div className="container industrial-cta-grid">
         <div className="industrial-cta-text">
-          {section.eyebrow && (
-            <p className="cta-eyebrow">
-              <span aria-hidden="true" />
-              {section.eyebrow}
-            </p>
-          )}
+          {section.eyebrow && <p className="cta-eyebrow">{section.eyebrow}</p>}
           {section.title && (
             <h2>
               <Highlight text={section.title} phrase={section.highlight} />
@@ -34,7 +29,15 @@ export default function Cta({ section }: { section: Section }) {
             {section.supportValue && (
               <a className="cta-support" href={tel ? `tel:${tel}` : undefined}>
                 <span className="cta-support-icon" aria-hidden="true">
-                  <img src={mediaUrl(section.supportIcon) || '/figma-v2/963abffd4857f43b039ec7564d50316f6104d7b3.svg'} width={20} height={23} alt="" />
+                  <img
+                    src={
+                      mediaUrl(section.supportIcon) ||
+                      '/figma-v2/963abffd4857f43b039ec7564d50316f6104d7b3.svg'
+                    }
+                    width={20}
+                    height={23}
+                    alt=""
+                  />
                 </span>
                 <span>
                   <small>{section.supportLabel}</small>
@@ -47,7 +50,15 @@ export default function Cta({ section }: { section: Section }) {
         {section.panelTitle && (
           <aside className="cta-panel">
             <h3>
-              <img src={mediaUrl(section.panelIcon) || '/figma-v2/67d2714143f939c1b282be733fcd5293e88828fa.svg'} width={20} height={18} alt="" />
+              <img
+                src={
+                  mediaUrl(section.panelIcon) ||
+                  '/figma-v2/67d2714143f939c1b282be733fcd5293e88828fa.svg'
+                }
+                width={20}
+                height={18}
+                alt=""
+              />
               {section.panelTitle}
             </h3>
             {section.panelText && <p>{section.panelText}</p>}

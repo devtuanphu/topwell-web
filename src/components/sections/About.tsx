@@ -2,7 +2,6 @@ import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
 import { safeHref } from '@/lib/media';
 import { Photo, Icon, Highlight } from '../ui';
-import { UiIcon } from '../icons';
 import CompanyProfile from './CompanyProfile';
 
 export default function About({ section }: { section: Section }) {
@@ -63,7 +62,6 @@ export default function About({ section }: { section: Section }) {
             {section.ctaLabel && (
               <Link className="pill dark" href={safeHref(section.ctaHref)}>
                 {section.ctaLabel}
-                <UiIcon name="arrowLongWhite" size={18} />
               </Link>
             )}
           </div>

@@ -75,7 +75,11 @@ export default function ContactForm({
             id="contact-form"
             className="contact-form"
             onSubmit={(e) => {
-              const picked = [...e.currentTarget.querySelectorAll<HTMLInputElement>('input[name="topic"]:checked')]
+              const picked = [
+                ...e.currentTarget.querySelectorAll<HTMLInputElement>(
+                  'input[name="topic"]:checked',
+                ),
+              ]
                 .map((x) => x.value)
                 .join(', ');
               submit(e, { topics: picked });
@@ -86,7 +90,14 @@ export default function ContactForm({
             <label className="sr-only" htmlFor="cf-name">
               {copy.forms.name}
             </label>
-            <input id="cf-name" name="name" autoComplete="name" required maxLength={100} placeholder={copy.forms.nameShort} />
+            <input
+              id="cf-name"
+              name="name"
+              autoComplete="name"
+              required
+              maxLength={100}
+              placeholder={copy.forms.nameShort}
+            />
             <label className="sr-only" htmlFor="cf-phone">
               {copy.forms.phone}
             </label>
@@ -146,7 +157,8 @@ export default function ContactForm({
                 {status === 'pending' ? copy.forms.pending : copy.forms.submit}
               </button>
               <small>
-                {copy.forms.privacyNotice} <Link href={copy.routes.privacy}>{copy.forms.privacyLabel}</Link>.
+                {copy.forms.privacyNotice}{' '}
+                <Link href={copy.routes.privacy}>{copy.forms.privacyLabel}</Link>.
               </small>
             </div>
             <p className={`form-message ${status}`} role="status" aria-live="polite">
@@ -170,12 +182,26 @@ export default function ContactForm({
                 <div className="contact-socials">
                   {footer.socialLinks.map((s) =>
                     s.href ? (
-                      <a key={s.title} href={safeHref(s.href)} target="_blank" rel="noopener noreferrer" aria-label={s.title}>
-                        {s.icon ? <img src={mediaUrl(s.icon)} width={16} height={16} alt="" /> : s.eyebrow || s.title[0]}
+                      <a
+                        key={s.title}
+                        href={safeHref(s.href)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.title}
+                      >
+                        {s.icon ? (
+                          <img src={mediaUrl(s.icon)} width={16} height={16} alt="" />
+                        ) : (
+                          s.eyebrow || s.title[0]
+                        )}
                       </a>
                     ) : (
                       <span key={s.title} aria-label={s.title} role="img">
-                        {s.icon ? <img src={mediaUrl(s.icon)} width={16} height={16} alt="" /> : s.eyebrow || s.title[0]}
+                        {s.icon ? (
+                          <img src={mediaUrl(s.icon)} width={16} height={16} alt="" />
+                        ) : (
+                          s.eyebrow || s.title[0]
+                        )}
                       </span>
                     ),
                   )}

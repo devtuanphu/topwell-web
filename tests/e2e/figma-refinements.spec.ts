@@ -288,3 +288,24 @@ test('the contact map carries its credit line from the CMS', async ({ page }) =>
   await page.goto('/lien-he');
   await expect(page.locator('.map-credit')).toHaveText(network.supportLabel);
 });
+
+test('detail pages carry the Figma copy: project title, line FAQ and sample article', async ({
+  page,
+}) => {
+  await page.goto('/du-an/oulide-ada-smart-warehouse');
+  const title = page.locator('.project-overview .project-title');
+  await expect(title).toHaveText('Oulide – ADA & Smart Warehouse');
+  await expect(title).toHaveCSS('text-transform', 'uppercase');
+  await expect(title).toHaveCSS('font-size', '50px');
+  await expect(page.locator('.project-split h2').first()).toHaveText('Thách thức & Giải pháp');
+
+  await page.goto('/dich-vu/thiet-bi-va-giai-phap/day-chuyen-san-xuat');
+  await expect(page.locator('.faq-list')).toContainText(
+    'Thời gian thiết kế, chế tạo và bàn giao dây chuyền tự động hóa mất bao lâu?',
+  );
+
+  await page.goto('/tin-tuc/quy-trinh-gia-cong-cnc-5-truc');
+  await expect(page.locator('h1')).toHaveText(/Quy trình chuyển giao máy phay CNC 5 trục/);
+  await expect(page.locator('.article-table thead')).toContainText('Hạng mục kiểm nghiệm');
+  await expect(page.getByText('Bài viết gần đây')).toBeVisible();
+});
