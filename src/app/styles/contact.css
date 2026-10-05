@@ -76,7 +76,7 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .contact-form {
-  grid-column: span 7;
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -178,10 +178,10 @@
 }
 .contact-submit button {
   min-height: 48px;
-  padding: 14px 32px;
+  padding: 14px 60px;
   border-radius: 9999px;
   background: #f1df57;
-  color: #111;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -192,14 +192,6 @@
 }
 .contact-submit button:hover:not(:disabled) {
   background: #e6d23f;
-}
-.contact-submit small {
-  color: #6b7280;
-  font-size: 12px;
-}
-.contact-submit small a {
-  color: #111827;
-  text-decoration: underline;
 }
 .form-message:empty {
   display: none;
@@ -217,70 +209,6 @@
   background: #fef2f2;
   color: #b91c1c;
 }
-.contact-panel {
-  grid-column: span 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 40px;
-  border-radius: 24px;
-  background: #111;
-  color: #fff;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-}
-.contact-panel h3 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 40px;
-  letter-spacing: -0.9px;
-}
-.contact-panel p {
-  padding-top: 8px;
-  color: #dbeafe;
-  font-size: 14px;
-  line-height: 20px;
-}
-.contact-panel-photo {
-  overflow: hidden;
-  padding-top: 16px;
-  border-radius: 16px;
-  background: rgba(30, 58, 138, 0.3);
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1);
-}
-.contact-panel-photo .photo {
-  height: 270px;
-}
-.contact-panel h4 {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 28px;
-}
-.contact-socials {
-  display: flex;
-  gap: 12px;
-  padding-top: 16px;
-}
-.contact-socials > * {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(241, 223, 87, 0.6);
-  border-radius: 9999px;
-  color: rgba(241, 223, 87, 0.95);
-  font-size: 12px;
-  font-weight: 700;
-  transition: background 0.2s;
-}
-.contact-socials a:hover {
-  background: rgba(241, 223, 87, 0.18);
-}
-
 /* Network / map */
 .network-section {
   padding: 0 0 50px;
@@ -573,9 +501,7 @@
 
 @media (max-width: 1024px) {
   .contact-intro-left,
-  .contact-intro-text,
-  .contact-form,
-  .contact-panel {
+  .contact-intro-text {
     grid-column: 1 / -1;
   }
   .contact-card {
@@ -588,8 +514,7 @@
     margin-bottom: 32px;
   }
   .contact-intro h2,
-  .network-head h2,
-  .contact-panel h3 {
+  .network-head h2 {
     font-size: 28px;
     line-height: 34px;
   }
@@ -605,9 +530,6 @@
     padding: 16px;
     border-radius: 16px;
   }
-  .contact-panel {
-    padding: 24px;
-  }
   .network-map {
     height: 420px;
   }
@@ -617,14 +539,4 @@
     right: 12px;
     max-width: none;
   }
-}
-
-/* Icon mạng xã hội tô vàng như Figma 146:9329 (icon tải lên là màu trắng). */
-.social-mask {
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: rgba(241, 223, 87, 0.95);
-  mask: center / contain no-repeat;
-  -webkit-mask: center / contain no-repeat;
 }

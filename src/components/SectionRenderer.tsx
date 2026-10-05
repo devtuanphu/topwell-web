@@ -103,7 +103,7 @@ export default function SectionRenderer({
     case 'sections.related-articles':
       return <RelatedArticles section={section} context={context} />;
     case 'sections.contact-form':
-      return <ContactForm section={section} global={context.global} footer={context.footer} />;
+      return <ContactForm section={section} global={context.global} />;
     case 'sections.article-steps':
       return <ArticleSteps section={section} />;
     case 'sections.article-comparison':

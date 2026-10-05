@@ -85,3 +85,19 @@ export function renderRichText(html: string, locale: Locale) {
     },
   });
 }
+
+// Dòng [[khoi-N]] trong Nội dung chính bài viết; CKEditor bọc nó trong <p>, có thể kèm &nbsp;.
+const BLOCK_MARKER =
+  /<p[^>]*>(?:\s|&nbsp;)*\[\[\s*khoi-(\d+)\s*\]\](?:\s|&nbsp;)*<\/p>|\[\[\s*khoi-(\d+)\s*\]\]/gi;
+
+/** Tách Nội dung chính thành các đoạn HTML và số thứ tự khối (bắt đầu từ 1) được chèn vào giữa. */
+export function splitBlockMarkers(html: string): (string | number)[] {
+  const parts: (string | number)[] = [];
+  let last = 0;
+  for (const match of html.matchAll(BLOCK_MARKER)) {
+    parts.push(html.slice(last, match.index), Number(match[1] ?? match[2]));
+    last = match.index + match[0].length;
+  }
+  parts.push(html.slice(last));
+  return parts.filter((part) => typeof part === 'number' || part.trim());
+}

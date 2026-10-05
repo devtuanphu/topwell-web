@@ -28,8 +28,9 @@ function RowArrow() {
 }
 
 /**
- * Menu con. Khi có mục cấp 3, mỗi hàng là một mục cấp 2 và cột bên phải liệt kê các mục
- * con của nó; không có mục cấp 3 thì là danh sách một cột.
+ * Menu con. Khi có mục cấp 3, menu chỉ liệt kê các mục cấp 2 (Figma 217:341); rê chuột vào
+ * mục cấp 2 nào thì menu cấp 3 của mục đó mới bật ra bên phải. Không có cấp 3 thì là danh sách
+ * một cột.
  */
 function Dropdown({ links }: { links: MenuLink[] }) {
   const nested = links.some((l) => l.children?.length);
@@ -44,20 +45,22 @@ function Dropdown({ links }: { links: MenuLink[] }) {
       </div>
     );
   return (
-    <div className="dropdown mega">
+    <div className="dropdown nested">
       {links.map((l) => (
         <div className="dropdown-row" key={l.href}>
           <Link className="dropdown-parent" href={l.href}>
             <span>{l.title}</span>
             {l.children?.length ? <RowArrow /> : null}
           </Link>
-          <div className="dropdown-children">
-            {l.children?.map((c) => (
-              <Link key={c.href} href={c.href}>
-                {c.title}
-              </Link>
-            ))}
-          </div>
+          {l.children?.length ? (
+            <div className="dropdown-children">
+              {l.children.map((c) => (
+                <Link key={c.href} href={c.href}>
+                  {c.title}
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </div>
       ))}
     </div>

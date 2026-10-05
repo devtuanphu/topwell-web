@@ -2,10 +2,7 @@
 import { useCopy } from '@/components/SiteCopyProvider';
 import { formFailure, validateField } from '@/lib/form-feedback';
 import { useState } from 'react';
-import Link from '@/components/Link';
-import type { Section, Global, FooterConfig } from '@/lib/types';
-import { mediaUrl, safeHref } from '@/lib/media';
-import { Photo } from '../ui';
+import type { Section, Global } from '@/lib/types';
 
 export function useInquiry(kind: 'contact' | 'quote') {
   const copy = useCopy();
@@ -43,15 +40,8 @@ export function useInquiry(kind: 'contact' | 'quote') {
   return { status, message, submit };
 }
 
-export default function ContactForm({
-  section,
-  global,
-  footer,
-}: {
-  section: Section;
-  global: Global;
-  footer?: FooterConfig;
-}) {
+// Figma 146:8739: thẻ liên hệ chỉ còn biểu mẫu, rộng hết 12 cột (bỏ cột giới thiệu bên phải).
+export default function ContactForm({ section, global }: { section: Section; global: Global }) {
   const copy = useCopy();
   const { status, message, submit } = useInquiry('contact');
   const topics = section.cards || [];
@@ -156,74 +146,11 @@ export default function ContactForm({
               <button type="submit" disabled={status === 'pending'}>
                 {status === 'pending' ? copy.forms.pending : copy.forms.submit}
               </button>
-              <small>
-                {copy.forms.privacyNotice}{' '}
-                <Link href={copy.routes.privacy}>{copy.forms.privacyLabel}</Link>.
-              </small>
             </div>
             <p className={`form-message ${status}`} role="status" aria-live="polite">
               {message}
             </p>
           </form>
-          <div className="contact-panel">
-            <div>
-              {section.panelTitle && <h3>{section.panelTitle}</h3>}
-              {section.panelText && <p>{section.panelText}</p>}
-            </div>
-            {section.image && (
-              <div className="contact-panel-photo">
-                <Photo picture={section.image} />
-              </div>
-            )}
-            <div>
-              {section.requestTitle && <h4>{section.requestTitle}</h4>}
-              {section.requestText && <p>{section.requestText}</p>}
-              {footer?.socialLinks && footer.socialLinks.length > 0 && (
-                <div className="contact-socials">
-                  {/* Figma 146:9329: LinkedIn, Facebook, Instagram, ngược thứ tự chân trang. */}
-                  {[...footer.socialLinks].reverse().map((s) =>
-                    s.href ? (
-                      <a
-                        key={s.title}
-                        href={safeHref(s.href)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.title}
-                      >
-                        {s.icon ? (
-                          <span
-                            className="social-mask"
-                            style={{
-                              maskImage: `url(${mediaUrl(s.icon)})`,
-                              WebkitMaskImage: `url(${mediaUrl(s.icon)})`,
-                            }}
-                            aria-hidden="true"
-                          />
-                        ) : (
-                          s.eyebrow || s.title[0]
-                        )}
-                      </a>
-                    ) : (
-                      <span key={s.title} aria-label={s.title} role="img">
-                        {s.icon ? (
-                          <span
-                            className="social-mask"
-                            style={{
-                              maskImage: `url(${mediaUrl(s.icon)})`,
-                              WebkitMaskImage: `url(${mediaUrl(s.icon)})`,
-                            }}
-                            aria-hidden="true"
-                          />
-                        ) : (
-                          s.eyebrow || s.title[0]
-                        )}
-                      </span>
-                    ),
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
         </div>
       </div>
       <span hidden>{global.email}</span>

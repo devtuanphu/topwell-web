@@ -155,28 +155,40 @@ test('the header menu and its dropdowns come from the CMS', async ({ page, reque
   }
 });
 
-test('the services menu is a two-tier submenu: level-2 rows with their level-3 pages', async ({
+test('the services menu lists level-2 rows; hovering one reveals its level-3 submenu', async ({
   page,
 }) => {
   await page.goto('/');
-  const services = page.locator('#primary-nav .nav-item').filter({ has: page.locator('.mega') });
+  const services = page.locator('#primary-nav .nav-item').filter({ has: page.locator('.nested') });
   await services.hover();
   const rows = services.locator('.dropdown-row');
   await expect(rows).toHaveCount(2);
   await expect(rows.nth(0).locator('.dropdown-parent')).toHaveText('Thiết bị và giải pháp');
+  await expect(rows.nth(1).locator('.dropdown-parent')).toHaveText('Phụ tùng và linh kiện');
+  // Figma 217:341: menu chỉ hiện mục cấp 2, cấp 3 ẩn cho tới khi rê chuột vào mục cha.
+  await expect(rows.nth(0).locator('.dropdown-children')).toBeHidden();
+  await expect(rows.nth(1).locator('.dropdown-children')).toBeHidden();
+  await rows.nth(0).locator('.dropdown-parent').hover();
   await expect(rows.nth(0).locator('.dropdown-children a')).toHaveText([
     'Thiết bị',
     'Dây chuyền sản xuất',
     'Dự án chìa khóa trao tay',
   ]);
-  await expect(rows.nth(1).locator('.dropdown-parent')).toHaveText('Phụ tùng và linh kiện');
+  await expect(rows.nth(0).locator('.dropdown-children')).toBeVisible();
+  await expect(rows.nth(1).locator('.dropdown-children')).toBeHidden();
+  // Đi chuột sang menu cấp 3 thì menu vẫn mở.
+  await rows.nth(0).locator('.dropdown-children a').nth(1).hover();
+  await expect(rows.nth(0).locator('.dropdown-children')).toBeVisible();
+  await rows.nth(1).locator('.dropdown-parent').hover();
   await expect(rows.nth(1).locator('.dropdown-children a')).toHaveText([
     'Cung cấp phụ tùng thay thế',
     'Hỗ trợ kỹ thuật & giải pháp linh kiện',
   ]);
+  await expect(rows.nth(1).locator('.dropdown-children')).toBeVisible();
+  await expect(rows.nth(0).locator('.dropdown-children')).toBeHidden();
   // Menu con theo Figma 217:341: nền #f8faff, chữ 18px đậm.
-  await expect(services.locator('.mega')).toHaveCSS('background-color', 'rgb(248, 250, 255)');
-  await expect(rows.nth(0).locator('.dropdown-children a').first()).toHaveCSS('font-size', '18px');
+  await expect(services.locator('.nested')).toHaveCSS('background-color', 'rgb(248, 250, 255)');
+  await expect(rows.nth(1).locator('.dropdown-children a').first()).toHaveCSS('font-size', '18px');
 });
 
 test('services and projects keep the layout of their level', async ({ page }) => {
@@ -317,7 +329,7 @@ test('the home banner autoplays every 4 seconds, even under the mouse', async ({
   await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true', { timeout: 6000 });
 });
 
-test('review fixes: process header, full-width project CTA and yellow contact socials', async ({
+test('review fixes: process header and full-width project CTA', async ({
   page,
 }) => {
   await page.goto('/dich-vu/thiet-bi-va-giai-phap');
@@ -329,13 +341,15 @@ test('review fixes: process header, full-width project CTA and yellow contact so
   const bar = await page.locator('.cta-bar').boundingBox();
   expect(Math.round(bar!.width)).toBe(1216);
   expect(Math.abs(bar!.height - 210)).toBeLessThanOrEqual(4);
+});
+
+test('the contact card is the form alone, spanning the card (Figma 146:8739)', async ({ page }) => {
   await page.goto('/lien-he');
-  const socials = page.locator('.contact-socials > *');
-  await expect(socials.first()).toHaveAttribute('aria-label', 'LinkedIn');
-  await expect(socials.first().locator('.social-mask')).toHaveCSS(
-    'background-color',
-    'rgba(241, 223, 87, 0.95)',
-  );
+  await expect(page.locator('.contact-card > *')).toHaveCount(1);
+  const card = await page.locator('.contact-card').boundingBox();
+  const form = await page.locator('.contact-form').boundingBox();
+  // Thẻ có lề trong 49px mỗi bên.
+  expect(Math.abs(form!.width - (card!.width - 98))).toBeLessThanOrEqual(2);
 });
 
 test('about value cards use the Figma icons at their natural size', async ({ page }) => {

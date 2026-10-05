@@ -183,7 +183,6 @@ mark {
     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0) 100%
   );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition:
     background 0.25s,
     box-shadow 0.25s;
@@ -313,30 +312,58 @@ mark {
   text-decoration-thickness: 2px;
   text-underline-offset: 6px;
 }
-/* Menu con nhiều tầng: hàng mục cấp 2, cột mục cấp 3 bên phải (Figma 217:341) */
-.nav-item .dropdown.mega {
+/* Menu con nhiều tầng: chỉ hiện mục cấp 2 (Figma 217:341), rê chuột vào mục cấp 2 thì menu
+   cấp 3 bật ra sát mép phải. Hàng giãn tới mép menu để chuột đi sang menu cấp 3 không bị đóng. */
+.nav-item .dropdown.nested {
   display: flex;
   flex-direction: column;
   gap: 32px;
   padding: 40px 44px;
 }
 .dropdown-row {
-  display: grid;
-  grid-template-columns: minmax(260px, max-content) max-content;
-  align-items: start;
+  position: relative;
+  margin: -16px -44px;
+  padding: 16px 44px;
 }
 .nav-item .dropdown .dropdown-parent {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-right: 16px;
+  min-width: 220px;
+}
+.dropdown-row:hover > .dropdown-parent,
+.dropdown-row:focus-within > .dropdown-parent {
+  text-decoration: underline;
+  text-decoration-color: #fc0;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 .dropdown-children {
+  position: absolute;
+  top: -24px;
+  left: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-left: 16px;
+  width: max-content;
+  padding: 32px 40px;
+  border-radius: 12px;
+  background: #f8faff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.18s,
+    transform 0.18s,
+    visibility 0.18s;
+}
+.dropdown-row:hover > .dropdown-children,
+.dropdown-row:focus-within > .dropdown-children {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
 .dropdown-arrow {
   flex: none;
@@ -737,19 +764,19 @@ mark {
     background: rgba(255, 255, 255, 0.06);
     color: var(--accent);
   }
-  .nav-item .dropdown.mega {
+  .nav-item .dropdown.nested {
     display: none;
     gap: 12px;
     padding: 8px 0 12px 12px;
     background: none;
   }
-  .nav-item.has-children:focus-within .dropdown.mega,
-  .nav-item.has-children:hover .dropdown.mega {
+  .nav-item.has-children:focus-within .dropdown.nested,
+  .nav-item.has-children:hover .dropdown.nested {
     display: flex;
   }
   .dropdown-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
+    margin: 0;
+    padding: 0;
   }
   .nav-item .dropdown .dropdown-parent,
   .nav-item .dropdown .dropdown-children a {
@@ -764,7 +791,18 @@ mark {
     font-weight: 500;
   }
   .dropdown-children {
+    position: static;
     gap: 0;
+    padding: 0 0 4px 12px;
+    background: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .dropdown-row:hover > .dropdown-parent,
+  .dropdown-row:focus-within > .dropdown-parent {
+    text-decoration: none;
   }
   .dropdown-arrow {
     display: none;
@@ -822,7 +860,6 @@ mark {
 /* Inner-page header variant (Figma 145:7590) */
 .site-header.inner:not(.is-scrolled) {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
-  border-bottom-color: transparent;
 }
 .site-header.inner:not(.is-scrolled) .header-inner {
   height: 96px;

@@ -160,6 +160,8 @@ export interface Entry extends PageContent {
   authorRole?: string;
   authorImage?: Picture;
   bannerImage?: Picture;
+  /** Nội dung chính bài viết (CKEditor), có thể chứa dòng [[khoi-N]] để chèn khối. */
+  content?: string;
 }
 export interface Global {
   title: string;

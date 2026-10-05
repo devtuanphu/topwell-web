@@ -6,8 +6,10 @@ import ArticleSidebar from './sections/ArticleSidebar';
 import ArticleHeader from './sections/ArticleHeader';
 import ArticleNavigation, { ArticleTags } from './sections/ArticleNavigation';
 import ServiceSidebar from './sections/ServiceSidebar';
+import RichText from './sections/RichText';
 import { jsonLd, localeUrl } from '@/lib/seo';
 import { mediaUrl } from '@/lib/media';
+import { splitBlockMarkers } from '@/lib/rich-text';
 
 const BANNER_SECTIONS = ['sections.page-hero'];
 
@@ -99,6 +101,26 @@ export default function PageView({
   const isArticlePart = (s: Section) => s.__component.startsWith('sections.article-');
   const inArticleColumn = (s: Section) =>
     isArticlePart(s) || ['sections.faq', 'sections.rich-text'].includes(s.__component);
+  // Nội dung chính bài viết: đoạn HTML xen với khối được gọi bằng [[khoi-N]] (N theo thứ tự trong
+  // CMS). Khối không được gọi giữ vị trí mặc định ở cuối bài.
+  const contentParts = kind === 'articles' && entry.content ? splitBlockMarkers(entry.content) : [];
+  const placed = new Set(
+    contentParts.flatMap((p) =>
+      typeof p === 'number' && sections.includes(all[p - 1]) ? [all[p - 1]] : [],
+    ),
+  );
+  const rest = sections.filter((s) => !placed.has(s));
+  const articleContent = contentParts.map((p, i) =>
+    typeof p === 'string' ? (
+      <RichText
+        key={`content-${i}`}
+        section={{ __component: 'sections.rich-text', content: p } as Section}
+        context={ctx}
+      />
+    ) : placed.has(all[p - 1]) ? (
+      <SectionRenderer key={`content-${i}`} section={all[p - 1]} context={ctx} />
+    ) : null,
+  );
 
   return (
     <div className={`page page-${kind} ${isHome ? 'page-home' : ''}`}>
@@ -167,19 +189,20 @@ export default function PageView({
             <div className="article-page-inner">
               <article className="article-main">
                 <ArticleHeader entry={entry} context={ctx} />
+                {articleContent}
                 {render(
-                  sections.filter(
+                  rest.filter(
                     (s) => inArticleColumn(s) && s.__component !== 'sections.article-author',
                   ),
                 )}
                 <ArticleTags entry={entry} />
-                {render(sections.filter((s) => s.__component === 'sections.article-author'))}
+                {render(rest.filter((s) => s.__component === 'sections.article-author'))}
                 <ArticleNavigation context={ctx} />
               </article>
               <ArticleSidebar context={ctx} category={entry.category} />
             </div>
           </div>
-          {render(sections.filter((s) => !inArticleColumn(s)))}
+          {render(rest.filter((s) => !inArticleColumn(s)))}
         </>
       ) : (
         render(sections)
