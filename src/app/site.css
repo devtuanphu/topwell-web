@@ -207,13 +207,8 @@ mark {
   flex: none;
   display: grid;
   place-items: center;
-  width: 95px;
   height: 44px;
-  /* Khung logo trang chủ (Figma 136:2073). */
-  border: 1px solid rgba(241, 223, 87, 0.6);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* Không khung: chỉ hiện ảnh logo biên tập viên tải lên. */
 }
 .brand-lockup .brand-logo {
   display: block;
@@ -867,11 +862,6 @@ mark {
 .site-header.inner:not(.is-scrolled) .brand-lockup {
   width: auto;
   height: auto;
-  /* Khung logo trang con (Figma 171:728). */
-  padding: 7px 13px;
-  border-color: rgba(226, 232, 240, 0.5);
-  border-radius: 8px;
-  background: rgba(241, 245, 249, 0.9);
 }
 .site-header.inner:not(.is-scrolled) .brand-lockup .brand-logo {
   width: 90px;
