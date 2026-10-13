@@ -3,8 +3,7 @@ import { useCopy } from '@/components/SiteCopyProvider';
 import { useEffect, useState } from 'react';
 import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
-import { safeHref } from '@/lib/media';
-import { Photo } from '../ui';
+import { safeHref, mediaUrl } from '@/lib/media';
 
 // Mỗi banner dừng 4 giây rồi tự chuyển. Sửa được trong CMS (ô Số giây mỗi banner).
 const DEFAULT_SLIDE_SECONDS = 4;
@@ -43,7 +42,17 @@ export default function HeroSlider({ section }: { section: Section }) {
             aria-hidden={i !== index}
             inert={i !== index}
           >
-            <Photo picture={s.image} priority={i === 0} />
+            {/* Ảnh theo chiều cao tự nhiên để hero cao đúng bằng ảnh (không khung, không dải đen). */}
+            {s.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                className="hero-photo"
+                src={mediaUrl(s.image)}
+                alt={s.image.alt || ''}
+                fetchPriority={i === 0 ? 'high' : undefined}
+                loading={i === 0 ? undefined : 'lazy'}
+              />
+            )}
             <div className="hero-content">
               {i === 0 ? <h1>{s.title}</h1> : <p className="hero-title">{s.title}</p>}
               {s.description && <p className="hero-text">{s.description}</p>}
