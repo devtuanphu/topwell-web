@@ -66,7 +66,6 @@ export default function HeroSlider({ section }: { section: Section }) {
                 src={mediaUrl(s.image)}
                 alt={s.image.alt || ''}
                 fetchPriority={i === 0 ? 'high' : undefined}
-                loading={i === 0 ? undefined : 'lazy'}
               />
             )}
             <div className="hero-content">
