@@ -131,6 +131,9 @@
 /* Khối chữ 244:1501: rộng 756, lề trái 38; tiêu đề 70/1.5, mô tả 22/1.6; hai nút cách 47. */
 .hero-content {
   grid-area: 1 / 1;
+  /* Căn giữa theo chiều dọc và chỉ cao bằng nội dung: ảnh cao hơn chữ thì phần dư là ẢNH,
+     không phải nền đen. */
+  align-self: center;
   position: relative;
   z-index: 1;
   display: flex;
@@ -140,7 +143,7 @@
   width: 100%;
   max-width: var(--container);
   margin-inline: auto;
-  padding: 210px 38px 56px;
+  padding: 40px 38px;
 }
 .hero-content h1,
 .hero-title {
@@ -153,7 +156,6 @@
 }
 .hero-text {
   max-width: 756px;
-  min-height: 105px; /* khung chữ Figma cao cố định 320 = tiêu đề 2 dòng + mô tả 3 dòng */
   margin-top: 5px;
   color: #fff;
   font-family: var(--font);
@@ -1257,7 +1259,7 @@
     line-height: 34px;
   }
   .hero-content {
-    padding: 120px 16px 72px;
+    padding: 32px 16px;
   }
   .hero-content h1,
   .hero-title {
