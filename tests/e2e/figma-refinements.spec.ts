@@ -95,12 +95,12 @@ test('the home hero matches Figma 235:550: title, text and a yellow and a dark b
   await expect(hero.locator('.hero-eyebrow, .hero-reviews, .hero-arrow')).toHaveCount(0);
   const slide = hero.locator('.hero-slide').first();
   const h1 = slide.locator('h1');
-  await expect(h1).toHaveCSS('font-size', '70px');
+  await expect(h1).toHaveCSS('font-size', '50px');
   await expect(h1).toHaveCSS('font-weight', '700');
   await expect(h1).toHaveCSS('color', 'rgb(255, 255, 255)');
   const box = await h1.boundingBox();
-  expect([Math.round(box!.x), Math.round(box!.y)]).toEqual([38, 176]);
-  await expect(slide.locator('.hero-text')).toHaveCSS('font-size', '22px');
+  expect([Math.round(box!.x), Math.round(box!.y)]).toEqual([38, 210]);
+  await expect(slide.locator('.hero-text')).toHaveCSS('font-size', '17px');
   await expect(slide.locator('.hero-text')).toHaveCSS('font-weight', '800');
   const [primary, secondary] = [
     slide.locator('.hero-button').nth(0),
@@ -112,7 +112,7 @@ test('the home hero matches Figma 235:550: title, text and a yellow and a dark b
   await expect(secondary).toHaveCSS('background-color', 'rgb(17, 17, 17)');
   await expect(secondary).toHaveCSS('color', 'rgb(255, 255, 255)');
   const button = await primary.boundingBox();
-  expect([Math.round(button!.y), Math.round(button!.height)]).toEqual([543, 52]);
+  expect([Math.round(button!.y), Math.round(button!.height)]).toEqual([517, 52]);
 });
 
 test('the home sections use the brand yellow and drop the parts the redesign removed', async ({

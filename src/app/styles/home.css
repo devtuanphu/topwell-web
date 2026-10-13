@@ -112,6 +112,13 @@
 .hero-slide > .photo {
   position: absolute;
   inset: 0;
+  /* Nền tối trùng hero để ảnh ngang (hiện trọn, không zoom) không để lộ dải xám. */
+  background: #1c1917;
+}
+/* Ảnh hero hiển thị tự nhiên, không cắt/phóng to. */
+.hero-slide > .photo img {
+  object-fit: contain;
+  object-position: center;
 }
 /* Banner theo Figma 235:550: ảnh phủ tối nhẹ, chữ trắng căn trái. */
 .hero-slide::after {
@@ -131,14 +138,14 @@
   max-width: var(--container);
   height: 100%;
   margin-inline: auto;
-  padding: 176px 38px 0;
+  padding: 210px 38px 0;
 }
 .hero-content h1,
 .hero-title {
   max-width: 756px;
   color: #fff;
   font-family: var(--font);
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -148,7 +155,7 @@
   margin-top: 5px;
   color: #fff;
   font-family: var(--font);
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.6;
 }
@@ -1198,7 +1205,7 @@
   }
   .hero-content h1,
   .hero-title {
-    font-size: 56px;
+    font-size: 50px;
   }
   .home-about-grid {
     grid-template-columns: 1fr;

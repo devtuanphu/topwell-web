@@ -36,7 +36,8 @@ export default function About({ section }: { section: Section }) {
                 {section.badges.map((b, i) => (
                   <div key={i}>
                     <Icon picture={b.icon} />
-                    <span>{b.title}</span>
+                    {/* Gõ dấu | trong CMS để xuống dòng (ô nhập một dòng không gõ Enter được). */}
+                    <span>{(b.title || '').replace(/\s*\|\s*/g, '\n')}</span>
                   </div>
                 ))}
               </div>
