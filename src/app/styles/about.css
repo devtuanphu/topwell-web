@@ -160,6 +160,14 @@
   display: flex;
   justify-content: center;
 }
+/* Cho hai cột co lại được dưới màn hình hẹp; chữ dài tự ngắt dòng, tránh tràn ngang. */
+.company-media,
+.company-text {
+  min-width: 0;
+}
+.company-text {
+  overflow-wrap: break-word;
+}
 .ship-circle {
   position: relative;
   width: 440px;
@@ -206,6 +214,7 @@
 .company-title {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   padding-bottom: 12px;
 }

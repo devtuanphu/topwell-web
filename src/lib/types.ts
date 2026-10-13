@@ -75,6 +75,8 @@ export interface Section {
   variant?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** File tải lên (PDF) cho nút Xem thêm; nếu có thì ưu tiên mở file này. */
+  ctaFile?: Media;
   body?: string;
   images?: Picture[];
   slideSeconds?: number;

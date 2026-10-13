@@ -23,9 +23,11 @@ function Emphasis({ text }: { text: string }) {
 export default function AboutHero({ section }: { section: Section }) {
   const [open, setOpen] = useState(false);
   const locale = useLocale();
-  const href = section.ctaHref ? localizePath(safeHref(section.ctaHref), locale) : '';
-  const media = href && /youtu|vimeo|\.(mp4|webm)(\?|$)/i.test(href) ? embedUrl(href) : null;
-  const external = /^https?:|\.pdf(\?|$)/i.test(href);
+  // File PDF tải lên được ưu tiên: bấm nút mở thẳng file trong tab mới.
+  const file = section.ctaFile?.url ? mediaUrl({ media: section.ctaFile, alt: '' }) : '';
+  const href = file || (section.ctaHref ? localizePath(safeHref(section.ctaHref), locale) : '');
+  const media = !file && href && /youtu|vimeo|\.(mp4|webm)(\?|$)/i.test(href) ? embedUrl(href) : null;
+  const external = Boolean(file) || /^https?:|\.pdf(\?|$)/i.test(href);
   const [big, pill, small] = [section.image, ...(section.images || [])];
   return (
     <section className="about-hero">

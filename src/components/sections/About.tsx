@@ -1,6 +1,6 @@
 import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
-import { safeHref } from '@/lib/media';
+import { safeHref, mediaUrl } from '@/lib/media';
 import { Photo, Icon, Highlight } from '../ui';
 import CompanyProfile from './CompanyProfile';
 
@@ -59,11 +59,22 @@ export default function About({ section }: { section: Section }) {
             ))}
           </div>
           <div className="about-cta">
-            {section.ctaLabel && (
-              <Link className="pill dark" href={safeHref(section.ctaHref)}>
-                {section.ctaLabel}
-              </Link>
-            )}
+            {section.ctaLabel &&
+              // File PDF tải lên được ưu tiên: mở thẳng file trong tab mới.
+              (section.ctaFile?.url ? (
+                <a
+                  className="pill dark"
+                  href={mediaUrl({ media: section.ctaFile, alt: '' })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {section.ctaLabel}
+                </a>
+              ) : (
+                <Link className="pill dark" href={safeHref(section.ctaHref)}>
+                  {section.ctaLabel}
+                </Link>
+              ))}
           </div>
         </div>
       </div>
