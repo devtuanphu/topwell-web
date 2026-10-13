@@ -1,6 +1,6 @@
 'use client';
 import { useCopy } from '@/components/SiteCopyProvider';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from '@/components/Link';
 import type { Section } from '@/lib/types';
 import { safeHref, mediaUrl } from '@/lib/media';
@@ -20,10 +20,23 @@ export default function HeroSlider({ section }: { section: Section }) {
     const id = setTimeout(() => setIndex((i) => (i + 1) % slides.length), slideMs);
     return () => clearTimeout(id);
   }, [index, paused, slides.length, slideMs]);
+  // Hero cao đúng bằng slide đang hiện (theo chiều cao ảnh của từng slide), không lấy ảnh cao nhất.
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [heroHeight, setHeroHeight] = useState<number>();
+  useEffect(() => {
+    const el = slideRefs.current[index];
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const update = () => setHeroHeight(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [index, slides.length]);
   if (!slides.length) return null;
   return (
     <section
       className="home-hero"
+      style={heroHeight ? { height: heroHeight } : undefined}
       aria-label={section.title || copy.accessibility.hero}
       aria-roledescription="carousel"
       onFocusCapture={() => setPaused(true)}
@@ -36,6 +49,9 @@ export default function HeroSlider({ section }: { section: Section }) {
           <div
             className="hero-slide"
             key={i}
+            ref={(el) => {
+              slideRefs.current[i] = el;
+            }}
             role="group"
             aria-roledescription="slide"
             aria-label={copy.accessibility.slide.replace('{number}', String(i + 1))}

@@ -97,10 +97,13 @@
   overflow: hidden;
   background: #1c1917;
   color: #fff;
+  /* Chiều cao đặt bằng JS theo slide đang hiện; đổi mượt khi chuyển slide. */
+  transition: height 0.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 .hero-track {
   display: flex;
-  align-items: stretch;
+  /* Mỗi slide giữ chiều cao riêng của ảnh, không bị kéo bằng slide cao nhất. */
+  align-items: flex-start;
   transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 .hero-slide {
