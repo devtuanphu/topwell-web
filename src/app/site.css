@@ -16,8 +16,9 @@
   --gutter: 32px;
   --font:
     'Inter Variable', Inter, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', Arial, sans-serif;
-  --font-display: 'Space Grotesk Variable', 'Space Grotesk', var(--font);
-  --font-jakarta: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', var(--font);
+  /* Toàn site dùng một font (Inter) như trang chủ; giữ tên token để không phải sửa từng nơi. */
+  --font-display: var(--font);
+  --font-jakarta: var(--font);
 }
 * {
   box-sizing: border-box;

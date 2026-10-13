@@ -27,7 +27,7 @@
   gap: 8px;
   padding-bottom: 16px;
   color: #d4b91f;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 700;
   line-height: 24px;
@@ -304,7 +304,7 @@
 }
 .mono-eyebrow-amber {
   color: #f1df57;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 700;
   line-height: 20px;
@@ -378,7 +378,7 @@
 .value-label {
   margin-bottom: 6px;
   color: #f1df57;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 10px;
   font-weight: 500;
   line-height: 14px;
@@ -673,7 +673,7 @@
   border-radius: 6px;
   background: rgba(33, 49, 69, 0.8);
   color: #eaf1ff;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 10px;
   font-weight: 500;
   line-height: 13px;
@@ -695,7 +695,7 @@
 }
 .team-role {
   color: #f1df57;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 13px;
   font-weight: 700;
   line-height: 18px;
@@ -716,7 +716,7 @@
   padding-top: 16px;
   border-top: 1px solid #f1f5f9;
   color: #565e74;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 10px;
   line-height: 16px;
   letter-spacing: 1px;
@@ -760,7 +760,7 @@
   gap: 8px;
   padding-bottom: 8px;
   color: #f1df57;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -835,13 +835,13 @@
 .cta-support small {
   display: block;
   color: #dae2fd;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 11px;
   line-height: 16px;
   letter-spacing: 0.3px;
 }
 .cta-support strong {
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 1px;
@@ -897,7 +897,7 @@
 .cta-panel dd {
   margin: 0;
   color: #f1df57;
-  font-family: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font);
   font-size: 10px;
   font-weight: 700;
   line-height: 14px;

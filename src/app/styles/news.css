@@ -29,7 +29,7 @@
   top: 104px;
 }
 .news-listing {
-  font-family: 'Be Vietnam Pro', var(--font);
+  font-family: var(--font);
 }
 .news-grid {
   display: grid;

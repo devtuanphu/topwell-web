@@ -1,13 +1,5 @@
 import type { Metadata } from 'next';
 import '@fontsource-variable/inter';
-import '@fontsource-variable/space-grotesk';
-import '@fontsource-variable/plus-jakarta-sans';
-import '@fontsource-variable/jetbrains-mono';
-import '@fontsource/be-vietnam-pro/400.css';
-import '@fontsource/be-vietnam-pro/500.css';
-import '@fontsource/be-vietnam-pro/600.css';
-import '@fontsource/be-vietnam-pro/700.css';
-import '@fontsource/be-vietnam-pro/800.css';
 import '../site.css';
 import '../styles/projects.css';
 import '../styles/services.css';

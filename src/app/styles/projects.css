@@ -229,7 +229,7 @@
 }
 .mono-eyebrow {
   color: #94a3b8;
-  font-family: 'Liberation Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font);
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
