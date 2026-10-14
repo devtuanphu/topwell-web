@@ -103,16 +103,14 @@ test('the home hero matches Figma 235:550: title, text and a yellow and a dark b
   expect(Math.round(box!.x)).toBe(38);
   await expect(slide.locator('.hero-text')).toHaveCSS('font-size', '17px');
   await expect(slide.locator('.hero-text')).toHaveCSS('font-weight', '800');
-  const [primary, secondary] = [
-    slide.locator('.hero-button').nth(0),
-    slide.locator('.hero-button').nth(1),
-  ];
-  await expect(primary).toHaveText('Nhận báo giá');
-  await expect(primary).toHaveCSS('background-color', 'rgb(241, 223, 87)');
+  // Đã bỏ nút chính "Nhận báo giá"; hero chỉ còn nút phụ "Xem thêm" (nền tối).
+  const buttons = slide.locator('.hero-button');
+  await expect(buttons).toHaveCount(1);
+  const secondary = buttons.first();
   await expect(secondary).toHaveText('Xem thêm');
   await expect(secondary).toHaveCSS('background-color', 'rgb(17, 17, 17)');
   await expect(secondary).toHaveCSS('color', 'rgb(255, 255, 255)');
-  const button = await primary.boundingBox();
+  const button = await secondary.boundingBox();
   expect(Math.round(button!.height)).toBe(52);
 });
 

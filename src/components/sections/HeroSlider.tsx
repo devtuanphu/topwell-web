@@ -79,18 +79,12 @@ export default function HeroSlider({ section }: { section: Section }) {
                 <p className="hero-title">{lineBreaks(s.title)}</p>
               )}
               {s.description && <p className="hero-text">{lineBreaks(s.description)}</p>}
-              {(s.label || s.secondaryLabel) && (
+              {s.secondaryLabel && (
                 <div className="hero-actions">
-                  {s.label && (
-                    <Link className="hero-button" href={safeHref(s.href)}>
-                      {s.label}
-                    </Link>
-                  )}
-                  {s.secondaryLabel && (
-                    <Link className="hero-button dark" href={safeHref(s.secondaryHref)}>
-                      {s.secondaryLabel}
-                    </Link>
-                  )}
+                  {/* Đã bỏ nút chính "Nhận báo giá" ở hero; chỉ giữ nút phụ. */}
+                  <Link className="hero-button dark" href={safeHref(s.secondaryHref)}>
+                    {s.secondaryLabel}
+                  </Link>
                 </div>
               )}
             </div>
