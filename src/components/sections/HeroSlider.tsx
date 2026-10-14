@@ -8,6 +8,9 @@ import { safeHref, mediaUrl } from '@/lib/media';
 // Mỗi banner dừng 4 giây rồi tự chuyển. Sửa được trong CMS (ô Số giây mỗi banner).
 const DEFAULT_SLIDE_SECONDS = 4;
 
+// Dấu | trong CMS = xuống dòng (ô nhập một dòng không gõ Enter được).
+const lineBreaks = (text?: string) => (text || '').replace(/\s*\|\s*/g, '\n');
+
 export default function HeroSlider({ section }: { section: Section }) {
   const copy = useCopy();
   const slides = section.cards || [];
@@ -69,8 +72,13 @@ export default function HeroSlider({ section }: { section: Section }) {
               />
             )}
             <div className="hero-content">
-              {i === 0 ? <h1>{s.title}</h1> : <p className="hero-title">{s.title}</p>}
-              {s.description && <p className="hero-text">{s.description}</p>}
+              {/* Gõ dấu | trong CMS để xuống dòng tại chỗ đó (CSS hero dùng white-space: pre-line). */}
+              {i === 0 ? (
+                <h1>{lineBreaks(s.title)}</h1>
+              ) : (
+                <p className="hero-title">{lineBreaks(s.title)}</p>
+              )}
+              {s.description && <p className="hero-text">{lineBreaks(s.description)}</p>}
               {(s.label || s.secondaryLabel) && (
                 <div className="hero-actions">
                   {s.label && (

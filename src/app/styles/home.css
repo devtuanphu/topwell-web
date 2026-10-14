@@ -153,6 +153,7 @@
   font-size: 50px;
   font-weight: 700;
   line-height: 1.5;
+  white-space: pre-line;
 }
 .hero-text {
   max-width: 756px;
@@ -162,6 +163,7 @@
   font-size: 17px;
   font-weight: 800;
   line-height: 1.6;
+  white-space: pre-line;
 }
 .hero-actions {
   display: flex;
