@@ -208,13 +208,13 @@ mark {
   flex: none;
   display: grid;
   place-items: center;
-  height: 44px;
+  height: 60px;
   /* Không khung: chỉ hiện ảnh logo biên tập viên tải lên. */
 }
 .brand-lockup .brand-logo {
   display: block;
-  width: 87px;
-  height: 35px;
+  width: 124px;
+  height: 50px;
   object-fit: contain;
 }
 .header-panel {
@@ -865,8 +865,8 @@ mark {
   height: auto;
 }
 .site-header.inner:not(.is-scrolled) .brand-lockup .brand-logo {
-  width: 90px;
-  height: 36px;
+  width: 128px;
+  height: 52px;
 }
 .site-header.inner:not(.is-scrolled) .nav-item > a {
   font-family: var(--font-jakarta);
